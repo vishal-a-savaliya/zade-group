@@ -44,7 +44,7 @@ function Home() {
 
             <div className='flex flex-col mb-7 md:flex-row justify-center md:relative md:-top-36 md:-mb-14'>
 
-                <Link to={"/z2"}>
+                <Link to={"/corporate-space"}>
 
                     <div className='w-[350px] mx-auto md:mx-0 md:mr-5  flex flex-col justify-end hover:cursor-pointer'>
                         <div className='bg-cover bg-center w-full h-[450px] ' style={{
@@ -64,7 +64,7 @@ function Home() {
 
 
 
-                <Link to={"/zluxuria"}>
+                <Link to={"/luxurious-living"}>
 
 
                     <div className='w-[350px] mx-auto md:mx-0 md:ml-5  flex flex-col justify-end hover:cursor-pointer'>

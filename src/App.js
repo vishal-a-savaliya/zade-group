@@ -23,9 +23,9 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Home />} />
-        <Route path="/z2" element={<Z2 />} />
+        <Route path="/corporate-Space" element={<Z2 />} />
 
-        <Route path="/zluxuria" element={<Zluxuria />} />
+        <Route path="/luxurious-living" element={<Zluxuria />} />
 
 
       </Routes>
