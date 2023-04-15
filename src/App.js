@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom'
+
+import Home from "./views/Home";
+import Z2 from './views/Z2';
+import Zluxuria from './views/Zluxuria';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
+
+
 
 function App() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [navigate]);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <>
+      <Routes>
+
+        <Route path="/" element={<Home />} />
+        <Route path="/z2" element={<Z2 />} />
+
+        <Route path="/zluxuria" element={<Zluxuria />} />
+
+
+      </Routes>
+    </>
+
   );
 }
+
 
 export default App;
