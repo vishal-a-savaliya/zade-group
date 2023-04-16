@@ -1,11 +1,18 @@
-@import url(//db.onlinewebfonts.com/c/adfd298e421945768d7bf13da3ee8a45?family=BankGothic+Md+BT);
+/* @import url(//db.onlinewebfonts.com/c/adfd298e421945768d7bf13da3ee8a45?family=BankGothic+Md+BT); */
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "BankGothic";
+  src: url('./fonts/BankGothic\ Regular.ttf');
+}
+
 
 *{
-    font-family: "BankGothic Md BT";
+    font-family: "BankGothic";
 }
 
 @layer components {
