@@ -102,7 +102,8 @@ function Zluxuria() {
     return (
         <div>
 
-            <h1 className='px-10 mt-10 text-5xl text-center font-bold text-primary'>Luxurious living</h1>
+            <h1 className='pt-10 mt-10 text-5xl text-center font-bold text-primary'>Luxurious living</h1>
+            {/* <h1 className='pt-5 pb-10 text-3xl text-center font-bold text-primary'>Presenting Soon</h1> */}
 
             <div className="relative md:hidden px-3 my-8 ">
                 <div className='w-full bg-cover bg-center h-[600px] bg-gray mr-10 '

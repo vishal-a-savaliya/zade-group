@@ -178,9 +178,9 @@ function Z2() {
                         <h1 className='text-5xl text-primary'>Details</h1>
 
                         <div className='pt-5 pl-3 md:pl-0 md:pt-10 md:pr-8'>
-                            <li className='li'>32 floor Corporate Space</li>
+                            <li className='li'>32 stories Corporate Space</li>
                             <li className='li'>12 feet hight for Each floor</li>
-                            <li className='li'>1230 square ft to 10,000 square ft Corporate Space</li>
+                            <li className='li'>1230 Sq. Ft. to 10,000 Sq. Ft. Corporate Space</li>
                             <li className='li'>5 level basement parking</li>
                             <li className='li'>30 Meter & 12 Metre two road corner</li>
                         </div>
