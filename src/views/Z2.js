@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 import img1 from '../image/z2/1.jpeg'
 import img2 from '../image/z2/2.jpeg'
@@ -15,8 +15,6 @@ function Z2() {
 
     const images = [img1, img2, img3, img4, img5, img6, img7, img8];
     const [current, setCurrent] = useState(0);
-    const slideRef = useRef(null);
-    const touchStartRef = useRef(null);
 
     const prevSlide = () => {
         setCurrent(current === 0 ? images.length - 1 : current - 1);
@@ -26,23 +24,22 @@ function Z2() {
         setCurrent(current === images.length - 1 ? 0 : current + 1);
     }, [current, images.length]);
 
-    const handleTouchStart = (event) => {
-        touchStartRef.current = event.touches[0].clientX;
+    const handleTouchStart = (e) => {
+        setTouchStartX(e.touches[0].clientX);
     };
 
-    const handleTouchMove = (event) => {
-        const touchEnd = event.touches[0].clientX;
-        const touchDiff = touchStartRef.current - touchEnd;
-        if (touchDiff > 0) {
-            nextSlide();
-        } else if (touchDiff < 0) {
+    const handleTouchEnd = (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchDistance = touchEndX - touchStartX;
+
+        if (touchDistance > 50) {
             prevSlide();
+        } else if (touchDistance < -50) {
+            nextSlide();
         }
     };
 
-    const handleTouchEnd = () => {
-        touchStartRef.current = null;
-    };
+    const [touchStartX, setTouchStartX] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -115,10 +112,9 @@ function Z2() {
 
             <h1 className='px-10 mt-10 text-5xl text-center font-bold text-primary'>Corporate Space</h1>
 
-            <div className="relative md:hidden px-3 my-8" ref={slideRef}>
+            <div className="relative md:hidden px-3 my-8">
                 <div className='w-full bg-cover bg-center h-[600px] bg-gray mr-10 '
                     onTouchStart={handleTouchStart}
-                    onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}
                     style={{
                         backgroundImage: `url(${images[current]})`,
