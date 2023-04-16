@@ -89,7 +89,7 @@ function Home() {
             </div>
 
             <Contact />
-            <Footer phoneNumber={"7573030027-28"} Email={"sales@zadegroup.in"} />
+            <Footer phoneNumber={"7573030027-28"} Email={"info@zadegroup.in"} />
 
         </div>
     );
