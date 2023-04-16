@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 import img1 from '../image/zluxuria/1_lite.jpeg'
 import img2 from '../image/zluxuria/2_lite.jpeg'
@@ -21,9 +21,9 @@ function Zluxuria() {
         setCurrent(current === 0 ? images.length - 1 : current - 1);
     };
 
-    const nextSlide = () => {
+    const nextSlide = useCallback(() => {
         setCurrent(current === images.length - 1 ? 0 : current + 1);
-    };
+    }, [current, images.length]);
 
     const handleTouchStart = (event) => {
         touchStartRef.current = event.touches[0].clientX;
@@ -48,7 +48,7 @@ function Zluxuria() {
             nextSlide();
         }, 3000);
         return () => clearInterval(interval);
-    }, [current]);
+    }, [nextSlide]);
 
 
     const [data, setData] = useState({

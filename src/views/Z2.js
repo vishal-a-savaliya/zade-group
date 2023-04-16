@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 import img1 from '../image/z2/1.jpeg'
 import img2 from '../image/z2/2.jpeg'
@@ -22,9 +22,9 @@ function Z2() {
         setCurrent(current === 0 ? images.length - 1 : current - 1);
     };
 
-    const nextSlide = () => {
+    const nextSlide = useCallback(() => {
         setCurrent(current === images.length - 1 ? 0 : current + 1);
-    };
+    }, [current, images.length]);
 
     const handleTouchStart = (event) => {
         touchStartRef.current = event.touches[0].clientX;
@@ -49,7 +49,7 @@ function Z2() {
             nextSlide();
         }, 3000);
         return () => clearInterval(interval);
-    }, [current]);
+    }, [nextSlide]);
 
 
 
