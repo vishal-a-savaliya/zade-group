@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import img1 from '../image/z2/1.jpeg'
 import img2 from '../image/z2/2.jpeg'
@@ -15,6 +15,8 @@ function Z2() {
 
     const images = [img1, img2, img3, img4, img5, img6, img7, img8];
     const [current, setCurrent] = useState(0);
+    const slideRef = useRef(null);
+    const touchStartRef = useRef(null);
 
     const prevSlide = () => {
         setCurrent(current === 0 ? images.length - 1 : current - 1);
@@ -23,6 +25,32 @@ function Z2() {
     const nextSlide = () => {
         setCurrent(current === images.length - 1 ? 0 : current + 1);
     };
+
+    const handleTouchStart = (event) => {
+        touchStartRef.current = event.touches[0].clientX;
+    };
+
+    const handleTouchMove = (event) => {
+        const touchEnd = event.touches[0].clientX;
+        const touchDiff = touchStartRef.current - touchEnd;
+        if (touchDiff > 0) {
+            nextSlide();
+        } else if (touchDiff < 0) {
+            prevSlide();
+        }
+    };
+
+    const handleTouchEnd = () => {
+        touchStartRef.current = null;
+    };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [current]);
+
 
 
     const [data, setData] = useState({
@@ -87,10 +115,14 @@ function Z2() {
 
             <h1 className='px-10 mt-10 text-5xl text-center font-bold text-primary'>Corporate Space</h1>
 
-            <div className="relative md:hidden px-3 my-8">
-                <div className='w-full bg-cover bg-center h-[600px] bg-gray mr-10 ' style={{
-                    backgroundImage: `url(${images[current]})`,
-                }}></div>
+            <div className="relative md:hidden px-3 my-8" ref={slideRef}>
+                <div className='w-full bg-cover bg-center h-[600px] bg-gray mr-10 '
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                    style={{
+                        backgroundImage: `url(${images[current]})`,
+                    }}></div>
 
                 <div className="absolute top-1/2 transform -translate-y-1/2 left-0">
                     <button className="absolute top-1/2 left-0 transform -translate-y-1/2 focus:outline-none" onClick={prevSlide}>
@@ -115,7 +147,7 @@ function Z2() {
                 </div>
             </div>
 
-            <div className='hidden md:flex flex-row w-[85%] mx-auto my-10 pb-5'>
+            <div className='hidden md:flex flex-row w-[1200px] mx-auto my-10 pb-5'>
 
                 <div className='w-[25%] bg-cover bg-center h-[604px] bg-gray mr-1' style={{
                     backgroundImage: `url(${img1})`,

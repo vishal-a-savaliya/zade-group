@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import img1 from '../image/zluxuria/1_lite.jpeg'
 import img2 from '../image/zluxuria/2_lite.jpeg'
@@ -14,6 +14,8 @@ function Zluxuria() {
 
     const images = [img1, img2];
     const [current, setCurrent] = useState(0);
+    const slideRef = useRef(null);
+    const touchStartRef = useRef(null);
 
     const prevSlide = () => {
         setCurrent(current === 0 ? images.length - 1 : current - 1);
@@ -22,6 +24,32 @@ function Zluxuria() {
     const nextSlide = () => {
         setCurrent(current === images.length - 1 ? 0 : current + 1);
     };
+
+    const handleTouchStart = (event) => {
+        touchStartRef.current = event.touches[0].clientX;
+    };
+
+    const handleTouchMove = (event) => {
+        const touchEnd = event.touches[0].clientX;
+        const touchDiff = touchStartRef.current - touchEnd;
+        if (touchDiff > 0) {
+            nextSlide();
+        } else if (touchDiff < 0) {
+            prevSlide();
+        }
+    };
+
+    const handleTouchEnd = () => {
+        touchStartRef.current = null;
+    };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [current]);
+
 
     const [data, setData] = useState({
         "subject": "New Inquiry for Luxurious living",
@@ -85,10 +113,14 @@ function Zluxuria() {
 
             <h1 className='px-10 mt-10 text-5xl text-center font-bold text-primary'>Luxurious living</h1>
 
-            <div className="relative md:hidden px-3 my-8">
-                <div className='w-full bg-cover bg-center h-[600px] bg-gray mr-10 ' style={{
-                    backgroundImage: `url(${images[current]})`,
-                }}></div>
+            <div className="relative md:hidden px-3 my-8 " ref={slideRef}>
+                <div className='w-full bg-cover bg-center h-[600px] bg-gray mr-10 '
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                    style={{
+                        backgroundImage: `url(${images[current]})`,
+                    }}></div>
 
                 <div className="absolute top-1/2 transform -translate-y-1/2 left-0">
                     <button className="absolute top-1/2 left-0 transform -translate-y-1/2 focus:outline-none" onClick={prevSlide}>
@@ -115,10 +147,10 @@ function Zluxuria() {
 
             <div className='hidden md:flex flex-row justify-center w-[85%] mx-auto my-10 pb-5'>
 
-                <div className='w-[35%] bg-cover bg-center h-[600px] bg-gray mr-10 ' style={{
+                <div className='w-[420px] bg-cover bg-center h-[700px] bg-gray mr-10 ' style={{
                     backgroundImage: `url(${img1})`,
                 }}></div>
-                <div className='w-[35%] bg-cover bg-center h-[600px] bg-gray' style={{
+                <div className='w-[420px] bg-cover bg-center h-[700px] bg-gray' style={{
                     backgroundImage: `url(${img2})`,
                 }}></div>
 
@@ -132,7 +164,7 @@ function Zluxuria() {
                         <h1 className='text-5xl text-primary'>Details</h1>
 
                         <div className='pt-5 pl-3 md:pl-0 md:pt-5 md:pr-8'>
-                            <li className='li'>32 stories </li>
+                            <li className='li'>33 stories </li>
                             <li className='li'>Each floor has two units</li>
                             <li className='li'>56 units with amenities</li>
                             <li className='li'>4, 6 & 7 BHK Luxurious living with separate servant quatre</li>
