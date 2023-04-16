@@ -1,21 +1,13 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 import img1 from '../image/zluxuria/1_lite.jpeg'
 import img2 from '../image/zluxuria/2_lite.jpeg'
-// import img3 from '../image/z2/3.jpeg'
-// import img4 from '../image/z2/4.jpeg'
-// import img5 from '../image/z2/5.jpeg'
-// import img6 from '../image/z2/6.jpeg'
-// import img7 from '../image/z2/7.jpeg'
-// import img8 from '../image/z2/8.jpeg'
 import Footer from '../components/Footer'
 
 function Zluxuria() {
 
     const images = [img1, img2];
     const [current, setCurrent] = useState(0);
-    const slideRef = useRef(null);
-    const touchStartRef = useRef(null);
 
     const prevSlide = () => {
         setCurrent(current === 0 ? images.length - 1 : current - 1);
@@ -25,23 +17,22 @@ function Zluxuria() {
         setCurrent(current === images.length - 1 ? 0 : current + 1);
     }, [current, images.length]);
 
-    const handleTouchStart = (event) => {
-        touchStartRef.current = event.touches[0].clientX;
+    const handleTouchStart = (e) => {
+        setTouchStartX(e.touches[0].clientX);
     };
 
-    const handleTouchMove = (event) => {
-        const touchEnd = event.touches[0].clientX;
-        const touchDiff = touchStartRef.current - touchEnd;
-        if (touchDiff > 0) {
-            nextSlide();
-        } else if (touchDiff < 0) {
+    const handleTouchEnd = (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchDistance = touchEndX - touchStartX;
+
+        if (touchDistance > 50) {
             prevSlide();
+        } else if (touchDistance < -50) {
+            nextSlide();
         }
     };
 
-    const handleTouchEnd = () => {
-        touchStartRef.current = null;
-    };
+    const [touchStartX, setTouchStartX] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -113,10 +104,9 @@ function Zluxuria() {
 
             <h1 className='px-10 mt-10 text-5xl text-center font-bold text-primary'>Luxurious living</h1>
 
-            <div className="relative md:hidden px-3 my-8 " ref={slideRef}>
+            <div className="relative md:hidden px-3 my-8 ">
                 <div className='w-full bg-cover bg-center h-[600px] bg-gray mr-10 '
                     onTouchStart={handleTouchStart}
-                    onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}
                     style={{
                         backgroundImage: `url(${images[current]})`,
