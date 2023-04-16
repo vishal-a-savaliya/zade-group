@@ -31,9 +31,10 @@ function Home() {
                 {/* <Navbar /> */}
                 <div className="h-full flex flex-col pt-20 items-center text-center text-white">
                     <img src={logo} alt='ZADE GROUP LOGO' className='w-[250px] h-auto' />
-                    <h1 className="text-6xl font-bold text-secondary py-6 mb-2">
+                    <h1 className="text-6xl font-bold text-secondary py-6 mb-4">
                         ZADE GROUP
                     </h1>
+                    <h1 className='mx-10 pb-10 text-4xl text-center font-bold text-secondary'>Presenting Soon</h1>
                     {/* <button className="px-6 py-3 bg-primary font-semibold uppercase tracking-wide">
             Get Started
           </button> */}
