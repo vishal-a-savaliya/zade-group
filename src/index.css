@@ -1,18 +1,52 @@
 /* @import url(//db.onlinewebfonts.com/c/adfd298e421945768d7bf13da3ee8a45?family=BankGothic+Md+BT); */
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
   font-family: "BankGothic";
-  src: url('./fonts/BankGothic\ Regular.ttf');
+  src: url("./fonts/BankGothic\ Regular.ttf");
+}
+@font-face {
+  font-family: "Euclid";
+  src: url("./fonts/EuclidSquare-Regular.ttf");
 }
 
+* {
+  font-family: "Euclid";
+}
 
-*{
-    font-family: "BankGothic";
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+
+  
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #000000ab;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
 }
 
 @layer components {
@@ -21,19 +55,37 @@
   }
 
   .input {
-    @apply w-full border-b border-white focus:border-primary bg-secondary font-normal text-base outline-none text-white py-1 md:px-1 leading-8 transition-colors duration-200 ease-in-out;
+    @apply w-full border-b border-white focus:border-primary bg-secondary font-normal text-base outline-none text-white py-1 md:px-1 leading-8 transition-colors duration-700 ease-in-out;
   }
 
-  .li{
-    @apply list-none text-2xl py-2
+  .li {
+    @apply list-none text-2xl py-2;
+  }
+
+  .primaryFont{
+    @apply font-family
   }
 }
 
-
 input::placeholder {
-    font-weight: 500 !important;
+  font-weight: 500 !important;
 }
 
 textarea::placeholder {
-    font-weight: 500 !important;
+  font-weight: 500 !important;
+}
+
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.5s ease-out;
 }

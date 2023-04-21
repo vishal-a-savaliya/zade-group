@@ -63,7 +63,7 @@ function Contact() {
 
 
     return (
-        <div className='bg-gray pb-28'>
+        <div className='bg-gray py-10 pb-28 slide-up'>
 
             <h1 className='text-5xl text-center font-bold text-primary pt-10 pb-14 '>Contact</h1>
 

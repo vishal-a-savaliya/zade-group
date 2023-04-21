@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
+import { motion } from "framer-motion"
+
 
 import img1 from '../image/z2/1.jpeg'
 import img2 from '../image/z2/2.jpeg'
@@ -8,6 +10,9 @@ import img5 from '../image/z2/5.jpeg'
 import img6 from '../image/z2/6.jpeg'
 import img7 from '../image/z2/7.jpeg'
 import img8 from '../image/z2/8.jpeg'
+
+import corporate_bg_image from '../image/z2/corponare_place_background_image.jpeg'
+
 import Footer from '../components/Footer'
 
 
@@ -108,9 +113,20 @@ function Z2() {
     }
 
     return (
-        <div>
+        <motion.div exit={{ opacity: 0 }}>
 
-            <h1 className='px-10 mt-10 text-5xl text-center font-bold text-primary'>Corporate Space</h1>
+            <div className='bg-secondary'>
+                <div className='h-[300px] w-[85%] mx-auto flex items-end'>
+                    <h1 className='py-20 text-7xl font-bold text-primary'>Corporate Space</h1>
+                </div>
+            </div>
+            {/* <div className='w-full h-[100vh] bg-cover bg-center' style={{
+                backgroundImage: `url(${corporate_bg_image})`,
+            }}>
+
+            </div> */}
+
+            {/* <h1 className='text-5xl text-primary font-bold w-[1200px] mx-auto'>Gallery</h1> */}
 
             <div className="relative md:hidden px-3 my-8">
                 <div className='w-full bg-cover bg-center h-[600px] bg-gray mr-10 '
@@ -175,7 +191,7 @@ function Z2() {
                 <div className='flex flex-col w-[90%] md:flex-row md:w-[85%] mx-auto my-10'>
 
                     <div className='md:w-1/2'>
-                        <h1 className='text-5xl text-primary'>Details</h1>
+                        <h1 className='text-5xl font-semibold text-primary'>Details</h1>
 
                         <div className='pt-5 pl-3 md:pl-0 md:pt-10 md:pr-8'>
                             <li className='li'>32 stories Corporate Space</li>
@@ -247,7 +263,7 @@ function Z2() {
 
             <Footer phoneNumber={"7573030027"} Email={"sales@zadegroup.in"} />
 
-        </div>
+        </motion.div>
     )
 }
 

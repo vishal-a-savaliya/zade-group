@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer({ phoneNumber, Email }) {
     return (
-        <div className='bg-secondary md:px-3 lg:px-14 pt-10'>
+        <div className='bg-secondary pt-146 md:px-3 lg:px-14 md:pt-20'>
 
             <div className='flex px-5 flex-col md:flex-row lg:w-[85%] md:px-0 mx-auto mt-5'>
 

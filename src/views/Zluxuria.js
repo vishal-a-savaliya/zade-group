@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { motion } from "framer-motion"
 
 import img1 from '../image/zluxuria/1_lite.jpeg'
 import img2 from '../image/zluxuria/2_lite.jpeg'
@@ -100,54 +101,58 @@ function Zluxuria() {
     }
 
     return (
-        <div>
+        <motion.div exit={{ opacity: 0 }}>
 
-            <h1 className='pt-10 mt-10 text-5xl text-center font-bold text-primary'>Luxurious living</h1>
-            {/* <h1 className='pt-5 pb-10 text-3xl text-center font-bold text-primary'>Presenting Soon</h1> */}
+            <div>
+                <h1 className='pt-10 mt-10 text-5xl text-center font-bold text-primary'>Luxurious living</h1>
+                {/* <h1 className='pt-5 pb-10 text-3xl text-center font-bold text-primary'>Presenting Soon</h1> */}
 
-            <div className="relative md:hidden px-3 my-8 ">
-                <div className='w-full bg-cover bg-center h-[600px] bg-gray mr-10 '
-                    onTouchStart={handleTouchStart}
-                    onTouchEnd={handleTouchEnd}
-                    style={{
-                        backgroundImage: `url(${images[current]})`,
+                <div className="relative md:hidden px-3 my-8 ">
+                    <div className='w-full bg-cover bg-center h-[600px] bg-gray mr-10 '
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={handleTouchEnd}
+                        style={{
+                            backgroundImage: `url(${images[current]})`,
+                        }}></div>
+
+                    <div className="absolute top-1/2 transform -translate-y-1/2 left-0">
+                        <button className="absolute top-1/2 left-0 transform -translate-y-1/2 focus:outline-none" onClick={prevSlide}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M15 18l-6-6 6-6" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div className="absolute top-1/2 transform -translate-y-1/2 right-0">
+                        <button className="absolute top-1/2 right-0 transform -translate-y-1/2 focus:outline-none" onClick={nextSlide}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        {images.map((_, index) => (
+                            <button key={index} className={`h-3 w-3 rounded-full ${index === current ? 'bg-white' : 'bg-[#FFFFFF33]'}`} onClick={() => setCurrent(index)}></button>
+                        ))}
+                    </div>
+                </div>
+
+                <div className='hidden md:flex flex-row justify-center w-[85%] mx-auto my-10 pb-5'>
+
+                    <div className='w-[420px] bg-cover bg-center h-[700px] bg-gray mr-10 ' style={{
+                        backgroundImage: `url(${img1})`,
+                    }}></div>
+                    <div className='w-[420px] bg-cover bg-center h-[700px] bg-gray' style={{
+                        backgroundImage: `url(${img2})`,
                     }}></div>
 
-                <div className="absolute top-1/2 transform -translate-y-1/2 left-0">
-                    <button className="absolute top-1/2 left-0 transform -translate-y-1/2 focus:outline-none" onClick={prevSlide}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M15 18l-6-6 6-6" />
-                        </svg>
-                    </button>
                 </div>
-
-                <div className="absolute top-1/2 transform -translate-y-1/2 right-0">
-                    <button className="absolute top-1/2 right-0 transform -translate-y-1/2 focus:outline-none" onClick={nextSlide}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M9 18l6-6-6-6" />
-                        </svg>
-                    </button>
-                </div>
-
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                    {images.map((_, index) => (
-                        <button key={index} className={`h-3 w-3 rounded-full ${index === current ? 'bg-white' : 'bg-[#FFFFFF33]'}`} onClick={() => setCurrent(index)}></button>
-                    ))}
-                </div>
-            </div>
-
-            <div className='hidden md:flex flex-row justify-center w-[85%] mx-auto my-10 pb-5'>
-
-                <div className='w-[420px] bg-cover bg-center h-[700px] bg-gray mr-10 ' style={{
-                    backgroundImage: `url(${img1})`,
-                }}></div>
-                <div className='w-[420px] bg-cover bg-center h-[700px] bg-gray' style={{
-                    backgroundImage: `url(${img2})`,
-                }}></div>
 
             </div>
 
-            <div className='bg-gray py-8 md:py-10 md:pb-14'>
+
+            <div className='bg-pink py-8 md:py-10 md:pb-14'>
 
                 <div className='flex flex-col w-[90%] md:flex-row md:w-[85%] mx-auto my-10'>
 
@@ -225,7 +230,7 @@ function Zluxuria() {
             </div>
 
             <Footer phoneNumber={"7573030028"} Email={"sales@zadegroup.in"} />
-        </div>
+        </motion.div>
     )
 }
 
