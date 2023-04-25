@@ -52,7 +52,7 @@ const InitialTransition = () => {
     return (
         // <div className="absolute inset-0 flex items-center justify-center">
         <motion.div
-            className="absolute z-10 flex items-center justify-center w-full bg-black"
+            className="absolute z-10 flex items-center justify-center w-full bg-secondary"
             initial="initial"
             animate="animate"
             variants={blackBox}

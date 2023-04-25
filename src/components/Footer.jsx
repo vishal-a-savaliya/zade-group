@@ -1,8 +1,12 @@
 import React from 'react'
+import footer_bg from '../image/Footer_BG.png'
 
 function Footer({ phoneNumber, Email }) {
     return (
-        <div className='bg-secondary pt-146 md:px-3 lg:px-14 md:pt-20'>
+        <div className='bg-secondary bg-cover pt-146 md:px-3 lg:px-14 md:pt-20'
+            style={{
+                backgroundImage: `url(${footer_bg})`,
+            }}>
 
             <div className='flex px-5 flex-col md:flex-row lg:w-[85%] md:px-0 mx-auto mt-5'>
 

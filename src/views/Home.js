@@ -1,28 +1,29 @@
 import { motion } from "framer-motion"
 
-// import Navbar from '../components/Navbar';
+import Navbar from "../components/Navbar";
+import FeatureCard from "../components/FeatureCard";
+import InitialTransition from "../components/InitialTransition";
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-// import About from '../views/About'
-import logo from '../image/Z GROUP LOGO.svg';
-import logo_z from '../image/Z GROUP LOGO_SQURE.png';
-import { Link } from 'react-router-dom'
-
-import bg from '../image/concrete-wall.avif';
-// import bg from './image/hero.png';
-// import bg from './image/wall.jpg';
 
 
-import Z2 from '../image/cam_12-removebg.png'
-import ZLuxuriya from '../image/Cam_1_M-transformed-removebg.png'
-import InitialTransition from "../components/InitialTransition";
 
 
-// import Z2 from './image/cam_12.jpg'
-// import ZLuxuriya from './image/Cam_1_M.jpg'
+import bg from '../image/zade_group_hero_image.jpg';
+import home_bg_1 from '../image/landing_bg1.png'
+import home_bg_2 from '../image/Home_bg_2.jpg'
+import home_bg_4 from '../image/bg-1.png'
 
-// import Z2 from '../image/Zluxura_sketch-no-bg.png'
-// import ZLuxuriya from '../image/Zluxura_sketch-no-bg.png'
+import project_corporate_space from '../image/z2/3.jpeg'
+
+// svg imports
+import corporate_svg from '../image/svg/skyscraper.svg';
+import office_svg from '../image/svg/offices.svg';
+import showroom_svg from '../image/svg/showrooms.svg';
+import residency_svg from '../image/svg/Recidency.svg';
+
+
+
 
 function Home() {
     return (
@@ -31,111 +32,141 @@ function Home() {
 
             <InitialTransition />
 
-            <div
-                className="bg-cover bg-center h-screen w-full"
+            <Navbar />
+
+            <div className="relative h-screen">
+                <div
+                    className="bg-cover bg-center h-screen w-full absolute inset-0 bg-no-repeat bg-fixed"
+                    style={{
+                        backgroundImage: `url(${bg})`,
+                    }}>
+                    {/* <Navbar /> */}
+                    <div className="h-full flex flex-col justify-center items-center">
+
+                        <div className='flex flex-col justify-center items-center -mt-20'>
+
+                            <h1 className='mt-10 pt-10 pb-2 text-5xl text-center font-bold text-white font-style uppercase'>Beautiful spaces</h1>
+                            <h1 className='text-6xl text-center font-bold text-white font-style uppercase'>in the best places</h1>
+                            <p className="w-[70%] mx-auto pt-8 text-xl text-white font-primary text-center py-4">We're excited to present a new level of luxury in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design.</p>
+                        </div>
+
+                        {/* <h1 className='my-10 pt-10 text-4xl text-center font-bold text-secondary font-primary'>Presenting Soon</h1> */}
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <div className="bg-cover bg-center flex flex-col justify-center items-center h-[400px] w-full"
                 style={{
-                    backgroundImage: `url(${bg})`,
+                    backgroundImage: `url(${home_bg_1})`,
                 }}>
-                {/* <Navbar /> */}
-                <div className="h-full flex flex-col justify-center items-center">
 
-                    <div className='flex flex-row justify-center items-center -mt-20'>
-                        <img src={logo} alt='ZADE GROUP LOGO' className='w-[450px] h-auto' />
-                        {/* <h1 className="text-6xl font-branding font-bold text-secondary py-6 mb-4">
-                            ZADE GROUP
-                        </h1> */}
-                    </div>
+                <h1 className="text-4xl font-style uppercase py-1 text-black">ZADE GROUP</h1>
+                <h1 className="text-5xl font-style py-1 text-black">Presenting Soon</h1>
 
-                    <h1 className='my-10 pt-10 text-4xl text-center font-bold text-secondary font-branding'>Presenting Soon</h1>
-                    {/* <button className="px-6 py-3 bg-primary font-semibold uppercase tracking-wide">
-            Get Started
-          </button> */}
+                <div className="w-[65%] mx-auto">
+                    <p className="text-lg mt-5 py-4 text-black font-primary text-center">We're excited to Present a new level of luxury in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design</p>
                 </div>
 
+                {/* <h1 className="text-4xl font-style uppercase py-1">ZADE GROUP Presenting Soon</h1> */}
+                {/* <h1 className="text-5xl font-style py-1">Corporate Space and Luxurious Living</h1> */}
+                {/* <p className="text-lg mt-5 py-4 text-black font-primary text-center">Zade group introducing the Corporate Space and Luxurious Living<br />Living in the Sky !</p> */}
 
             </div>
 
-            <div className='flex flex-col mb-7 md:flex-row justify-center md:relative md:-top-36 md:-mb-14'>
 
-                <Link to={"/corporate-space"}>
+            {/* projects  */}
 
-                    <div className='w-[350px] mx-auto md:mx-0 md:mr-5  flex flex-col justify-end hover:cursor-pointer'>
-                        <div className='bg-cover bg-center w-full h-[450px] ' style={{
-                            backgroundImage: `url(${Z2})`,
-                        }}>
+            <div className="bg-gray py-44 pb-60">
 
-                        </div>
-                        <div className='py-4 px-6 shadow-b-sm'>
-                            <h1 className='text-primary text-center text-2xl font-semibold  py-1'>Corporate Space</h1>
-                            {/* <p className='text-secondary py-1'>Construction of houses  with a long term guarantee.</p> */}
-                            {/* <button className='bg-gray px-4 py-1 font-semibold text-black mt-2 mb-2 w-full'>Explore</button> */}
-                        </div>
+                <div className="flex justify-center items-center">
 
-                    </div>
-
-                </Link>
-
-
-
-                <Link to={"/luxurious-living"}>
-
-
-                    <div className='w-[350px] mx-auto md:mx-0 md:ml-5  flex flex-col justify-end hover:cursor-pointer'>
-                        <div className='bg-cover bg-center w-full h-[450px] ' style={{
-                            backgroundImage: `url(${ZLuxuriya})`,
-                        }}>
-
-                        </div>
-                        <div className='py-4 px-6'>
-                            <h1 className='text-primary text-center text-2xl font-semibold  py-1'>Luxurious living</h1>
-                            {/* <p className='text-secondary py-1'>Construction of houses  with a long term guarantee.</p> */}
-                            {/* <h3 className="text-primary font-semibold">Explore</h3> */}
-                            {/* <button className='bg-gray px-4 py-1 font-semibold text-black mt-2 mb-2 w-full'>Explore</button> */}
-                        </div>
-
-                    </div>
-
-                </Link>
-
-
-            </div>
-
-            <div className="px-4 py-14 pb-20 md:px-6 lg:px-8 bg-secondary">
-
-                <div className='w-[85%] mx-auto py-14'>
-
-                    <div className='flex'>
-
-                        <div className='w-1/2 flex justify-center items-center'>
-                            <img src={logo_z} alt='ZADE GROUP LOGO' className='w-[250px] h-auto' />
-                        </div>
-                        <div className='w-1/2'>
-                            <h1 className="text-4xl font-heading  text-primary font-semibold pb-10">
-                                About zade group
-                            </h1>
-                            <p className="text  text-white mb-6">
-                                At Zade Group, we've been providing top-quality construction services in Ahmedabad for over a decade. Our reputation has been built on our commitment to delivering exceptional projects that surpass our clients' expectations.
-                            </p>
-                            <p className="text text-white mb-6">
-                                We take pride in everything we do, from using the finest materials to paying close attention to detail in every aspect of our projects. Our team of highly skilled professionals has earned us a reputation as a trusted name in the construction industry, known for our innovative designs and exceptional craftsmanship.
-                            </p>
-                            {/* <h2 className="text-2xl text-primary font-bold text-gray-800 mb-4">
-                                The Corporate Space and Luxurious Living
-                            </h2>
-                            <p className="text text-white mb-6">
-                                Our latest project, The Corporate Space and Luxurious Living, is a testament to our dedication to excellence. We're excited to offer a new level of luxury living in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design.
-                            </p>
-                            <p className="text text-white mb-6">
-                                Our commitment to our clients is evident in every detail of this project, from the impressive entrance to the luxurious interiors. We're passionate about providing the best possible living experience for our clients, and we're confident that our latest project will exceed their expectations.
-                            </p> */}
-                            <p className="text text-white mb-6">
-                                We're proud to set the bar high for construction companies in Ahmedabad, inspiring others to aim for greatness and always strive for excellence.
-                            </p>
-                        </div>
+                    <div className="relative flex flex-col items-center -bottom-8 left-20 w-[80%] mx-auto z-20">
+                        <h1 className="text-6xl font-style font-extrabold text-primaryHover uppercase">zade group</h1>
+                        <h1 className="text-7xl pt-2 font-style font-semibold text-[#181D24] uppercase">projects</h1>
                     </div>
 
                 </div>
 
+                <div className="flex">
+                    <div className="w-[55%] relative">
+                        <div
+                            className="absolute rounded-sm inset-0 bg-no-repeat bg-cover bg-fixed bg-center"
+                            style={{ backgroundImage: `url(${project_corporate_space})` }}
+                        />
+                        <div
+                            className="relative z-10 flex flex-col justify-end items-end h-screen"
+                        >
+                            <div className="px-12 py-10 flex justify-center items-center">
+                                <div>
+                                    <h1 className="text-4xl text-pink font-style">~ 01 ~</h1>
+                                    <h1 className="text-2xl text-pink font-style">Corporate Space</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-[45%] flex flex-col justify-center px-20 ">
+                        <h1 className="text-5xl font-style text-primaryHover py-2">Corporate Space</h1>
+                        <p className="py-2 font-primary">Our commitment to our clients is evident in every detail of this project, from the impressive entrance to the luxurious interiors. We're passionate about providing the best possible living experience for our clients, and we're confident that our latest project will exceed their expectations.</p>
+                        <p className="text-secondary pb-1 pt-3 font-primary">Thaltej, Ahmedabad</p>
+                        <p className="py-1 text-primaryHover font-primary">Newly Launched</p>
+                        <span className="py-2 px-6 w-fit my-8 border border-primaryHover rounded-full font-primary">Read More</span>
+
+                        <div className="flex mt-4">
+
+                            <div className="p-7 rounded-full border border-primaryHover">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                                </svg>
+                            </div>
+                            <div className="p-7 ml-2 rounded-full border border-primaryHover">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                </svg>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            {/* CTA */}
+
+            <div className="bg-cover bg-center bg-secondary bg-opacity-60 flex flex-col justify-center items-center h-[400px]"
+                style={{
+                    backgroundImage: `url(${home_bg_4})`,
+                }}
+            >
+                <h1 className="text-5xl font-style uppercase py-2 text-black">WE ARE WAITING FOR YOU HERE</h1>
+                <h1 className="text-6xl font-style py-2 text-black">SCHEDULE A TOUR</h1>
+                <button className="py-2 px-4 my-2 bg-black text-white">BOOK A VISIT</button>
+            </div>
+
+            {/* features */}
+
+
+            <div className="relative h-screen">
+                <div
+                    className="absolute inset-0 bg-no-repeat bg-cover bg-fixed bg-center"
+                    style={{ backgroundImage: `url(${home_bg_2})` }}
+                />
+                <div className="relative z-10 flex flex-col justify-center items-center h-screen">
+
+                    <div className="w-[1200px] max-w-[85%] flex justify-between">
+
+                        <FeatureCard SVG={corporate_svg} Text={"Corporate Space"} />
+                        <FeatureCard SVG={office_svg} Text={"Office Space"} />
+                        <FeatureCard SVG={showroom_svg} Text={"Showrooms"} />
+                        <FeatureCard SVG={residency_svg} Text={"Residency"} />
+
+                    </div>
+                </div>
             </div>
 
             <Contact />

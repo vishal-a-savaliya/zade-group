@@ -1,91 +1,142 @@
-import React, { useState } from "react";
-import logo from '../image/Z GROUP LOGO.png'
-import Z2 from '../image/Z2.jpeg'
+import React, { useState, useEffect } from "react";
+// import { FaBars } from "react-icons/fa";
 
-function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
+import bg from '../image/Z GROUP LOGO.svg'
 
-    const handleMenuClick = () => {
-        setMenuOpen(!menuOpen);
+const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleToggle = () => {
+        setIsOpen(!isOpen);
     };
 
+    const [scroll, setScroll] = useState(false);
+    const scrollTop = window.pageYOffset;
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [scrollTop]);
+
+    const handleScroll = () => {
+        // const scrollTop = window.pageYOffset;
+
+        if (scrollTop > 1 && !scroll) {
+            setScroll(true);
+        } else if (scrollTop <= 1 && scroll) {
+            setScroll(false);
+        }
+
+    }
+
+    const navbarClasses = `fixed w-full py-6 z-30 ${scroll ? 'bg-transparent' : 'bg-transparent'}`;
+
     return (
-        <div className="">
-            <nav className="flex items-center justify-between flex-wrap bg-gray-100 p-6 mx-10 pt-5">
-                <div className="flex items-center flex-shrink-0 text-gray-800 mr-6">
-                    <img src={logo} alt="Logo" className="w-[120px]" />
+        <nav className={navbarClasses}>
+            <div className="max-w-6xl mx-auto px-4">
+                <div className="flex justify-between">
+
+                    <div className="flex items-center justify-center">
+                        <a href="/" className="mr-7">
+                            <img src={bg} className="w-32" alt="ZADE GROUP" />
+                        </a>
+                    </div>
+                    <div className="flex flex-row items-center">
+                        <button
+                            className="p-2"
+                            onClick={handleToggle}
+                            aria-label="Toggle Menu"
+                        >
+                            {/* <FaBars className="text-white text-2xl" /> */}
+                            {/* <svg
+                                className="w-6 h-6 fill-primary hover:fill-primaryHover"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="#fff"
+                            >
+                                <path stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h12M4 10h12M4 14h12" />
+                                <path stroke="#000" strokeWidth="2" d="M0 0h24v24H0z" fill="none" />
+                            </svg> */}
+                            <img src="https://img.icons8.com/ios-filled/50/null/skyscrapers.png" />
+                        </button>
+                        <button
+                            className="p-2 pt-3 hover:text-primaryHover font-semibold font-branding"
+                            onClick={handleToggle}
+                            aria-label="Toggle Menu"
+                        >
+                            MENU
+                        </button>
+                    </div>
+
+                    {/* <div className="hidden md:flex items-center justify-end">
+                        <button className=" text-black border-primary border-2 px-6 py-3 font-branding font-bold uppercase hover:border-primaryHover">
+                            Schedule a Visit
+                        </button>
+                    </div> */}
                 </div>
-                <div className="block">
+            </div>
+
+            <div
+                className={`${isOpen ? "transition-all ease-in-out duration-700" : "hidden"
+                    } bg-[#f8f8f8] w-full h-screen fixed top-0 left-0 z-40 transition-all ease-in-out duration-700`}
+            >
+
+                <div className="absolute top-5 right-5 px-10">
                     <button
-                        className="flex items-center px-3 py-2 text-gray-800 border-gray-800 hover:text-white hover:bg-gray-800"
-                        onClick={handleMenuClick}
+                        className="p-2"
+                        onClick={handleToggle}
+                        aria-label="Toggle Menu"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-9 w-9 text-white" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+                        {/* <FaBars className="text-white text-2xl" /> */}
+                        <svg
+                            className="w-6 h-6 fill-current"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="#fff"
+                        >
+                            {isOpen ? (
+                                <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M18.004 7.2H5.997c-.662 0-1.198.536-1.198 1.2 0 .664.536 1.2 1.198 1.2h12.007c.662 0 1.198-.536 1.198-1.2 0-.664-.536-1.2-1.198-1.2zm0 5.998H5.997c-.662 0-1.198.536-1.198 1.2 0 .663.536 1.199 1.198 1.199h12.007c.662 0 1.198-.536 1.198-1.2 0-.663-.536-1.199-1.198-1.199zm0 5.998H5.997c-.662 0-1.198.536-1.198 1.199 0 .664.536 1.2 1.198 1.2h12.007c.662 0 1.198-.536 1.198-1.2 0-.663-.536-1.199-1.198-1.199z"
+                                />
+                            ) : (
+                                <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M3.997 8.4h16.007c.662 0 1.198.536 1.198 1.2 0 .664-.536 1.2-1.198 1.2H3.997c-.662 0-1.198-.536-1.198-1.2 0-.664.536-1.2 1.198-1.2zm0 5.998h16.007c.662 0 1.198.536 1.198 1.2 0 .663-.536 1.199-1.198 1.199H3.997c-.662 0-1.198-.536-1.198-1.2 0-.663.536-1.199 1.198-1.199zm0 5.998h16.007c.662 0 1.198.536 1.198 1.199 0 .664-.536 1.2-1.198 1.2H3.997c-.662 0-1.198-.536-1.198-1.2 0-.663.536-1.199 1.198-1.199z"
+                                />
+                            )}
                         </svg>
                     </button>
                 </div>
 
-            </nav>
-
-            <div
-                className={`w-full absolute top-0 bottom-0 left-0 right-0 min-h-[900px] z-30 block bg-gray ${menuOpen ? "block" : "hidden"
-                    }`}
-            >
-
-                <nav className="flex items-center justify-between flex-wrap bg-gray-100 p-6 mx-10 pt-7">
-                    <div className="flex items-center flex-shrink-0 text-gray-800 ml-6">
-                        <img src={logo} alt="Logo" className="w-[120px]" />
-                    </div>
-                    <div className="block">
-                        <button
-                            className="flex items-center px-3 py-2 text-gray-800 border-gray-800 hover:text-primary hover:bg-gray-800"
-                            onClick={handleMenuClick}
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-6 text-black outline-none" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-                                <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-                            </svg>
-
-                        </button>
-                    </div>
-                </nav>
-
-                <div className="flex flex-row h-screen w-[80%] mx-auto mt-14">
-
-                    <div className="w-[40%] flex justify-end">
-                        <img src={Z2} className="h-[450px]" />
-                    </div>
-
-                    <div className="w-[60%] flex flex-col pt-14 items-center ">
-                        <a
-                            href="#"
-                            className="text-left py-2 block mt-4 text-secondary text-2xl hover:text-primary"
-                        >
-                            Home
-                        </a>
-                        <a
-                            href="#"
-                            className="text-left block mt-4 text-secondary text-2xl hover:text-primary"
-                        >
-                            About Us
-                        </a>
-                        <a
-                            href="#"
-                            className="text-left block mt-4 text-secondary text-2xl hover:text-primary"
-                        >
-                            Contact Us
-                        </a>
-
-                    </div>
-
+                <div className="flex flex-col justify-center items-center h-full">
+                    <a
+                        href="/"
+                        className="text-secondary text-xl font-bold py-6 hover:text-gray-300"
+                    >
+                        Home
+                    </a>
+                    <a
+                        href="/about"
+                        className="text-secondary text-xl font-bold py-6 hover:text-gray-300"
+                    >
+                        About Us
+                    </a>
+                    <a
+                        href="/contact"
+                        className="text-secondary text-xl font-bold py-6 hover:text-gray-300"
+                    >
+                        Contact Us
+                    </a>
                 </div>
-
-
             </div>
-        </div>
-
+        </nav>
     );
-}
+};
 
 export default Navbar;

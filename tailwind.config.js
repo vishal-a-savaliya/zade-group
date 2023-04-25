@@ -8,10 +8,12 @@ module.exports = {
       colors: {
         primary: '#cda24b',
         primaryHover: '#c7ac70',
-        gray: '#f7f7f7',
-        secondary: '#1a1a1a',
-        // secondary: '#181D24',
-        pink: '#FFFBF3'
+        gray: '#f8f8f8',
+        // secondary: '#1a1a1a',
+        black: '#3f4448',
+        secondary: '#181D24',
+        pink: '#FFFBF3',
+        graytext: '#9ea0a6',
       },
     },
     fontFamily: {
@@ -20,9 +22,11 @@ module.exports = {
       'mono': ['ui-monospace', 'SFMono-Regular'],
       'display': ['Oswald'],
       'body': ['"Open Sans"'],
-      'primary': ['Euclid'],
+      // 'primary': ['Euclid'],
+      'primary': ['Montserrat'],
       'branding': ['BankGothic'],
-      'heading': ['BankGothic']
+      'heading': ['BankGothic'],
+      'style': ['Marcellus SC'],
     }
   },
 
