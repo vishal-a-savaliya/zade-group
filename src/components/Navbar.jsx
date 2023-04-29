@@ -32,7 +32,8 @@ const Navbar = () => {
 
     }
 
-    const navbarClasses = `fixed w-full py-6 z-30 ${scroll ? 'bg-transparent' : 'bg-transparent'}`;
+    // const navbarClasses = `w-full py-2 z-30 ${scroll ? 'bg-white' : 'bg-transparent'}`;
+    const navbarClasses = `relative w-full py-2 z-30 bg-transparent`;
 
     return (
         <nav className={navbarClasses}>

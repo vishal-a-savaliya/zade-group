@@ -3,12 +3,21 @@ import { motion } from "framer-motion"
 
 import img1 from '../image/zluxuria/1_lite.jpeg'
 import img2 from '../image/zluxuria/2_lite.jpeg'
+import bg from '../image/Z_Luxuriya_bg_1.jpg'
+import bg_2 from '../image/zluxuria/bg-2.png'
+
+
 import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
+import Contact from '../components/Contact'
+
+import { Projects } from '../data/ProjectDetails'
 
 function Zluxuria() {
 
     const images = [img1, img2];
     const [current, setCurrent] = useState(0);
+    const ZL = Projects[1]
 
     const prevSlide = () => {
         setCurrent(current === 0 ? images.length - 1 : current - 1);
@@ -103,131 +112,123 @@ function Zluxuria() {
     return (
         <motion.div exit={{ opacity: 0 }}>
 
-            <div>
-                <h1 className='pt-10 mt-10 text-5xl text-center font-bold text-primary'>Luxurious living</h1>
-                {/* <h1 className='pt-5 pb-10 text-3xl text-center font-bold text-primary'>Presenting Soon</h1> */}
+            <Navbar />
 
-                <div className="relative md:hidden px-3 my-8 ">
-                    <div className='w-full bg-cover bg-center h-[600px] bg-gray mr-10 '
-                        onTouchStart={handleTouchStart}
-                        onTouchEnd={handleTouchEnd}
+            <div className="relative h-screen">
+                <div
+                    className="bg-cover bg-center h-screen w-full absolute inset-0 bg-no-repeat bg-fixed"
+                    style={{
+                        backgroundImage: `url(${bg})`,
+                    }}>
+                    {/* <Navbar /> */}
+                    <div class="w-full h-full flex  justify-center items-center backdrop-brightness-50">
+                        <motion.div
+
+                            animate={{ opacity: 1 }}
+                            transition={{
+                                duration: 2,
+                                delay: 1,
+                                // ease: [0.5, 0.71, 1, 1.5],
+                            }}
+                            initial={{ opacity: 0 }}
+                            // whileHover={{ scale: 1.2 }}
+
+                            className="h-full flex flex-col justify-center items-center">
+
+                            <div className='flex flex-col justify-center items-center -mt-20'>
+
+                                <h1 className='mt-10 pt-10 pb-2 text-6xl text-center font-bold text-white font-style uppercase'>ULTIMATE</h1>
+                                <h1 className='text-6xl text-center font-bold text-white font-style uppercase'> LUXURY LIVING</h1>
+                                <h1 className='text-6xl text-center font-bold text-white font-style uppercase'>AT SKY</h1>
+                                <p className="w-[70%] mx-auto pt-8 text-xl text-white font-primary text-center py-4 font-medium">We're excited to present a new level of luxury in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design.</p>
+                            </div>
+
+                            {/* <h1 className='my-10 pt-10 text-4xl text-center font-bold text-secondary font-primary'>Presenting Soon</h1> */}
+
+                        </motion.div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div className='flex justify-center flex-col items-center bg-gray py-20 bg-center'
+                style={{
+                    backgroundImage: `url(${bg_2})`,
+                }}
+            >
+                <div className='py-20'>
+                    <h1 className='text-6xl font-style text-center py-2 text-black'>z luxuria</h1>
+                    <h1 className='text-4xl font-style text-center text-black'>introducing new level of luxury living</h1>
+
+
+                </div>
+
+                <div className='flex justify-between pt-5'>
+                    {
+                        ZL.details ? ZL.details.map((data, index) => {
+
+                            if (index == ZL.details.length - 1) {
+                                return (
+                                    <div className='flex justify-start items-center mx-8'>
+                                        <div className='py-5'>
+                                            <h1 className='text-5xl text-black font-primary font-bold'>{data[0]}</h1>
+                                            <p className=' text-black py-3 text-2xl font-style'>{data[1]}</p>
+                                        </div>
+                                    </div>
+                                )
+                            } else {
+                                return (
+                                    <div className='flex justify-start items-center mx-8'>
+                                        <div className='py-5'>
+                                            <h1 className='text-5xl text-black font-primary font-bold'>{data[0]}</h1>
+                                            <p className=' text-black py-3 text-2xl font-style'>{data[1]}</p>
+                                        </div>
+                                        <div className='ml-8 py-1'>
+                                            <hr className='border-primary border w-24'></hr>
+                                        </div>
+                                    </div>
+                                )
+                            }
+
+                        }) : null
+                    }
+                </div>
+
+            </div>
+
+
+            <div className=''>
+
+                <div className='flex flex-row'>
+                    <div className='w-[400px] bg-center bg-cover'
                         style={{
-                            backgroundImage: `url(${images[current]})`,
-                        }}></div>
+                            backgroundImage: `url(${img1})`,
+                        }}
+                    >
 
-                    <div className="absolute top-1/2 transform -translate-y-1/2 left-0">
-                        <button className="absolute top-1/2 left-0 transform -translate-y-1/2 focus:outline-none" onClick={prevSlide}>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M15 18l-6-6 6-6" />
-                            </svg>
-                        </button>
                     </div>
+                    <div className='h-[700px] grow flex flex-col justify-center items-center'>
 
-                    <div className="absolute top-1/2 transform -translate-y-1/2 right-0">
-                        <button className="absolute top-1/2 right-0 transform -translate-y-1/2 focus:outline-none" onClick={nextSlide}>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M9 18l6-6-6-6" />
-                            </svg>
-                        </button>
+                        <h3 className='text-2xl text-black font-primary'>About z luxuria</h3>
+                        <h1 className='text-3xl py-3 font-style text-center text-black'>Introducing our latest project,<br /> Luxurious Living</h1>
+                        <p className='w-[450px] text-center mx-auto font-primary py-2 text-black'>z luxuria, a luxurious residential tower that will set new standards for opulent living in Ahmedabad. This magnificent 33-story tower offers 56 units with world-class amenities and stunning architectural design.</p>
+
+                        <div>
+
+                        </div>
+
+
                     </div>
-
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                        {images.map((_, index) => (
-                            <button key={index} className={`h-3 w-3 rounded-full ${index === current ? 'bg-white' : 'bg-[#FFFFFF33]'}`} onClick={() => setCurrent(index)}></button>
-                        ))}
+                    <div className='w-[400px] bg-center bg-cover'
+                        style={{
+                            backgroundImage: `url(${img2})`,
+                        }}
+                    >
                     </div>
                 </div>
-
-                <div className='hidden md:flex flex-row justify-center w-[85%] mx-auto my-10 pb-5'>
-
-                    <div className='w-[420px] bg-cover bg-center h-[700px] bg-gray mr-10 ' style={{
-                        backgroundImage: `url(${img1})`,
-                    }}></div>
-                    <div className='w-[420px] bg-cover bg-center h-[700px] bg-gray' style={{
-                        backgroundImage: `url(${img2})`,
-                    }}></div>
-
-                </div>
-
             </div>
 
-
-            <div className='bg-pink py-8 md:py-10 md:pb-14'>
-
-                <div className='flex flex-col w-[90%] md:flex-row md:w-[85%] mx-auto my-10'>
-
-                    <div className='md:w-1/2'>
-                        <h1 className='text-5xl text-primary'>Details</h1>
-
-                        <div className='pt-5 pl-3 md:pl-0 md:pt-5 md:pr-8'>
-                            <li className='li'>33 stories </li>
-                            <li className='li'>Each floor has two units</li>
-                            <li className='li'>56 units with amenities</li>
-                            <li className='li'>4, 6 & 7 BHK Luxurious living with separate servant quatre</li>
-                            <li className='li'>4 level basement parking</li>
-                            <li className='li'>30 Meter & 18 Metre two corner road</li>
-                            <li className='li'>Double hight banquet hall</li>
-                            <li className='li'>Double hight entrance foyer with lounge</li>
-                        </div>
-                    </div>
-                    <div className='mt-10 md:mt-0 md:w-1/2'>
-                        <div className='bg-secondary flex justify-start flex-col flex-wrap px-10 pb-8 md:pb-0 md:px-14 h-[100%]'>
-
-                            <h1 className='text-2xl font-bold text-white pt-10 pb-5'>Inquiry for Luxurious living</h1>
-
-                            {/* form section */}
-                            <form onSubmit={(e) => { HandleFormSubmit(e) }}>
-
-                                <div className="w-full flex md:items-baseline mb-6 flex-col md:flex-row">
-
-                                    {/* <label htmlFor="name" className="label">Full Name:</label> */}
-                                    <input type="text" id="name" name="name" placeholder='Full name' autocomplete="off" className="input" value={data.name} onChange={handleChange} required />
-
-                                </div>
-
-                                <div className="w-full flex md:items-baseline mb-6 flex-col md:flex-row">
-
-                                    {/* <label htmlFor="email" className="label">Email:</label> */}
-                                    <input type="email" id="email" name="email" placeholder='Email Address' autocomplete="off" className="input" value={data.email} onChange={handleChange} />
-
-                                </div>
-
-                                <div className="w-full flex mb-6 md:items-baseline flex-col md:flex-row">
-
-                                    {/* <label htmlFor="phone" className="label">Phone:</label> */}
-                                    <input type="text" id="phone" name="phone" placeholder='Phone number' autocomplete="off" className="input" value={data.phone} onChange={handleChange} required />
-
-                                </div>
-
-                                <div className="w-full flex mb-6 md:items-baseline flex-col md:flex-row">
-
-                                    {/* <label htmlFor="message" className="label">Message:</label> */}
-                                    <textarea id="message" name="message" placeholder='Message' autocomplete="off" className="input" defaultValue={""} value={data.message} onChange={handleChange} required />
-
-                                </div>
-
-                                <div className="w-full flex mb-6 md:items-baseline flex-col md:flex-row">
-
-                                    <button type="submit" className="text-white bg-primary flex items-center shadow-lg justify-around border-0 py-2 px-6  mt-4 w-[150px] focus:outline-none hover:bg-yellow-600  text-lg font-normal " >
-
-                                        {submitting ? "sending..." : "send"}
-
-                                    </button>
-
-                                </div>
-
-                                <div className="w-full flex mb-6 md:items-baseline flex-col md:flex-row">
-                                    {successMessage && <div className="text-white">{successMessage}</div>}
-                                    {errorMessage && <div className="text-white">{errorMessage}</div>}
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
+            <Contact />
 
             <Footer phoneNumber={"7573030028"} Email={"sales@zadegroup.in"} />
         </motion.div>

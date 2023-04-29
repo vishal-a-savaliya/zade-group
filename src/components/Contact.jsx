@@ -1,6 +1,10 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
+
 import contact_bg from '../image/contact_bg.jpg'
 import avatar from '../image/Z GROUP LOGO_SQURE.png'
+
+
 
 function Contact() {
 
@@ -70,13 +74,37 @@ function Contact() {
                 backgroundImage: `url(${contact_bg})`,
             }}>
 
-            <div className='flex w-[85%] flex-col justify-center mx-auto md:flex-row'>
+            <div className='flex w-[85%] mt-10 flex-col justify-center mx-auto md:flex-row'>
                 <div className='md:w-[40%] font-primary pr-14'>
 
-                    <h1 className='text-2xl font-semi text-black bold font-style'>GET IN TOUCH</h1>
-                    <p className='pt-6 text-graytext font-primary'>We’d love to share more with you about Zade Group. Please complete this form and our dedicated team will get back to you shortly.</p>
+                    <motion.h1
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                            duration: 1,
+                            delay: 0.2,
+                        }}
+                        initial={{ opacity: 0, x: -20 }}
 
-                    <div className='py-2 border-b border-[#e6e6e6] pt-4'>
+                        className='text-2xl font-semi text-black bold font-style'>GET IN TOUCH</motion.h1>
+
+                    <motion.p
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                            duration: 1,
+                            delay: 0.2,
+                        }}
+                        initial={{ opacity: 0, x: -20 }}
+                        className='pt-6 text-graytext font-primary'>We’d love to share more with you about Zade Group. Please complete this form and our dedicated team will get back to you shortly.</motion.p>
+
+                    <motion.div
+
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                            duration: 1,
+                            delay: 0.2,
+                        }}
+                        initial={{ opacity: 0, x: -20 }}
+                        className='py-2 border-b border-[#e6e6e6] pt-4'>
                         <h1 className='text-primary font-bold text-sm'>CONTACT THE MANAGER</h1>
 
                         <div className='flex items-center py-6'>
@@ -87,10 +115,16 @@ function Contact() {
                             </div>
                         </div>
 
-                    </div>
+                    </motion.div>
 
-                    <div className='flex flex-col pt-4'>
-
+                    <motion.div
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                            duration: 1,
+                            delay: 0.2,
+                        }}
+                        initial={{ opacity: 0, x: -20 }}
+                        className='flex flex-col pt-4'>
                         <span className='flex items-center pt-4 pb-1'>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 fill-primary">
                                 <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
@@ -109,7 +143,7 @@ function Contact() {
 
                         </span>
 
-                    </div>
+                    </motion.div>
 
 
                 </div>

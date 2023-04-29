@@ -1,12 +1,13 @@
 import React from 'react'
-import footer_bg from '../image/Footer_BG.png'
+import footer_bg from '../image/bg_squre.png'
 
 function Footer({ phoneNumber, Email }) {
     return (
-        <div className='bg-secondary bg-cover pt-146 md:px-3 lg:px-14 md:pt-20'
-            style={{
-                backgroundImage: `url(${footer_bg})`,
-            }}>
+        <div className='bg-secondary bg-cover pt-14 md:px-3 lg:px-14 md:pt-24'
+        // style={{
+        //     backgroundImage: `url(${footer_bg})`,
+        // }}
+        >
 
             <div className='flex px-5 flex-col md:flex-row lg:w-[85%] md:px-0 mx-auto mt-5'>
 
@@ -58,7 +59,7 @@ function Footer({ phoneNumber, Email }) {
             </div>
 
             <div>
-                <p className='text-center text-white font-medium pt-4 pb-5'>© 2023 All rights reserved</p>
+                <p className='text-center text-white font-medium pt-4 pb-10'>© 2023 All rights reserved</p>
             </div>
 
         </div>

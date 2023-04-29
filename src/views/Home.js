@@ -1,4 +1,13 @@
 import { motion } from "framer-motion"
+import { useState } from 'react'
+// import transition from 'tailwindcss/plugin/transition';
+
+//Data
+
+import { Projects } from "../data/ProjectDetails";
+
+
+//components
 
 import Navbar from "../components/Navbar";
 import FeatureCard from "../components/FeatureCard";
@@ -8,24 +17,50 @@ import Footer from '../components/Footer';
 
 
 
-
-import bg from '../image/zade_group_hero_image.jpg';
+//images
+import bg from '../image/Home_bg_5.png';
 import home_bg_1 from '../image/landing_bg1.png'
-import home_bg_2 from '../image/Home_bg_2.jpg'
-import home_bg_4 from '../image/bg-1.png'
+import home_bg_2 from '../image/Home_bg_6.jpg'
+// import home_bg_4 from '../image/bg-1.png'
 
-import project_corporate_space from '../image/z2/3.jpeg'
+// import project_corporate_space from '../image/z2/3.jpeg'
+
 
 // svg imports
-import corporate_svg from '../image/svg/skyscraper.svg';
+import corporate_svg from '../image/svg/buildings_1.svg';
 import office_svg from '../image/svg/offices.svg';
-import showroom_svg from '../image/svg/showrooms.svg';
+import showroom_svg from '../image/svg/apartment.svg';
 import residency_svg from '../image/svg/Recidency.svg';
 
 
 
 
 function Home() {
+
+
+    const [ProjectId, setProjectId] = useState(0);
+    // const [Action, setAction] = useState("Right");
+    // const [imageLoaded, setImageLoaded] = useState(false)
+    // const [backgroundImage, setBackgroundImage] = useState(`url(${Projects[0].image})`);
+
+    const ProjectToggle = (Action) => {
+
+        // setImageLoaded(false);
+
+        if (Action === -1) {
+            setProjectId(ProjectId === 0 ? Projects.length - 1 : ProjectId - 1);
+            // setBackgroundImage(`url(${Projects[ProjectId].image})`)
+            // setImageLoaded(true)
+            // console.log(backgroundImage);
+        }
+        else {
+            setProjectId(ProjectId === Projects.length - 1 ? 0 : ProjectId + 1)
+            // setBackgroundImage(`url(${Projects[ProjectId].image})`)
+            // console.log(backgroundImage);
+            // setImageLoaded(true)
+        }
+    }
+
     return (
 
         <motion.div exit={{ opacity: 0 }}>
@@ -41,89 +76,222 @@ function Home() {
                         backgroundImage: `url(${bg})`,
                     }}>
                     {/* <Navbar /> */}
-                    <div className="h-full flex flex-col justify-center items-center">
+                    <div class="w-full h-full flex  justify-center items-center backdrop-brightness-50">
+                        <motion.div
 
-                        <div className='flex flex-col justify-center items-center -mt-20'>
+                            animate={{ opacity: 1 }}
+                            transition={{
+                                duration: 3,
+                                delay: 7,
+                                // ease: [0.5, 0.71, 1, 1.5],
+                            }}
+                            initial={{ opacity: 0 }}
+                            // whileHover={{ scale: 1.2 }}
 
-                            <h1 className='mt-10 pt-10 pb-2 text-5xl text-center font-bold text-white font-style uppercase'>Beautiful spaces</h1>
-                            <h1 className='text-6xl text-center font-bold text-white font-style uppercase'>in the best places</h1>
-                            <p className="w-[70%] mx-auto pt-8 text-xl text-white font-primary text-center py-4">We're excited to present a new level of luxury in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design.</p>
-                        </div>
+                            className="h-full flex flex-col justify-center items-center">
 
-                        {/* <h1 className='my-10 pt-10 text-4xl text-center font-bold text-secondary font-primary'>Presenting Soon</h1> */}
+                            <div className='flex flex-col justify-center items-center -mt-20'>
+
+                                <h1 className='mt-10 pt-10 pb-2 text-5xl text-center font-bold text-white font-style uppercase'>Beautiful spaces</h1>
+                                <h1 className='text-6xl text-center font-bold text-white font-style uppercase'>in the best places</h1>
+                                <p className="w-[70%] mx-auto pt-8 text-xl text-white font-primary text-center py-4 font-medium">We're excited to present a new level of luxury in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design.</p>
+                            </div>
+
+                            {/* <h1 className='my-10 pt-10 text-4xl text-center font-bold text-secondary font-primary'>Presenting Soon</h1> */}
+
+                        </motion.div>
 
                     </div>
-
-
                 </div>
             </div>
 
 
+            <div className="w-full bg-white pb-10">
 
-            <div className="bg-cover bg-center flex flex-col justify-center items-center h-[400px] w-full"
-                style={{
-                    backgroundImage: `url(${home_bg_1})`,
-                }}>
+                <motion.h1
 
-                <h1 className="text-4xl font-style uppercase py-1 text-black">ZADE GROUP</h1>
-                <h1 className="text-5xl font-style py-1 text-black">Presenting Soon</h1>
+                    whileInView={{ opacity: 1 }}
+                    transition={{
+                        duration: 1,
+                        delay: 0.5,
+                    }}
+                    initial={{ opacity: 0.5 }}
 
-                <div className="w-[65%] mx-auto">
-                    <p className="text-lg mt-5 py-4 text-black font-primary text-center">We're excited to Present a new level of luxury in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design</p>
+                    className="text-5xl font-style uppercase mt-32 text-center text-primary">ABOUT ZADE GROUP</motion.h1>
+
+                <div className="bg-cover bg-center flex flex-col justify-center items-center w-full py-10"
+                    style={{
+                        backgroundImage: `url(${home_bg_1})`,
+                    }}>
+
+                    <div className="w-[65%] mx-auto mb-14">
+
+                        <motion.p
+
+                            whileInView={{ opacity: 1 }}
+                            transition={{
+                                duration: 1,
+                                delay: 0.5,
+                            }}
+                            initial={{ opacity: 0.5 }}
+
+                            className="text-lg pt-4 pb-2 text-black font-primary text-center">
+                            At Zade Group, we've been providing top-quality construction services in Ahmedabad for over a decade. Our reputation has been built on our commitment to delivering exceptional projects that surpass our clients' expectations.
+                        </motion.p>
+
+                        <motion.p whileInView={{ opacity: 1 }}
+                            transition={{
+                                duration: 1,
+                                delay: 0.5,
+                            }}
+                            initial={{ opacity: 0.5 }} className="text-lg py-2 text-black font-primary text-center">
+                            Our commitment to our partners is evident in every detail of this project, from the impressive entrance to the luxurious interiors. We're passionate about providing the best possible living experience for our clients, and we're confident that our latest project will exceed their expectations.
+                        </motion.p>
+                        <motion.p whileInView={{ opacity: 1 }}
+                            transition={{
+                                duration: 1,
+                                delay: 0.5,
+                            }}
+                            initial={{ opacity: 0.5 }} className="text-lg py-2 text-black font-primary text-center">
+                            We're proud to set the bar high for construction companies in Ahmedabad, inspiring others to aim for greatness and always strive for excellence.
+                        </motion.p>
+                    </div>
+
                 </div>
 
-                {/* <h1 className="text-4xl font-style uppercase py-1">ZADE GROUP Presenting Soon</h1> */}
-                {/* <h1 className="text-5xl font-style py-1">Corporate Space and Luxurious Living</h1> */}
-                {/* <p className="text-lg mt-5 py-4 text-black font-primary text-center">Zade group introducing the Corporate Space and Luxurious Living<br />Living in the Sky !</p> */}
-
             </div>
+
 
 
             {/* projects  */}
 
-            <div className="bg-gray py-44 pb-60">
+            <div className="bg-gray py-40 pb-60">
 
                 <div className="flex justify-center items-center">
 
                     <div className="relative flex flex-col items-center -bottom-8 left-20 w-[80%] mx-auto z-20">
-                        <h1 className="text-6xl font-style font-extrabold text-primaryHover uppercase">zade group</h1>
-                        <h1 className="text-7xl pt-2 font-style font-semibold text-[#181D24] uppercase">projects</h1>
+                        <motion.h1
+
+                            // whileInView={{ opacity: 1 }}
+                            // transition={{
+                            //     duration: 1,
+                            //     delay: 0.5,
+                            // }}
+                            // initial={{ opacity: 0.5 }}
+
+                            className="text-6xl font-style font-extrabold text-primaryHover uppercase">zade group</motion.h1>
+                        <motion.h1
+                            // whileInView={{ opacity: 1 }}
+                            // transition={{
+                            //     duration: 1,
+                            //     delay: 0.7,
+                            // }}
+                            // initial={{ opacity: 0.5 }}
+                            className="text-7xl pt-2 font-style font-semibold text-[#181D24] uppercase">Presenting</motion.h1>
                     </div>
 
                 </div>
 
                 <div className="flex">
-                    <div className="w-[55%] relative">
+                    <div className="w-[55%] relative h-[1000px]">
+                        <motion.div
+                            key={Projects[ProjectId].id}
+                            className={`absolute w-full h-full rounded-sm opacity-0 bg-no-repeat bg-cover`}
+                            style={{
+                                backgroundImage: `url(${Projects[ProjectId].image})`,
+                            }}
+                            animate={{ opacity: 1 }}
+                            initial={{ opacity: 0 }}
+                            transition={{ delay: 0.5, duration: 2 }}
+                        ></motion.div>
                         <div
-                            className="absolute rounded-sm inset-0 bg-no-repeat bg-cover bg-fixed bg-center"
-                            style={{ backgroundImage: `url(${project_corporate_space})` }}
-                        />
-                        <div
-                            className="relative z-10 flex flex-col justify-end items-end h-screen"
+                            className="relative z-10 flex flex-col justify-end items-end h-full"
                         >
                             <div className="px-12 py-10 flex justify-center items-center">
                                 <div>
-                                    <h1 className="text-4xl text-pink font-style">~ 01 ~</h1>
-                                    <h1 className="text-2xl text-pink font-style">Corporate Space</h1>
+                                    <h1 className="text-4xl text-black font-style">~ {Projects[ProjectId].id} ~</h1>
+                                    <h1 className="text-2xl text-black font-style">{Projects[ProjectId].title}</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="w-[45%] flex flex-col justify-center px-20 ">
-                        <h1 className="text-5xl font-style text-primaryHover py-2">Corporate Space</h1>
-                        <p className="py-2 font-primary">Our commitment to our clients is evident in every detail of this project, from the impressive entrance to the luxurious interiors. We're passionate about providing the best possible living experience for our clients, and we're confident that our latest project will exceed their expectations.</p>
-                        <p className="text-secondary pb-1 pt-3 font-primary">Thaltej, Ahmedabad</p>
-                        <p className="py-1 text-primaryHover font-primary">Newly Launched</p>
-                        <span className="py-2 px-6 w-fit my-8 border border-primaryHover rounded-full font-primary">Read More</span>
+                    <div key={Projects[ProjectId].id} className="w-[45%] flex flex-col justify-start mt-28 px-20 ">
+                        <motion.h1
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{
+                                duration: 1,
+                                delay: 0.2,
+                            }}
+                            initial={{ opacity: 0, x: 20 }}
+                            className="text-5xl font-style text-primaryHover py-2">{Projects[ProjectId].title}</motion.h1>
+
+                        <motion.p
+
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{
+                                duration: 1,
+                                delay: 0.2,
+                            }}
+                            initial={{ opacity: 0, x: 20 }}
+
+                            className="py-2 font-primary">{Projects[ProjectId].description}</motion.p>
+
+                        <motion.p
+
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{
+                                duration: 1,
+                                delay: 0.2,
+                            }}
+                            initial={{ opacity: 0, x: 20 }}
+
+                            className="text-secondary pb-1 pt-3 font-primary">{Projects[ProjectId].location}</motion.p>
+                        <motion.p
+
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{
+                                duration: 1,
+                                delay: 0.2,
+                            }}
+                            initial={{ opacity: 0, x: 20 }}
+
+                            className="py-1 text-primary font-primary">{Projects[ProjectId].status}</motion.p>
+
+                        <motion.div
+
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{
+                                duration: 1,
+                                delay: 0.2,
+                            }}
+                            initial={{ opacity: 0, x: 20 }}
+
+                            className="grid grid-cols-2">
+
+                            {
+                                Projects[ProjectId].details ? Projects[ProjectId].details.map((item, index) => {
+                                    return (
+
+                                        <div key={index} className="flex flex-col py-10">
+                                            <h3 className="text-4xl text-primaryHover">{item[0]}</h3>
+                                            <h4 className="py-4 text-xl font-style">{item[1]}</h4>
+                                        </div>
+                                    )
+                                }) : null
+                            }
+
+                        </motion.div>
+
+                        <span className="py-2 px-6 w-fit mt-2 mb-10 border border-primaryHover rounded-full font-primary hover:bg-primaryHover hover:text-white hover:cursor-pointer">Read More</span>
 
                         <div className="flex mt-4">
 
-                            <div className="p-7 rounded-full border border-primaryHover">
+                            <div className="p-7 rounded-full border border-primaryHover hover:border-secondary transition duration-500 ease-in-out transform" onClick={() => { ProjectToggle(-1) }}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
                                 </svg>
                             </div>
-                            <div className="p-7 ml-2 rounded-full border border-primaryHover">
+                            <div className="p-7 ml-2 rounded-full border border-primaryHover hover:border-secondary transition duration-500 ease-in-out transform" onClick={() => { ProjectToggle(1) }}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                 </svg>
@@ -138,15 +306,15 @@ function Home() {
 
             {/* CTA */}
 
-            <div className="bg-cover bg-center bg-secondary bg-opacity-60 flex flex-col justify-center items-center h-[400px]"
+            {/* <div className="bg-cover bg-center bg-secondary bg-opacity-90 flex flex-col justify-center items-center h-[400px]"
                 style={{
                     backgroundImage: `url(${home_bg_4})`,
                 }}
             >
-                <h1 className="text-5xl font-style uppercase py-2 text-black">WE ARE WAITING FOR YOU HERE</h1>
+                <h1 className="text-5xl font-style uppercase py-2 text-black">SUTTON PLACE ARE WAITING FOR YOU HERE</h1>
                 <h1 className="text-6xl font-style py-2 text-black">SCHEDULE A TOUR</h1>
                 <button className="py-2 px-4 my-2 bg-black text-white">BOOK A VISIT</button>
-            </div>
+            </div> */}
 
             {/* features */}
 
@@ -158,10 +326,11 @@ function Home() {
                 />
                 <div className="relative z-10 flex flex-col justify-center items-center h-screen">
 
-                    <div className="w-[1200px] max-w-[85%] flex justify-between">
+                    <div className="w-[1000px] max-w-[85%] flex justify-between">
 
-                        <FeatureCard SVG={corporate_svg} Text={"Corporate Space"} />
-                        <FeatureCard SVG={office_svg} Text={"Office Space"} />
+                        {/* <FeatureCard SVG={corporate_svg} Text={"Corporate Space"} /> */}
+                        {/* <FeatureCard SVG={office_svg} Text={"Office Space"} /> */}
+                        <FeatureCard SVG={office_svg} Text={"Corporate Space"} />
                         <FeatureCard SVG={showroom_svg} Text={"Showrooms"} />
                         <FeatureCard SVG={residency_svg} Text={"Residency"} />
 
