@@ -24,7 +24,7 @@ function Home() {
 
         <div>
             <div
-                className="bg-cover bg-center h-screen w-full relative"
+                className="bg-cover bg-center h-[700px] w-full relative"
                 style={{
                     backgroundImage: `url(${bg})`,
                 }}>
