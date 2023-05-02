@@ -6,11 +6,11 @@ import avatar from '../image/Z GROUP LOGO_SQURE.png'
 
 
 
-function Contact() {
+function Contact({ Email, Subject }) {
 
 
     const [data, setData] = useState({
-        "subject": "Message from zadegroup.in",
+        "subject": Subject,
         "name": "",
         "email": "",
         "phone": "",
@@ -36,7 +36,7 @@ function Contact() {
 
         setSubmitting(true);
 
-        fetch("https://formsubmit.co/ajax/info@zadegroup.in", {
+        fetch(`https://formsubmit.co/ajax/${Email}`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ function Contact() {
                 setSuccessMessage('Thank you for submitting! We will be in touch with you soon.');
                 setTimeout(() => { setSuccessMessage(null) }, 10000)
                 setData({
-                    "subject": "Message from zadegroup.in",
+                    "subject": Subject,
                     name: '',
                     phone: '',
                     email: '',
@@ -69,13 +69,13 @@ function Contact() {
 
 
     return (
-        <div className='flex justify-center items-center bg-gray bg-cover bg-center bg-opacity-50 md:py-20'
+        <div id='contact' className='flex flex-col md:flex-row justify-center items-center bg-gray bg-cover bg-center md:bg-opacity-50 py-10 md:py-20'
             style={{
                 backgroundImage: `url(${contact_bg})`,
             }}>
 
-            <div className='flex w-[85%] mt-10 flex-col justify-center mx-auto md:flex-row'>
-                <div className='md:w-[40%] font-primary pr-14'>
+            <div className='flex w-[90%] md:w-[85%] mt-10 flex-col justify-center mx-auto md:flex-row'>
+                <div className='md:w-[40%] pl-4 md:pl-0 font-primary md:pr-14'>
 
                     <motion.h1
                         whileInView={{ opacity: 1, x: 0 }}
@@ -105,13 +105,13 @@ function Contact() {
                         }}
                         initial={{ opacity: 0, x: -20 }}
                         className='py-2 border-b border-[#e6e6e6] pt-4'>
-                        <h1 className='text-primary font-bold text-sm'>CONTACT THE MANAGER</h1>
+                        <h1 className='text-primary font-bold text-sm'>CONTACT THE EXECUTIVE</h1>
 
                         <div className='flex items-center py-6'>
-                            <img src={avatar} className='w-16 rounded-full bg-white' />
+                            <img src={avatar} className='w-16 rounded-full bg-white' alt='Zade Group' />
                             <div className='ml-6'>
                                 <p className='font-style text-2xl text-secondary uppercase'>Dhruv Udani</p>
-                                <p className='font-primary text-xs text-graytext font-bold uppercase pt-1'>Head of Marketing</p>
+                                <p className='font-primary text-xs text-graytext font-bold uppercase pt-1'>Sales Executive</p>
                             </div>
                         </div>
 
@@ -142,13 +142,21 @@ function Contact() {
                             <a href='mailto:info@zadegroup.in' className='ml-4 font-primary' >info@zadegroup.in</a>
 
                         </span>
+                        <span className='flex items-start py-1'>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 fill-primary">
+                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                            </svg>
+
+                            <a href='https://goo.gl/maps/auwChgwE1F3MRLzHA' className='ml-4 font-primary' >Corporate Campus, Nr. Baghban Circle, <br />Zydus Hospital Rd, Thaltej, Ahmedabad <br /> 380059</a>
+
+                        </span>
 
                     </motion.div>
 
 
                 </div>
 
-                <div className='md:w-[60%] shadow-md'>
+                <div className='md:w-[60%] shadow-md mt-10 md:mt-0'>
 
                     <div className='bg-white flex justify-between flex-col flex-wrap px-10 py-14 h-[100%]'>
 
@@ -157,11 +165,23 @@ function Contact() {
                         {/* form section */}
                         <form onSubmit={(e) => { HandleFormSubmit(e) }}>
 
-                            <div className="w-full flex md:items-baseline mb-4 flex-col md:flex-row">
+                            <div className="hidden w-full md:flex md:items-baseline mb-4 flex-col md:flex-row">
 
                                 <input type="text" id="name" name="name" placeholder='Full Name' autocomplete="off" className="input" required value={data.name} onChange={handleChange} />
 
                                 <input type="text" id="phone" name="phone" placeholder='Phone number' autocomplete="off" className="input ml-4" value={data.phone} onChange={handleChange} required />
+
+                            </div>
+
+                            <div className="md:hidden w-full flex md:items-baseline mb-4 flex-col md:flex-row">
+
+                                <input type="text" id="name" name="name" placeholder='Full Name' autocomplete="off" className="input" required value={data.name} onChange={handleChange} />
+
+                            </div>
+
+                            <div className="w-full md:hidden flex md:items-baseline mb-4 flex-col md:flex-row">
+
+                                <input type="text" id="phone" name="phone" placeholder='Phone number' autocomplete="off" className="input" value={data.phone} onChange={handleChange} required />
 
                             </div>
 

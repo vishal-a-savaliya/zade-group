@@ -16,7 +16,7 @@ const animate = {
 
 function FeatureCard({ SVG, Text }) {
     return (
-        <div className="w-[25%] bg-secondary h-[320px] shadow-sm flex flex-col justify-center items-center hover:bg-opacity-80 transition duration-500 ease-in-out transform">
+        <div className="w-[250px] mr-8 md:mr-0 md:w-[25%] bg-secondary h-[320px] shadow-sm flex flex-col justify-center items-center hover:bg-opacity-80 transition duration-500 ease-in-out transform">
 
             <div className="h-[60%] flex justify-end items-end">
                 <motion.img

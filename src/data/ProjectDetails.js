@@ -1,34 +1,16 @@
 import z2_image from '../image/z2/8.jpeg';
 import zluxuria_image from '../image/zluxuria/1_lite.jpeg';
-import {
-    faBus,
-    faBuilding,
-    faTree,
-    faChild,
-    faGazebo,
-    faWheelchair,
-    faBanquet,
-    faShieldAlt,
-    faUmbrellaBeach,
-    faCoffee,
-    faUserTie,
-    faSkating,
-    faBook,
-    faBirthdayCake,
-    faCar,
-    faBed,
-    faHotTub,
-    faPoolTable,
-    faChess,
-    faDumbbell,
-    faSwimmingPool,
-    faGamepad,
-    faTableTennis,
-    faFilm,
-    faSolarPanel,
-    faBasketballBall
-} from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
 
+import { AiOutlineCar, AiOutlineFundProjectionScreen } from 'react-icons/ai';
+import { MdSecurity, MdOutlineDesk } from 'react-icons/md';
+import { GiRoad } from "react-icons/gi";
+import { TbBrandCouchdb } from "react-icons/tb";
+
+
+library.add(far, fas);
 
 export const Projects = [
     {
@@ -37,7 +19,7 @@ export const Projects = [
         description: "The Corporate Space is our newest project in construction, offering a state-of-the-art space for businesses and corporations to thrive. This stunning 32-story building boasts a grand height of 12 feet per floor, providing ample space for businesses of all sizes",
         location: "Thaltej, Ahmedabad",
         status: "Newly Launched",
-        link: "",
+        link: "/corporate-Space",
         image: z2_image,
         details: [
             {
@@ -64,7 +46,7 @@ export const Projects = [
         description: "Introducing our latest project, Luxury Living, a luxurious residential tower that will set new standards for opulent living in Ahmedabad. This magnificent 33-story tower offers 56 units with world-class amenities and stunning architectural design.",
         location: "Thaltej, Ahmedabad",
         status: "Newly Launched",
-        link: "",
+        link: "/luxurious-living",
         image: zluxuria_image,
         details: [
             {
@@ -88,35 +70,44 @@ export const Projects = [
 ];
 
 
-export const Aminities = {
-    "zluxuria": {
-        "0": { "SVG": faBus, "name": "SCHOOL DROP UP POINT" },
-        "1": { "SVG": faBuilding, "name": "DOUBLE HEIGHT ENTRANCE PORCH" },
-        "2": { "SVG": faTree, "name": "HARDSCAPE GARDEN" },
-        "3": { "SVG": faChild, "name": "CHILDREN PLAY AREA" },
-        "4": { "SVG": faGazebo, "name": "GAZEBO" },
-        "5": { "SVG": faWheelchair, "name": "SENIOR CITIZEN HANGOUT" },
-        "6": { "SVG": faBanquet, "name": "MULTIPURPOSE / BANQUET HALL" },
-        "7": { "SVG": faShieldAlt, "name": "SECURITY CABIN" },
-        "8": { "SVG": faUmbrellaBeach, "name": "SEATING WITH UMBRELLA" },
-        "9": { "SVG": faCoffee, "name": "CAFE AREA" },
-        "10": { "SVG": faUserTie, "name": "DRIVER LOUNGE" },
-        "11": { "SVG": faSkating, "name": "SKATING RINK" },
-        "12": { "SVG": faBook, "name": "LIBRARY" },
-        "13": { "SVG": faBirthdayCake, "name": "PARTY LAWN" },
-        "14": { "SVG": faCar, "name": "COVERED PARKING" },
-        "15": { "SVG": faBed, "name": "3 GUEST BEDROOM" },
-        "16": { "SVG": faTree, "name": "SEMI COVERED SEATING AREA WITH LANDSCAPE" },
-        "17": { "SVG": faHotTub, "name": "JACUZZI" },
-        "18": { "SVG": faPoolTable, "name": "POOL TABLE" },
-        "19": { "SVG": faChess, "name": "CARD | CHESS CARROM" },
-        "20": { "SVG": faDumbbell, "name": "GYM" },
-        "21": { "SVG": faSwimmingPool, "name": "SWIMMING POOL / SPLASH POOL" },
-        "22": { "SVG": faGamepad, "name": "GAME ZONE AND CAFÉ" },
-        "23": { "SVG": faTableTennis, "name": "TABLE TENNIS" },
-        "24": { "SVG": faHotTub, "name": "STEAM ROOM" },
-        "25": { "SVG": faFilm, "name": "MINI THEATER" },
-        "26": { "SVG": faSolarPanel, "name": "SOLAR PANEL AT ROOFTOP" },
-        "27": { "SVG": faBasketballBall, "name": "MULTIPURPOSE COURT" }
-    }
+export const Amenities = {
+    "zluxuria": [
+        { "SVG": "fa-bus", "name": "SCHOOL DROP UP POINT" },
+        { "SVG": "fa-building", "name": "DOUBLE HEIGHT ENTRANCE PORCH" },
+        { "SVG": "fa-tree", "name": "HARDSCAPE GARDEN" },
+        { "SVG": "fa-child", "name": "CHILDREN PLAY AREA" },
+        { "SVG": "fa-home", "name": "GAZEBO" },
+        { "SVG": "fa-wheelchair", "name": "SENIOR CITIZEN HANGOUT" },
+        { "SVG": "fa-bacon", "name": "MULTIPURPOSE / BANQUET HALL" },
+        { "SVG": "fa-shield-alt", "name": "SECURITY CABIN" },
+        { "SVG": "fa-umbrella-beach", "name": "SEATING WITH UMBRELLA" },
+        { "SVG": "fa-coffee", "name": "CAFE AREA" },
+        { "SVG": "fa-user-tie", "name": "DRIVER LOUNGE" },
+        { "SVG": "fa-skating", "name": "SKATING RINK" },
+        { "SVG": "fa-book", "name": "LIBRARY" },
+        { "SVG": "fa-birthday-cake", "name": "PARTY LAWN" },
+        { "SVG": "fa-car", "name": "COVERED PARKING" },
+        { "SVG": "fa-bed", "name": "3 GUEST BEDROOM" },
+        { "SVG": "fa-couch", "name": "SEMI COVERED SEATING AREA WITH LANDSCAPE" },
+        { "SVG": "fa-bath", "name": "JACUZZI" },
+        { "SVG": "fa-table", "name": "POOL TABLE" },
+        { "SVG": "fa-chess", "name": "CARD | CHESS CARROM" },
+        { "SVG": "fa-dumbbell", "name": "GYM" },
+        { "SVG": "fa-swimming-pool", "name": "SWIMMING POOL / SPLASH POOL" },
+        { "SVG": "fa-gamepad", "name": "GAME ZONE AND CAFÉ" },
+        { "SVG": "fa-table-tennis", "name": "TABLE TENNIS" },
+        { "SVG": "fa-hot-tub", "name": "STEAM ROOM" },
+        { "SVG": "fa-film", "name": "MINI THEATER" },
+        { "SVG": "fa-solar-panel", "name": "SOLAR PANEL AT ROOFTOP" },
+        { "SVG": "fa-basketball-ball", "name": "MULTIPURPOSE COURT" }
+    ],
+    "Z2": [
+
+        { "SVG": <TbBrandCouchdb size={50} style={{ 'stroke': "#CCA34B" }} />, "name": "Driver Waiting Lounge" },
+        { "SVG": <AiOutlineCar size={50} style={{ fill: '#cda24b' }} />, "name": "5 level Basement Parking" },
+        { "SVG": <MdSecurity size={50} style={{ fill: '#cda24b' }} />, "name": "Security Cabin" },
+        { "SVG": <AiOutlineFundProjectionScreen size={50} style={{ fill: '#cda24b' }} />, "name": "Conference Room" },
+        { "SVG": <MdOutlineDesk size={50} style={{ fill: '#cda24b' }} />, "name": "Reception Area" },
+        { "SVG": <GiRoad size={50} style={{ fill: '#cda24b' }} />, "name": "Wide Drive Way" },
+    ]
 }

@@ -1,116 +1,25 @@
-import { useState, useEffect, useCallback } from 'react'
+// import { useState, useEffect, useCallback } from 'react'
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-regular-svg-icons'
 
 import img1 from '../image/zluxuria/1_lite.jpeg'
 import img2 from '../image/zluxuria/2_lite.jpeg'
 import bg from '../image/Z_Luxuriya_bg_1.jpg'
 import bg_2 from '../image/zluxuria/bg-2.png'
 import amenities_section_bg from '../image/landing_bg2.png'
+import CTA_bg from "../image/landing_bg3.jpg"
 
 
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Contact from '../components/Contact'
 
-import { Projects, Aminities } from '../data/ProjectDetails'
+import { Projects, Amenities } from '../data/ProjectDetails'
 
 function Zluxuria() {
 
-    const images = [img1, img2];
-    const [current, setCurrent] = useState(0);
+
     const ZL = Projects[1]
-
-    const prevSlide = () => {
-        setCurrent(current === 0 ? images.length - 1 : current - 1);
-    };
-
-    const nextSlide = useCallback(() => {
-        setCurrent(current === images.length - 1 ? 0 : current + 1);
-    }, [current, images.length]);
-
-    const handleTouchStart = (e) => {
-        setTouchStartX(e.touches[0].clientX);
-    };
-
-    const handleTouchEnd = (e) => {
-        const touchEndX = e.changedTouches[0].clientX;
-        const touchDistance = touchEndX - touchStartX;
-
-        if (touchDistance > 50) {
-            prevSlide();
-        } else if (touchDistance < -50) {
-            nextSlide();
-        }
-    };
-
-    const [touchStartX, setTouchStartX] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            nextSlide();
-        }, 3000);
-        return () => clearInterval(interval);
-    }, [nextSlide]);
-
-
-    const [data, setData] = useState({
-        "subject": "New Inquiry for Luxurious living",
-        "name": "",
-        "email": "",
-        "phone": "",
-        "message": ""
-    })
-
-    const [successMessage, setSuccessMessage] = useState(null);
-    const [errorMessage, setErrorMessage] = useState(null);
-    const [submitting, setSubmitting] = useState(false);
-
-    const handleChange = (event) => {
-        setData({
-            ...data,
-            [event.target.name]: event.target.value,
-        });
-        // console.log(data)
-    };
-
-
-    const HandleFormSubmit = (e) => {
-
-        e.preventDefault();
-
-        setSubmitting(true);
-
-        fetch("https://formsubmit.co/ajax/sales@zadegroup.in", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(response => response.json())
-            .then(data => {
-                // console.log(data);
-                setSuccessMessage('Thank you for submitting! We will be in touch with you soon.');
-                setTimeout(() => { setSuccessMessage(null) }, 10000)
-                setData({
-                    "subject": "New Inquiry for Luxurious living",
-                    name: '',
-                    phone: '',
-                    email: '',
-                    message: '',
-                });
-                setSubmitting(false);
-            })
-            .catch(error => {
-                console.log(error);
-                setSubmitting(false);
-                setErrorMessage('An error occurred while submitting the form.');
-            }
-            );
-    }
 
     return (
         <motion.div exit={{ opacity: 0 }}>
@@ -121,7 +30,7 @@ function Zluxuria() {
 
             <div className="relative h-screen">
                 <div
-                    className="bg-cover bg-center h-screen w-full absolute inset-0 bg-no-repeat bg-fixed"
+                    className="bg-cover bg-center h-screen w-full md:absolute inset-0 bg-no-repeat md:bg-fixed"
                     style={{
                         backgroundImage: `url(${bg})`,
                     }}>
@@ -142,10 +51,10 @@ function Zluxuria() {
 
                             <div className='flex flex-col justify-center items-center -mt-20'>
 
-                                <h1 className='mt-10 pt-10 pb-2 text-6xl text-center font-bold text-white font-style uppercase'>ULTIMATE</h1>
-                                <h1 className='text-6xl text-center font-bold text-white font-style uppercase'> LUXURY LIVING</h1>
-                                <h1 className='text-6xl text-center font-bold text-white font-style uppercase'>AT SKY</h1>
-                                <p className="w-[70%] mx-auto pt-8 text-xl text-white font-primary text-center py-4 font-medium">We're excited to present a new level of luxury in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design.</p>
+                                <h1 className='mt-10 pt-10 pb-2 text-3xl md:text-6xl text-center font-bold text-white font-style uppercase'>ULTIMATE</h1>
+                                <h1 className='text-3xl md:text-6xl text-center font-bold text-white font-style uppercase'> LUXURY LIVING</h1>
+                                <h1 className='text-3xl md:text-6xl text-center font-bold text-white font-style uppercase'>AT SKY</h1>
+                                <p className="w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">Experience the height of luxury with our latest project, designed to inspire and elevate your senses.</p>
                             </div>
 
                             {/* <h1 className='my-10 pt-10 text-4xl text-center font-bold text-secondary font-primary'>Presenting Soon</h1> */}
@@ -165,36 +74,50 @@ function Zluxuria() {
                 }}
             >
                 <div className='py-20'>
-                    <h1 className='text-6xl font-style text-center py-2 text-black'>z luxuria</h1>
-                    <h1 className='text-4xl font-style text-center text-black'>introducing new level of luxury living</h1>
-
-
+                    <h1 className='text-5xl md:text-6xl font-style text-center py-2 text-black'>z luxuria</h1>
+                    <h1 className='text-3xl px-4 md:px-0 md:text-4xl font-style text-center text-black'>introducing new level of luxury living</h1>
                 </div>
 
-                <div className='flex justify-between pt-5'>
+                <div className='flex flex-col md:flex-row justify-between md:pt-5'>
                     {
                         ZL.details ? ZL.details.map((data, index) => {
 
                             if (index === ZL.details.length - 1) {
                                 return (
-                                    <div className='flex justify-start items-center mx-8'>
+                                    <motion.div
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{
+                                            duration: 1,
+                                            delay: 0.3,
+                                            // ease: [0.5, 0.71, 1, 1.5],
+                                        }}
+                                        initial={{ opacity: 0 }}
+                                        className='flex justify-start items-baseline my-4 md:my-0 md:mx-8'>
                                         <div className='py-5'>
                                             <h1 className='text-5xl text-black font-primary font-bold'>{data[0]}</h1>
                                             <p className=' text-black py-3 text-2xl font-style'>{data[1]}</p>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 )
                             } else {
                                 return (
-                                    <div className='flex justify-start items-center mx-8'>
+                                    <motion.div
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{
+                                            duration: 1,
+                                            delay: 0.3,
+                                            // ease: [0.5, 0.71, 1, 1.5],
+                                        }}
+                                        initial={{ opacity: 0 }}
+                                        className='flex flex-col md:flex-row md:justify-start md:items-baseline md:mx-8 my-4 md:my-0'>
                                         <div className='py-5'>
                                             <h1 className='text-5xl text-black font-primary font-bold'>{data[0]}</h1>
-                                            <p className=' text-black py-3 text-2xl font-style'>{data[1]}</p>
+                                            <p className=' text-black py-3 text-2xl font-style max-w-[180px]'>{data[1]}</p>
                                         </div>
                                         <div className='ml-8 py-1'>
                                             <hr className='border-primary border w-24'></hr>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 )
                             }
 
@@ -209,10 +132,10 @@ function Zluxuria() {
 
             <div className=''>
 
-                <div className='flex flex-row'>
+                <div className='flex flex-col md:flex-row '>
 
 
-                    <div className='w-[400px] bg-center bg-cover'
+                    <div className='w-full h-[700px] md:h-auto md:w-[400px] bg-center bg-cover'
                         style={{
                             backgroundImage: `url(${img1})`,
                         }}
@@ -220,12 +143,19 @@ function Zluxuria() {
                     </div>
 
 
-
-                    <div className='h-[700px] grow flex flex-col justify-center items-center'>
+                    <motion.div
+                        whileInView={{ opacity: 1 }}
+                        transition={{
+                            duration: 2,
+                            delay: 0.3,
+                            // ease: [0.5, 0.71, 1, 1.5],
+                        }}
+                        initial={{ opacity: 0 }}
+                        className='h-[700px] md:grow flex flex-col justify-center items-center'>
 
                         <h3 className='text-2xl text-primary font-primary font-semibold'>About z luxuria</h3>
                         <h1 className='text-3xl py-4 font-style text-center text-black'>Introducing our latest project<br /> Luxurious Living</h1>
-                        <p className='w-[450px] text-center mx-auto font-primary py-2 text-black'>z luxuria, a luxurious residential tower that will set new standards for opulent living in Ahmedabad. This magnificent 33-story tower offers 56 units with world-class amenities and stunning architectural design.</p>
+                        <p className='w-[85%] md:w-[450px] text-center mx-auto font-primary py-2 text-black'>z luxuria, a luxurious residential tower that will set new standards for opulent living in Ahmedabad. This magnificent 33-story tower offers 56 units with world-class amenities and stunning architectural design.</p>
 
                         <div className='flex items-center justify-center py-3 mt-2'>
 
@@ -247,16 +177,12 @@ function Zluxuria() {
 
                         </div>
 
-                        <span className="py-2 px-6 w-fit my-5 border border-primaryHover rounded-full font-primary hover:bg-primaryHover hover:text-white hover:cursor-pointer">CONTACT</span>
+                        <a href="#contact" className="py-2 px-6 w-fit my-5 border border-primaryHover rounded-full font-primary hover:bg-primaryHover hover:text-white hover:cursor-pointer">CONTACT</a>
 
-                    </div>
-
-
+                    </motion.div>
 
 
-
-
-                    <div className='w-[400px] bg-center bg-cover'
+                    <div className='hidden md:block w-[400px] bg-center bg-cover'
                         style={{
                             backgroundImage: `url(${img2})`,
                         }}
@@ -268,25 +194,86 @@ function Zluxuria() {
 
             {/* Amenities */}
 
-            <div className='bg-center bg-black px-16 py-20'
+            <div className='bg-center bg-black md:px-16 py-20'
                 style={{
                     backgroundImage: `url(${amenities_section_bg})`,
                 }}
             >
-                <h1 className='text-5xl font-style text-white text-center'>AMENITIES</h1>
-                <p className='text-2xl font-style text-white text-center py-2'>Our never ending list of stunning amenities</p>
+                <h1 className='text-3xl md:text-5xl font-style text-white text-center'>AMENITIES</h1>
+                <p className='text-xl md:text-2xl font-style text-white text-center py-2'>Our never ending list of stunning amenities</p>
                 {/* <FontAwesomeIcon icon={faHeart} /> */}
 
-                <div className=''>
+                {/* <FontAwesomeIcon icon="fa-sharp fa-regular fa-shield-halved" /> */}
+                {/* <FontAwesomeIcon icon="fa-regular fa-eye" /> */}
+                {/* <FontAwesomeIcon icon="fa-sharp fa-regular fa-bus-simple" /> */}
+                <div className='flex w-[95%] md:w-[1200px] flex-wrap mx-auto py-10'>
+
+                    {
+                        Amenities.zluxuria ? Amenities.zluxuria.map((item, index) => {
+                            return (
+                                <motion.div
+
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        duration: 1,
+                                        delay: 0.3,
+                                        // ease: [0.5, 0.71, 1, 1.5],
+                                    }}
+                                    initial={{ opacity: 0, y: 30 }}
+
+                                    key={index} className="flex justify-center items-center flex-col py-2 px-2 mx-1 my-1 w-[45%] md:w-[24%] h-[200px] border border-primaryHover">
+                                    <FontAwesomeIcon className="md:hidden" icon={item.SVG} size="2x" style={{ color: '#cda24b' }} />
+                                    <FontAwesomeIcon className="hidden md:block" icon={item.SVG} size="3x" style={{ color: '#cda24b' }} />
+                                    <h3 className='text-white text-center pt-2'>{item.name}</h3>
+                                </motion.div>
+                            )
+                        }) : null
+                    }
 
                 </div>
 
             </div>
 
-            <Contact />
+            <div className='md:bg-cover bg-center py-20 flex flex-col justify-center items-center bg-primary'
+                style={{
+                    backgroundImage: `url(${CTA_bg})`,
+                }}
+            >
+                <motion.h1
+
+                    whileInView={{ y: 0 }}
+                    transition={{
+                        duration: 1,
+                        delay: 0,
+                    }}
+                    initial={{ y: 30 }}
+
+                    className='text-2xl md:text-4xl font-style text-white py-2'>AVAILABLE FOR</motion.h1>
+                <motion.h1
+                    whileInView={{ y: 0 }}
+                    transition={{
+                        duration: 1,
+                        delay: 0,
+                    }}
+                    initial={{ y: 30 }}
+                    className='text-2xl md:text-6xl font-style text-white'>IMMEDIATE OCCUPANCY !</motion.h1>
+
+                <motion.a
+                    whileInView={{ opacity: 1 }}
+                    transition={{
+                        duration: 1,
+                        delay: 0.5,
+                    }}
+                    initial={{ opacity: 0 }}
+                    href="#contact" className='bg-white text-lg mt-8 py-2 px-6 uppercase hover:cursor-pointer hover:bg-black hover:shadow-md hover:text-white '>Inquire Now</motion.a>
+
+            </div>
+
+            <Contact id="contact" Email={'sales@zadegroup.in'} Subject={'New inquiry for z luxuria'} />
 
             <Footer phoneNumber={"7573030028"} Email={"sales@zadegroup.in"} />
-        </motion.div>
+
+        </motion.div >
     )
 }
 
