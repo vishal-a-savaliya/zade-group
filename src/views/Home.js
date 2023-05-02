@@ -71,6 +71,7 @@ function Home() {
 
     return (
 
+
         <motion.div exit={{ opacity: 0 }}>
 
             <InitialTransition />
@@ -86,7 +87,6 @@ function Home() {
                     {/* <Navbar /> */}
                     <div class="w-full h-full flex  justify-center items-center backdrop-brightness-50">
                         <motion.div
-
                             animate={{ opacity: 1 }}
                             transition={{
                                 duration: 3,
