@@ -1,5 +1,5 @@
 import React from 'react'
-import footer_bg from '../image/bg_squre.png'
+// import footer_bg from '../image/bg_squre.png'
 
 function Footer({ phoneNumber, Email }) {
     return (
