@@ -60,7 +60,7 @@ function Home() {
             // console.log(backgroundImage);
             // setImageLoaded(true)
         }
-    }, [])
+    }, [ProjectId, Projects.length])
 
     useEffect(() => {
         const interval = setInterval(() => {
