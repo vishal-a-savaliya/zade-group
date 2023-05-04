@@ -355,6 +355,11 @@ function Z2() {
             </div> */}
 
 
+
+
+
+
+
             <div className='md:bg-center bg-gray px-16 py-20'
                 style={{
                     backgroundImage: `url(${amenities_section_bg})`,

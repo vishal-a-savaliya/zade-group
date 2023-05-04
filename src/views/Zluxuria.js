@@ -223,7 +223,7 @@ function Zluxuria() {
 
                                     key={index} className="flex justify-center items-center flex-col py-2 px-2 mx-1 my-1 w-[45%] md:w-[24%] h-[200px] border border-primaryHover">
                                     <FontAwesomeIcon className="md:hidden" icon={item.SVG} size="2x" style={{ color: '#cda24b' }} />
-                                    <FontAwesomeIcon className="hidden md:block" icon={item.SVG} size="3x" style={{ color: '#cda24b' }} />
+                                    {item.SVG}
                                     <h3 className='text-white text-center pt-2'>{item.name}</h3>
                                 </motion.div>
                             )

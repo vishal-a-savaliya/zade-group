@@ -60,12 +60,12 @@ function Home() {
             // console.log(backgroundImage);
             // setImageLoaded(true)
         }
-    }, [ProjectId, Projects.length])
+    }, [ProjectId])
 
     useEffect(() => {
         const interval = setInterval(() => {
             ProjectToggle(1);
-        }, 5000);
+        }, 7000);
         return () => clearInterval(interval);
     }, [ProjectToggle]);
 
@@ -100,8 +100,8 @@ function Home() {
 
                             <div className='flex flex-col justify-center items-center -mt-20'>
 
-                                <h1 className='text-3xl mt-10 pt-10 pb-2 md:text-5xl text-center font-bold text-white font-style uppercase'>Beautiful spaces</h1>
-                                <h1 className='text-3xl md:text-6xl text-center font-bold text-white font-style uppercase'>in the best places</h1>
+                                <h1 className='text-3xl mt-10 pt-10 pb-2 md:text-5xl text-center font-bold text-white font-style uppercase'>Zade Group</h1>
+                                <h1 className='text-3xl md:text-6xl text-center font-bold text-white font-style uppercase'>Build The Future</h1>
                                 <p className="w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">We're excited to present a new level of luxury in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design.</p>
                             </div>
 
