@@ -18,7 +18,7 @@ import Footer from '../components/Footer';
 
 
 //images
-import bg from '../image/Home_bg_5.png';
+import bg from '../image/hero_image.jpeg';
 import home_bg_1 from '../image/landing_bg1.png'
 import home_bg_2 from '../image/Home_bg_6.jpg'
 // import home_bg_4 from '../image/bg-1.png'
@@ -101,7 +101,7 @@ function Home() {
                             <div className='flex flex-col justify-center items-center -mt-20'>
 
                                 <h1 className='text-3xl mt-10 pt-10 pb-2 md:text-5xl text-center font-bold text-white font-style uppercase'>Zade Group</h1>
-                                <h1 className='text-3xl md:text-6xl text-center font-bold text-white font-style uppercase'>Build The Future</h1>
+                                {/* <h1 className='text-3xl md:text-6xl text-center font-bold text-white font-style uppercase'>Build The Future</h1> */}
                                 <p className="w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">We're excited to present a new level of luxury in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design.</p>
                             </div>
 
