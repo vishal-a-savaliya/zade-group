@@ -7,7 +7,7 @@ import CTA_bg from '../image/bg-1.png'
 import amenities_section_bg from '../image/landing_bg2.png'
 
 
-import bg from '../image/z2/hero_4.jpg'
+import bg from '../image/z2/hero_4.jpeg'
 
 import img1 from '../image/z2/1.jpeg'
 // import img2 from '../image/z2/2.jpeg'
