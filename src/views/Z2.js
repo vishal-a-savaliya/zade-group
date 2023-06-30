@@ -3,15 +3,20 @@
 
 import { motion } from "framer-motion"
 import { Projects, Amenities } from '../data/ProjectDetails'
+import { ProjectUpdates } from "../data/ProjectUpdate"
+
+import ImageSlider from "../components/ImageSlider"
+
 import CTA_bg from '../image/bg-1.png'
 import amenities_section_bg from '../image/landing_bg2.png'
 
 
-import bg from '../image/z2/hero_4.jpeg'
+import bg from '../image/z2/hero_4.jpeg';
+import pattern_image from '../image/z2/pattern.svg';
 
 import img1 from '../image/z2/1.jpeg'
 // import img2 from '../image/z2/2.jpeg'
-// import img3 from '../image/z2/3.jpeg'
+import img3 from '../image/z2/3.jpeg'
 // import img4 from '../image/z2/4.jpeg'
 import img5 from '../image/z2/5.jpeg'
 // import img6 from '../image/z2/6.jpeg'
@@ -19,6 +24,7 @@ import img7 from '../image/z2/7.jpeg'
 // import img8 from '../image/z2/8.jpeg'
 
 import bg_2 from '../image/zluxuria/bg-2.png'
+import z2_hall_image from '../image/z2/z2_hall.jpeg'
 
 // import corporate_bg_image from '../image/z2/corponare_place_background_image.jpeg'
 
@@ -29,12 +35,14 @@ import Contact from '../components/Contact'
 
 
 
-
 function Z2() {
 
-    const Z2 = Projects[0]
+    const Z2 = Projects[0];
+
 
     // const images = [img1, img2, img3, img4, img5, img6, img7, img8];
+    const images = [img3, z2_hall_image, img7];
+    // const images = [img1, img2, img4, img5, img8];
     // const [current, setCurrent] = useState(0);
 
 
@@ -156,12 +164,14 @@ function Z2() {
 
             {/* Intro */}
 
-            <div className='flex justify-center flex-col items-center bg-gray py-20 bg-right md:bg-center'
+            <div className='flex relative justify-center flex-col items-center bg-gray py-20 bg-right md:bg-center'
                 style={{
                     backgroundImage: `url(${bg_2})`,
                 }}
             >
-                <div className='py-20'>
+                <div className="absolute w-full h-[100%] bg-gray bg-opacity-60 md:hidden"></div>
+
+                <div className='py-20 z-30'>
                     <h1 className='text-6xl font-style text-center py-4 md:py-10 text-black'>Z2</h1>
                     <h1 className='hidden md:block text-4xl font-style text-center text-black'>Elevate your business to new heights</h1>
                     <h1 className='hidden md:block text-4xl font-style text-center text-black'>with Corporate Space</h1>
@@ -170,7 +180,7 @@ function Z2() {
 
                 </div>
 
-                <div className='flex flex-col md:flex-row justify-between pt-5'>
+                <div className='flex flex-col md:flex-row justify-between pt-5 z-30'>
                     {
                         Z2.details ? Z2.details.map((data, index) => {
 
@@ -217,6 +227,51 @@ function Z2() {
                     }
                 </div>
 
+            </div>
+
+
+
+
+            {/* Progress */}
+
+            <div className="flex flex-col items-center mt-10 mb-20" >
+
+                <div>
+                    <h1 className="font-style text-4xl md:text-6xl my-5 pb-10 text-center">updates so far</h1>
+                </div>
+
+                <div className="bg-cover bg-center w-full px-5 md:px-20 py-10" style={{
+                    backgroundImage: `url(${pattern_image})`,
+                }}>
+
+                    {ProjectUpdates.z2.map((item, index) => (
+                        <div className="flex items-center flex-col" key={index}>
+                            <div className="w-2 flex-grow-0">
+                                {index !== 0 && <div className="w-[1px] h-[150px] bg-gray-400 mx-auto border-dashed border-l-2 border-black"></div>}
+                            </div> {/* Vertical line */}
+
+
+                            <div className={index % 2 === 0 ? 'flex flex-col  md:flex-row-reverse w-full' : 'flex flex-col md:flex-row w-full'}>
+
+
+                                <div className="rounded-sm shadow-md md:w-[55%] backdrop-brightness-50">
+                                    <video src={item.video} autoPlay loop muted controls className="w-full rounded-sm shadow-sm" />
+                                </div>
+
+                                <div className="md:w-[45%] flex flex-col justify-center items-center">
+                                    <h3 className="text-4xl mt-5 md:mt-0 text-center font-style mb-2 text-primary">{item.title}</h3>
+                                    <p className="mb-4">{item.description}</p>
+                                    <p className="text-xl font-style ">{item.date}</p>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    ))}
+
+                </div>
             </div>
 
 
@@ -360,38 +415,56 @@ function Z2() {
 
 
 
-            <div className='md:bg-center bg-gray px-16 py-20'
+            <div className='md:bg-center bg-gray py-20'
                 style={{
                     backgroundImage: `url(${amenities_section_bg})`,
                 }}
             >
 
-                <div className='flex w-[98%] md:w-[1200px] md:max-w-[1000px] flex-wrap mx-auto py-10'>
+                <div className="mx-10 md:px-16">
 
-                    {
-                        Amenities.Z2 ? Amenities.Z2.map((item, index) => {
-                            return (
-                                <motion.div
+                    <div className='flex w-[98%] md:w-[1200px] md:max-w-[1000px] flex-wrap mx-auto py-10'>
 
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 1,
-                                        delay: 0.3,
-                                        // ease: [0.5, 0.71, 1, 1.5],
-                                    }}
-                                    initial={{ opacity: 0, y: 30 }}
+                        {
+                            Amenities.Z2 ? Amenities.Z2.map((item, index) => {
+                                return (
+                                    <motion.div
 
-                                    key={index} className="flex bg-white justify-center items-center flex-col py-2 px-2 md:mx-3 my-3 w-full md:w-[30%] h-[220px] hover:shadow-lg">
-                                    {/* <FontAwesomeIcon icon={item.SVG} size="3x" style={{ color: '#cda24b' }} /> */}
-                                    {item.SVG}
-                                    <h3 className='text-black text-center text-xl pt-5 font-style'>{item.name}</h3>
-                                </motion.div>
-                            )
-                        }) : null
-                    }
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{
+                                            duration: 1,
+                                            delay: 0.3,
+                                            // ease: [0.5, 0.71, 1, 1.5],
+                                        }}
+                                        initial={{ opacity: 0, y: 30 }}
+
+                                        key={index} className="flex bg-white justify-center items-center flex-col py-2 px-2 md:mx-3 my-3 w-full md:w-[30%] h-[220px] hover:shadow-lg">
+                                        {/* <FontAwesomeIcon icon={item.SVG} size="3x" style={{ color: '#cda24b' }} /> */}
+                                        {item.SVG}
+                                        <h3 className='text-black text-center text-xl pt-5 font-style'>{item.name}</h3>
+                                    </motion.div>
+                                )
+                            }) : null
+                        }
+
+                    </div>
 
                 </div>
+                {/* <div className="flex justify-end">
+                    <div className="w-[1000px] h-[500px] bg-cover bg-center"
 
+                        style={{
+                            backgroundImage: `url(${z2_hall_image})`,
+                        }}
+                    >
+
+                    </div>
+                </div> */}
+
+                <div className="md:px-10">
+
+                    <ImageSlider images={images} width={600} height={400} />
+                </div>
 
 
             </div>

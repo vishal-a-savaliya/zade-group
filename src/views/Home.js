@@ -187,16 +187,18 @@ function Home() {
 
                 <div className="flex flex-col md:flex-row">
                     <div className="md:w-[55%] relative h-[650px] md:h-[1000px]">
-                        <motion.div
-                            key={Projects[ProjectId].id}
-                            className={`absolute w-full h-full rounded-sm opacity-0 bg-no-repeat bg-cover`}
-                            style={{
-                                backgroundImage: `url(${Projects[ProjectId].image})`,
-                            }}
-                            animate={{ opacity: 1 }}
-                            initial={{ opacity: 0 }}
-                            transition={{ delay: 0.5, duration: 2 }}
-                        ></motion.div>
+                        <Link to={Projects[ProjectId].link} className="hover:cursor-pointer">
+                            <motion.div
+                                key={Projects[ProjectId].id}
+                                className={`absolute w-full h-full rounded-sm opacity-0 bg-no-repeat bg-cover hover:cursor-pointer`}
+                                style={{
+                                    backgroundImage: `url(${Projects[ProjectId].image})`,
+                                }}
+                                animate={{ opacity: 1 }}
+                                initial={{ opacity: 0 }}
+                                transition={{ delay: 0.5, duration: 2 }}
+                            ></motion.div>
+                        </Link>
                         <div
                             className="relative z-10 flex flex-col justify-end items-end h-full"
                         >

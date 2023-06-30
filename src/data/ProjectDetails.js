@@ -39,8 +39,8 @@ export const Projects = [
                 1: "Stories"
             },
             {
-                0: 10000,
-                1: "Upto Sq. Ft."
+                0: 1230,
+                1: "Sq. Ft. Onwards"
             },
             {
                 0: 5,
