@@ -1,68 +1,123 @@
-import { useState, useEffect } from "react";
+import React, { useRef, useEffect, useState } from 'react';
 
-const ImageSlider = ({ images }) => {
-    const [currentImage, setCurrentImage] = useState(0);
-    const [sliderInView, setSliderInView] = useState(false);
+function ImageSlider({ images, width = 450, height }) {
+
+    const startDivRef = useRef(0);
+    const [scrollAmount, setScrollAmount] = useState();
 
     useEffect(() => {
-        const slider = document.getElementById("slider");
-
         const handleScroll = () => {
-            if (slider) {
-                const rect = slider.getBoundingClientRect();
-                const visible =
-                    rect.top <= window.innerHeight && rect.bottom >= 0;
-
-                setSliderInView(visible);
-            }
+            const startDivPosition = startDivRef.current ? startDivRef.current.offsetTop : 0;
+            const scrollPosition = window.scrollY - startDivPosition + 550;
+            console.log('Scroll Amount:', scrollPosition);
+            setScrollAmount(scrollPosition)
         };
 
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener('scroll', handleScroll);
 
         return () => {
-            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
-    const handlePrev = () => {
-        if (currentImage === 0) {
-            setCurrentImage(images.length - 1);
-        } else {
-            setCurrentImage(currentImage - 1);
-        }
-    };
 
-    const handleNext = () => {
-        if (currentImage === images.length - 1) {
-            setCurrentImage(0);
-        } else {
-            setCurrentImage(currentImage + 1);
-        }
-    };
 
     return (
-        <div id="slider" className="mx-auto mt-8 relative overflow-hidden">
-            {sliderInView && (
-                <>
-                    <div
-                        className="absolute left-0 top-0 bottom-0 w-1/2 bg-gradient-to-r from-white to-transparent"
-                        onClick={handlePrev}
-                    ></div>
-                    <div
-                        className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-white to-transparent"
-                        onClick={handleNext}
-                    ></div>
-                </>
-            )}
+        <div
+            className="w-full h-full flex items-center my-14 overflow-hidden"
+            ref={startDivRef}
+        >
             <div
-                className="w-full h-64 bg-no-repeat bg-cover bg-center transform transition-all duration-500 ease-in-out"
-                style={{
-                    backgroundImage: `url(${images[currentImage]})`,
-                    marginLeft: `-${currentImage * 100}%`,
-                }}
-            ></div>
+                className="flex w-full h-full transition-transform duration-400 ease-out"
+                style={{ transform: `translateX(-${scrollAmount}px)` }}
+            >
+                {images.map((image, index) => (
+                    <img
+                        key={index}
+                        src={image}
+                        alt={`zade group slider ${index + 1}`}
+                        className={`md:w-[${600}px] md:h-[400px] object-cover mx-3`}
+                    />
+                ))}
+            </div>
         </div>
     );
-};
+}
 
 export default ImageSlider;
+
+
+
+
+
+
+
+
+
+// ---------------------------- With Mouse Movement ------------------
+
+
+
+
+// import React, { useRef, useEffect, useState } from 'react';
+
+// function ImageSlider({ images, width = 450, height }) {
+//     const startDivRef = useRef(0);
+//     const [scrollAmount, setScrollAmount] = useState(0);
+
+//     useEffect(() => {
+//         const handleScroll = () => {
+//             const startDivPosition = startDivRef.current.offsetTop;
+//             const scrollPosition = window.scrollY - startDivPosition + 550;
+//             setScrollAmount(scrollPosition);
+//         };
+
+//         window.addEventListener('scroll', handleScroll);
+//         return () => {
+//             window.removeEventListener('scroll', handleScroll);
+//         };
+//     }, []);
+
+//     const handleMouseEnter = () => {
+//         window.addEventListener('mousemove', handleMouseMove);
+//     };
+
+//     const handleMouseLeave = () => {
+//         window.removeEventListener('mousemove', handleMouseMove);
+//     };
+
+//     const handleMouseMove = (e) => {
+//         const mouseX = e.clientX;
+
+//         setScrollAmount(scrollAmount + mouseX);
+//     };
+
+//     return (
+//         <div
+//             className="w-full h-full flex items-center my-14 overflow-hidden"
+//             ref={startDivRef}
+//             onMouseEnter={handleMouseEnter}
+//             onMouseLeave={handleMouseLeave}
+//         >
+//             <div
+//                 className="flex w-full h-full transition-transform duration-300 ease-out"
+//                 style={{ transform: `translateX(-${scrollAmount}px)` }}
+//             >
+//                 {images.map((image, index) => (
+//                     <img
+//                         key={index}
+//                         src={image}
+//                         alt={`Image ${index + 1}`}
+//                         className={`w-[${width}px] h-[${height}px] object-cover mx-3`}
+//                     />
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// }
+
+// export default ImageSlider;
+
+
+
+
