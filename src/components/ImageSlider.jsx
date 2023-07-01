@@ -36,7 +36,7 @@ function ImageSlider({ images, width = 600, height = 450 }) {
                         key={index}
                         src={image}
                         alt={`zade group slider ${index + 1}`}
-                        className={`md:w-[${width}px] md:h-[${height}px] object-cover mx-3`}
+                        className={`md:w-[600px] md:h-[400px] object-cover mx-3`}
                     />
                 ))}
             </div>
