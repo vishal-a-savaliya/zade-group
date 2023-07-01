@@ -8,7 +8,7 @@ function ImageSlider({ images, width = 600, height = 450 }) {
     useEffect(() => {
         const handleScroll = () => {
             const startDivPosition = startDivRef.current ? startDivRef.current.offsetTop : 0;
-            const scrollPosition = window.scrollY - startDivPosition + 250;
+            const scrollPosition = window.scrollY - startDivPosition + 350;
             console.log('Scroll Amount:', scrollPosition);
             setScrollAmount(scrollPosition)
         };
