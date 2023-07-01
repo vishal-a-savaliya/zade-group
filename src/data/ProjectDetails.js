@@ -1,5 +1,5 @@
 import z2_image from '../image/z2/8.jpeg';
-import zluxuria_image from '../image/zluxuria/1_lite.jpeg';
+import zluxuria_image from '../image/zluxuria/Zluxuria1.jpeg';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';

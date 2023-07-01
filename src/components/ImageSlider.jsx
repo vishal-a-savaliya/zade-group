@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-function ImageSlider({ images, width = 450, height }) {
+function ImageSlider({ images, width = 600, height = 450 }) {
 
     const startDivRef = useRef(0);
     const [scrollAmount, setScrollAmount] = useState();
@@ -24,7 +24,7 @@ function ImageSlider({ images, width = 450, height }) {
 
     return (
         <div
-            className="w-full h-full flex items-center my-14 overflow-hidden"
+            className="w-full h-full flex items-center md:my-14 overflow-hidden"
             ref={startDivRef}
         >
             <div
@@ -36,7 +36,7 @@ function ImageSlider({ images, width = 450, height }) {
                         key={index}
                         src={image}
                         alt={`zade group slider ${index + 1}`}
-                        className={`md:w-[${600}px] md:h-[400px] object-cover mx-3`}
+                        className={`md:w-[${width}px] md:h-[${height}px] object-cover mx-3`}
                     />
                 ))}
             </div>

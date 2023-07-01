@@ -2,24 +2,31 @@
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import img1 from '../image/zluxuria/1_lite.jpeg'
+import img1 from '../image/zluxuria/Zluxuria1.jpeg'
 import img2 from '../image/zluxuria/2_lite.jpeg'
 import bg from '../image/Z_Luxuriya_bg_1.jpg'
 import bg_2 from '../image/zluxuria/bg-2.png'
 import amenities_section_bg from '../image/landing_bg2.png'
 import CTA_bg from "../image/landing_bg3.jpg"
-
+import img3 from '../image/zluxuria/Zluxuria2.jpeg';
+import img4 from '../image/zluxuria/Zluxuria6.jpeg';
+import img5 from '../image/zluxuria/Zluxuria5.jpeg';
+import img6 from '../image/zluxuria/Zluxuria4.jpeg';
 
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Contact from '../components/Contact'
+import ImageSlider from "../components/ImageSlider"
+
 
 import { Projects, Amenities } from '../data/ProjectDetails'
 
 function Zluxuria() {
 
 
-    const ZL = Projects[1]
+    const ZL = Projects[1];
+    const images = [img6, img3, img4, img5];
+
 
     return (
         <motion.div exit={{ opacity: 0 }}>
@@ -68,17 +75,19 @@ function Zluxuria() {
 
             {/* Intro */}
 
-            <div className='flex justify-center flex-col items-center bg-gray py-20 bg-center'
+            <div className='flex relative justify-center flex-col items-center bg-gray py-20 bg-right md:bg-center'
                 style={{
                     backgroundImage: `url(${bg_2})`,
                 }}
             >
-                <div className='py-20'>
+                <div className="absolute w-full h-[100%] z-10 bg-gray bg-opacity-60 md:hidden"></div>
+
+                <div className='py-20 z-30'>
                     <h1 className='text-5xl md:text-6xl font-style text-center py-2 text-black'>z luxuria</h1>
                     <h1 className='text-3xl px-4 md:px-0 md:text-4xl font-style text-center text-black'>introducing new level of luxury living</h1>
                 </div>
 
-                <div className='flex flex-col md:flex-row justify-between md:pt-5'>
+                <div className='flex flex-col md:flex-row justify-between z-30 md:pt-5'>
                     {
                         ZL.details ? ZL.details.map((data, index) => {
 
@@ -231,6 +240,14 @@ function Zluxuria() {
                     }
 
                 </div>
+
+
+
+            </div>
+
+            <div className="py-12 h-[300px] md:h-full md:py-0 md:px-10">
+
+                <ImageSlider images={images} width={600} height={400} />
 
             </div>
 
