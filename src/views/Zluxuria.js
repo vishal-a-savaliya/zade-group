@@ -245,7 +245,7 @@ function Zluxuria() {
 
             </div>
 
-            <div className="py-12 h-[300px] md:h-auto md:py-0 md:px-10">
+            <div className="py-12 h-[300px] md:h-[470px] md:py-0 md:px-10">
 
                 <ImageSlider images={images} width={600} height={400} />
 

@@ -24,7 +24,7 @@ function ImageSlider({ images, width = 600, height = 450 }) {
 
     return (
         <div
-            className="w-full h-full flex items-center md:my-14 overflow-hidden"
+            className="w-full h-full flex justify-center items-center md:my-14 overflow-hidden"
             ref={startDivRef}
         >
             <div
