@@ -21,6 +21,8 @@ import Footer from '../components/Footer';
 import bg from '../image/hero_image.jpeg';
 import home_bg_1 from '../image/landing_bg1.png'
 import home_bg_2 from '../image/Home_bg_6.jpg'
+import pattern_image from '../image/skyscraper-.jpeg';
+import award from '../image/z2_sketch-1.jpg'
 // import home_bg_4 from '../image/bg-1.png'
 
 // import project_corporate_space from '../image/z2/3.jpeg'
@@ -166,6 +168,35 @@ function Home() {
 
                 </div>
 
+            </div>
+
+            <div className="flex justify-center items-center md:bg-gray"
+
+            >
+
+                <div className="hidden md:flex w-[40%] bg-cover bg-center"
+                >
+                    <img src={award} alt="z2 most work friendly office Space of the year award" />
+                </div>
+
+                <div className="bg-cover md:w-[60%] pb-16 md:pb-0 flex flex-col justify-center items-center">
+
+                    <video
+
+                        src="https://res.cloudinary.com/dqc8hsfyv/video/upload/v1689241509/Most_Work-Friendly_Office_Space_of_the_Year_hyqqcf.mp4"
+
+                        autoPlay muted loop controls
+                        className="rounded-sm shadow-sm w-[95%] md:w-[75%]"
+
+                    />
+
+                    <div className="flex flex-col justify-center md:w-[60%] pt-8 md:pt-16">
+                        <h1 className="text-2xl md:text-4xl font-style text-center text-primary">most work friendly office Space of the year</h1>
+                        <h1 className="text-2xl md:text-3xl font-style text-center pt-3 md:pt-5">Award winner for Z2</h1>
+                    </div>
+
+
+                </div>
             </div>
 
 

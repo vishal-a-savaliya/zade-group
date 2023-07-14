@@ -1,6 +1,7 @@
 /* @import url(//db.onlinewebfonts.com/c/adfd298e421945768d7bf13da3ee8a45?family=BankGothic+Md+BT); */
 @import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Montserrat&display=swap');
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
