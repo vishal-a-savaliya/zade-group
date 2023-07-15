@@ -347,7 +347,7 @@ function Z2() {
                             // ease: [0.5, 0.71, 1, 1.5],
                         }}
                         initial={{ opacity: 0 }}
-                        className='md:h-[700px] md:w-[40%] py-10 md:py-0 px-5 md:px-0 flex flex-col justify-center items-start '>
+                        className='md:h-[900px] md:w-[40%] py-10 md:py-0 px-5 md:px-0 flex flex-col justify-center items-start '>
 
                         <h1 className='text-2xl md:text-lg py-2 font-style text-left text-white'>Introducing</h1>
                         <h3 className='text-3xl md:text-2xl text-white font-style'>Z2 Corporate Space</h3>
@@ -378,14 +378,14 @@ function Z2() {
                     </motion.div>
 
                     <div className='w-[95%] md:w-[60%] flex flex-row mt-10 md:mt-0'>
-                        <div className='w-full md:w-[50%] bg-cover bg-center h-[604px] bg-black mr-1' style={{
+                        <div className='w-full md:w-[50%] bg-cover bg-center h-[804px] bg-black mr-1' style={{
                             backgroundImage: `url(${img1})`,
                         }}></div>
                         <div className='hidden md:block w-[50%] bg-black mr-1'>
-                            <div className='w-full bg-cover bg-center h-[200px] bg-black mr-1 mb-1 ' style={{
+                            <div className='w-full bg-cover bg-center h-[250px] bg-black mr-1 mb-1 ' style={{
                                 backgroundImage: `url(${img7})`,
                             }}></div>
-                            <div className='w-full bg-cover bg-center h-[400px] bg-black mr-1' style={{
+                            <div className='w-full bg-cover bg-center h-[550px] bg-black mr-1' style={{
                                 backgroundImage: `url(${img5})`,
                             }}></div>
                         </div>

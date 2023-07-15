@@ -35,26 +35,26 @@ function About() {
 
             </div>
 
-            <div className="max-w-5xl mx-auto px-4 my-14 mb-20 md:px-6 lg:px-8 text font-primary">
-                <h1 className="text-3xl text-primary font-bold text-gray-800 mb-4">
+            <div className="max-w-[1000px] mx-auto px-4 my-14 md:py-16 mb-20 md:px-6 lg:px-8 text font-primary">
+                <h1 className="text-3xl md:text-5xl text-center text-primary font-style text-gray-800 mb-5 md:mb-10">
                     About zade group
                 </h1>
-                <p className="text-lg  text-gray-600 mb-6 font-primary">
+                <p className="text-lg text-center text-gray-600 mb-6 font-primary">
                     At Zade Group, we've been providing top-quality construction services in Ahmedabad for over a decade. Our reputation has been built on our commitment to delivering exceptional projects that surpass our clients' expectations.
                 </p>
-                <p className="text-lg  text-gray-600 mb-6 font-primary">
+                <p className="text-lg text-center text-gray-600 mb-6 font-primary">
                     We take pride in everything we do, from using the finest materials to paying close attention to detail in every aspect of our projects. Our team of highly skilled professionals has earned us a reputation as a trusted name in the construction industry, known for our innovative designs and exceptional craftsmanship.
                 </p>
-                <h2 className="text-2xl text-primary font-bold text-gray-800 mb-4">
+                <h2 className="text-2xl md:text-3xl text-center text-primary font-style text-gray-800 mt-14 mb-5">
                     The Corporate Space and Luxurious Living
                 </h2>
-                <p className="text-lg  text-gray-600 mb-6 font-primary">
+                <p className="text-lg text-center text-gray-600 mb-6 font-primary">
                     Our latest project, The Corporate Space and Luxurious Living, is a testament to our dedication to excellence. We're excited to offer a new level of luxury living in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design.
                 </p>
-                <p className="text-lg  text-gray-600 mb-6 font-primary">
+                <p className="text-lg text-center text-gray-600 mb-6 font-primary">
                     Our commitment to our clients is evident in every detail of this project, from the impressive entrance to the luxurious interiors. We're passionate about providing the best possible living experience for our clients, and we're confident that our latest project will exceed their expectations.
                 </p>
-                <p className="text-lg  mb-6 font-primary">
+                <p className="text-lg text-center mb-6 font-primary">
                     We're proud to set the bar high for construction companies in Ahmedabad, inspiring others to aim for greatness and always strive for excellence.
                 </p>
             </div>

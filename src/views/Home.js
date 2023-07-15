@@ -23,6 +23,7 @@ import home_bg_1 from '../image/landing_bg1.png'
 import home_bg_2 from '../image/Home_bg_6.jpg'
 // import pattern_image from '../image/skyscraper-.jpeg';
 import award from '../image/z2_sketch-1.jpg'
+import crain from '../image/crain.png'
 // import home_bg_4 from '../image/bg-1.png'
 
 // import project_corporate_space from '../image/z2/3.jpeg'
@@ -103,7 +104,7 @@ function Home() {
 
                                 <h1 className='text-3xl mt-10 pt-10 pb-2 md:text-5xl text-center font-bold text-white font-style uppercase'>Zade Group</h1>
                                 {/* <h1 className='text-3xl md:text-6xl text-center font-bold text-white font-style uppercase'>Build The Future</h1> */}
-                                <p className="w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">We're excited to present a new level of luxury in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design.</p>
+                                <p className="w-[90%] md:w-[70%] mx-auto pt-8 md:text-2xl text-white font-primary text-center py-4 font-medium">We're excited to present a new level of luxury in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design.</p>
                             </div>
 
                             {/* <h1 className='my-10 pt-10 text-4xl text-center font-bold text-secondary font-primary'>Presenting Soon</h1> */}
@@ -170,31 +171,43 @@ function Home() {
 
             </div>
 
-            <div className="flex justify-center items-center md:bg-gray"
+            <div className="flex justify-center md:bg-gray">
 
-            >
 
-                <div className="hidden md:flex w-[40%] bg-cover bg-center"
-                >
-                    <img src={award} alt="z2 most work friendly office Space of the year award" />
-                </div>
 
-                <div className="bg-cover md:w-[60%] pb-16 md:pb-0 flex flex-col justify-center items-center">
+                <div className="bg-cover md:w-[55%] pb-16 md:pb-0 flex flex-col justify-center items-center">
 
-                    <video
+                    <div className="w-[95%] relative flex justify-center pt-10">
 
-                        src="https://res.cloudinary.com/dqc8hsfyv/video/upload/v1689241509/Most_Work-Friendly_Office_Space_of_the_Year_hyqqcf.mp4"
+                        <img src={crain} alt="Zade group award collection" className="ml-28 md:h-[680px] md:w-[500px]" />
 
-                        autoPlay muted loop controls
-                        className="rounded-sm shadow-sm w-[95%] md:w-[75%]"
+                        <video
+                            src="https://res.cloudinary.com/dqc8hsfyv/video/upload/v1689241509/Most_Work-Friendly_Office_Space_of_the_Year_hyqqcf.mp4"
 
-                    />
+                            autoPlay muted loop controls
+                            className="rounded-sm shadow-sm absolute w-[60%] top-[45%] left-[17%]"
 
-                    <div className="flex flex-col justify-center md:w-[60%] pt-8 md:pt-16">
-                        <h1 className="text-2xl md:text-4xl font-style text-center text-primary">most work friendly office Space of the year</h1>
-                        <h1 className="text-2xl md:text-3xl font-style text-center pt-3 md:pt-5">Award winner for Z2</h1>
+                        />
                     </div>
 
+
+                    <motion.div
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                            duration: 1,
+                        }}
+                        initial={{ opacity: 0.5, y: 20 }}
+                        className="flex flex-col justify-center w-[85%] md:w-[70%] pt-8 md:pt-2">
+                        <h1 className="text-2xl md:text-5xl font-style text-center text-primary">most work friendly office Space of the year</h1>
+                        <h1 className="text-2xl md:text-4xl font-style text-center pt-3 md:pt-5">Award winner for Z2</h1>
+                    </motion.div>
+
+
+                </div>
+
+                <div className="hidden md:flex items-start w-[45%] h-[100%] bg-cover bg-center"
+                >
+                    <img src={award} alt="z2 most work friendly office Space of the year award" className="h-full top-0" />
 
                 </div>
             </div>
@@ -207,7 +220,7 @@ function Home() {
 
                 <div className="flex justify-center items-center">
 
-                    <div className="md:relative flex flex-col items-center md:-bottom-12 md:left-20 md:w-[80%] mx-auto md:z-20">
+                    <div className="flex flex-col items-center md:relative md:-bottom-12 md:left-20 md:w-[80%] mx-auto md:z-20">
                         <motion.h1
                             className="text-3xl md:text-6xl font-style font-extrabold text-primaryHover uppercase">zade group</motion.h1>
                         <motion.h1
