@@ -21,7 +21,7 @@ import Footer from '../components/Footer';
 import bg from '../image/hero_image.jpeg';
 import home_bg_1 from '../image/landing_bg1.png'
 import home_bg_2 from '../image/Home_bg_6.jpg'
-import pattern_image from '../image/skyscraper-.jpeg';
+// import pattern_image from '../image/skyscraper-.jpeg';
 import award from '../image/z2_sketch-1.jpg'
 // import home_bg_4 from '../image/bg-1.png'
 
