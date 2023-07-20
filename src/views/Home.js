@@ -179,13 +179,13 @@ function Home() {
 
                     <div className="w-[95%] relative flex justify-center pt-10">
 
-                        <img src={crain} alt="Zade group award collection" className="ml-28 md:h-[680px] md:w-[500px]" />
+                        <img src={crain} alt="Zade group award collection" className="md:ml-28 w-[300px] md:h-[680px] md:w-[500px]" />
 
                         <video
                             src="https://res.cloudinary.com/dqc8hsfyv/video/upload/v1689241509/Most_Work-Friendly_Office_Space_of_the_Year_hyqqcf.mp4"
 
                             autoPlay muted loop controls
-                            className="rounded-sm shadow-sm absolute w-[60%] top-[45%] left-[17%]"
+                            className="rounded-sm shadow-sm absolute w-[60%] top-[45%] left-[7%] md:left-[17%]"
 
                         />
                     </div>
