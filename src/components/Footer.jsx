@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 // import footer_bg from '../image/bg_squre.png'
 
 function Footer({ phoneNumber, Email }) {
@@ -58,7 +59,12 @@ function Footer({ phoneNumber, Email }) {
 
             </div>
 
-            <div>
+            <div className='flex justify-between pt-3 w-[83%] mx-auto'>
+                <div className='flex justify-start'>
+                    <Link to='/about'><p className='text-center text-white font-medium pt-4 pb-10 pr-3'>About</p></Link>
+                    <Link to='/privacy-policy'><p className='text-center text-white font-medium pt-4 pb-10 px-3'>Privacy Policy</p></Link>
+                    {/* <Link to='/privacy-policy'><p className='text-center text-white font-medium pt-4 pb-10 px-3'>Privacy Policy</p></Link> */}
+                </div>
                 <p className='text-center text-white font-medium pt-4 pb-10'>© 2023 All rights reserved</p>
             </div>
 

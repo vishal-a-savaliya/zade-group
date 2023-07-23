@@ -35,7 +35,7 @@ function About() {
 
             </div>
 
-            <div className="max-w-[1000px] mx-auto px-4 my-14 md:py-16 mb-20 md:px-6 lg:px-8 text font-primary">
+            <div className="max-w-[1000px] mx-auto px-4 mt-14 md:py-16 mb-10 md:px-6 lg:px-8 text font-primary">
                 <h1 className="text-3xl md:text-5xl text-center text-primary font-style text-gray-800 mb-5 md:mb-10">
                     About zade group
                 </h1>
@@ -57,6 +57,13 @@ function About() {
                 <p className="text-lg text-center mb-6 font-primary">
                     We're proud to set the bar high for construction companies in Ahmedabad, inspiring others to aim for greatness and always strive for excellence.
                 </p>
+            </div>
+
+            <div className="max-w-[1000px] mx-auto px-4 mb-20 md:px-6 lg:px-8 text font-primary">
+                <h1 className="text-3xl md:text-5xl text-center text-primary font-style text-gray-800 mb-5 md:mb-10">
+                    Visit Our Office
+                </h1>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14684.99616276178!2d72.4998164!3d23.0513296!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b98d8b3ca05%3A0xcd5408ab37917bd0!2sZADE%20CORPORATE%20CAMPUS!5e0!3m2!1sen!2sin!4v1690098823012!5m2!1sen!2sin" width="100%" height="450" style={{ border: 0 }} allowfullscreen="" loading="lazy" title='Zade group office' className='mx-auto shadow-sm' ></iframe>
             </div>
 
             <Contact />

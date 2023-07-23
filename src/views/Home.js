@@ -18,7 +18,7 @@ import Footer from '../components/Footer';
 
 
 //images
-import bg from '../image/hero_image.jpeg';
+import bg from '../image/zade_group_hero_image.jpg';
 import home_bg_1 from '../image/landing_bg1.png'
 import home_bg_2 from '../image/Home_bg_6.jpg'
 // import pattern_image from '../image/skyscraper-.jpeg';

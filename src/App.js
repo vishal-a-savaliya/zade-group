@@ -7,6 +7,7 @@ import Zluxuria from './views/Zluxuria';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import About from './views/About';
+import PrivacyPolicy from './views/PrivacyPolicy';
 
 
 
@@ -34,6 +35,7 @@ function App() {
 
         <Route path="/luxurious-living" element={<Zluxuria />} />
         <Route path="/about" element={<About />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
 
       </Routes>
