@@ -28,7 +28,7 @@ export const Projects = [
     {
         title: "Corporate Space",
         id: "01",
-        description: "The Corporate Space is our newest project in construction, offering a state-of-the-art space for businesses and corporations to thrive. This stunning 32-story building boasts a grand height of 12 feet per floor, providing ample space for businesses of all sizes",
+        description: "The Z2, Corporate Space is our newest project in construction, offering a state-of-the-art space for businesses and corporations to thrive. This stunning 32-story building boasts a grand height of 12 feet per floor, providing space for businesses of all sizes",
         location: "Thaltej, Ahmedabad",
         status: "Newly Launched",
         link: "/corporate-Space",
@@ -55,7 +55,7 @@ export const Projects = [
     {
         title: "Luxurious Living",
         id: "02",
-        description: "Introducing our latest project, Luxury Living, a luxurious residential tower that will set new standards for opulent living in Ahmedabad. This magnificent 33-story tower offers 56 units with world-class amenities and stunning architectural design.",
+        description: "Introducing our latest project, Z Luxuria a luxurious residential tower that will set new standards for opulent living in Ahmedabad. This magnificent 33-story tower offers 56 units with world-class amenities and stunning architectural design.",
         location: "Thaltej, Ahmedabad",
         status: "Newly Launched",
         link: "/luxurious-living",

@@ -16,13 +16,15 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 
-
 //images
-import bg from '../image/zade_group_hero_image.jpg';
-import home_bg_1 from '../image/landing_bg1.png'
+// import bg from '../image/zade_group_hero_image.jpg';
+// import home_bg_1 from '../image/landing_bg1.png'
+import bg from '../image/hero_image_zage_group.jpeg';
+import home_bg_1 from '../image/zade_group_bg.png'
 import home_bg_2 from '../image/Home_bg_6.jpg'
 // import pattern_image from '../image/skyscraper-.jpeg';
 import award from '../image/z2_sketch-1.jpg'
+// import award from '../image/z2/1.jpeg'
 import crain from '../image/crain.png'
 // import home_bg_4 from '../image/bg-1.png'
 
@@ -32,7 +34,7 @@ import crain from '../image/crain.png'
 // svg imports
 // import corporate_svg from '../image/svg/buildings_1.svg';
 import office_svg from '../image/svg/offices.svg';
-import showroom_svg from '../image/svg/apartment.svg';
+// import showroom_svg from '../image/svg/apartment.svg';
 import residency_svg from '../image/svg/Recidency.svg';
 import { Link } from "react-router-dom";
 
@@ -116,25 +118,25 @@ function Home() {
             </div>
 
 
-            <div className="w-full bg-white pb-10">
-
-                <motion.h1
-
-                    whileInView={{ opacity: 1 }}
-                    transition={{
-                        duration: 1,
-                        delay: 0.5,
-                    }}
-                    initial={{ opacity: 0.5 }}
-
-                    className="text-3xl md:text-5xl font-style uppercase mt-32 text-center text-primary">ABOUT ZADE GROUP</motion.h1>
+            <div className="w-full bg-white">
 
                 <div className="md:bg-cover md:bg-center flex flex-col justify-center items-center w-full py-10"
                     style={{
                         backgroundImage: `url(${home_bg_1})`,
                     }}>
 
-                    <div className="w-[85%] md:w-[65%] mx-auto mb-14">
+                    <motion.h1
+
+                        whileInView={{ opacity: 1 }}
+                        transition={{
+                            duration: 1,
+                            delay: 0.5,
+                        }}
+                        initial={{ opacity: 0.5 }}
+
+                        className="text-3xl md:text-5xl font-style uppercase mt-32 pb-14 text-center text-primary">ABOUT ZADE GROUP</motion.h1>
+
+                    <div className="w-[85%] md:w-[60%] mx-auto mb-14">
 
                         <motion.p
 
@@ -171,8 +173,12 @@ function Home() {
 
             </div>
 
-            <div className="flex justify-center md:bg-gray">
 
+
+            {/* award  */}
+
+
+            <div className="flex justify-center">
 
 
                 <div className="bg-cover md:w-[55%] pb-16 md:pb-0 flex flex-col justify-center items-center">
@@ -197,19 +203,23 @@ function Home() {
                             duration: 1,
                         }}
                         initial={{ opacity: 0.5, y: 20 }}
-                        className="flex flex-col justify-center w-[85%] md:w-[70%] pt-8 md:pt-2">
+                        className="flex flex-col justify-center w-[85%] md:w-[70%] pt-8 md:pt-2 md:pb-14">
                         <h1 className="text-2xl md:text-5xl font-style text-center text-primary">most work friendly office Space of the year</h1>
                         <h1 className="text-2xl md:text-4xl font-style text-center pt-3 md:pt-5">Award winner for Z2</h1>
                     </motion.div>
 
 
                 </div>
-
-                <div className="hidden md:flex items-start w-[45%] h-[100%] bg-cover bg-center"
+                <div className="hidden md:flex items-start w-[45%] bg-cover bg-center"
                 >
-                    <img src={award} alt="z2 most work friendly office Space of the year award" className="h-full top-0" />
+
+                    <img src={award} alt="z2 most work friendly office Space of the year award" className="h-full" />
+                    {/* <div className="">
+                    </div> */}
 
                 </div>
+
+
             </div>
 
 
@@ -230,7 +240,11 @@ function Home() {
                 </div>
 
                 <div className="flex flex-col md:flex-row">
-                    <Link to={Projects[ProjectId].link} className="md:w-[55%] relative h-[650px] md:h-[1000px] hover:cursor-pointer">
+
+
+                    {/* image  */}
+
+                    <Link to={Projects[ProjectId].link} className="md:w-[55%] relative h-[650px] md:h-[1100px] hover:cursor-pointer">
                         <div className="w-full h-full">
                             <motion.div
                                 key={Projects[ProjectId].id}
@@ -270,6 +284,10 @@ function Home() {
                             </div>
                         </div>
                     </Link>
+
+
+                    {/* Details */}
+
                     <div key={Projects[ProjectId].id} className="px-5 mt-10 md:w-[45%] flex flex-col justify-start md:mt-28 md:px-20 ">
                         <motion.h1
                             whileInView={{ opacity: 1, x: 0 }}
@@ -321,7 +339,7 @@ function Home() {
                             }}
                             initial={{ opacity: 0, x: 20 }}
 
-                            className="hidden md:grid grid-cols-2">
+                            className="hidden md:grid grid-cols-2 md:py-8">
 
                             {
                                 Projects[ProjectId].details ? Projects[ProjectId].details.map((item, index) => {
@@ -337,14 +355,14 @@ function Home() {
 
                         </motion.div>
 
-                        <Link to={Projects[ProjectId].link} className="mt-5 md:mt-2 mb-10">
+                        <Link to={Projects[ProjectId].link} className="mt-5 md:mt-0 mb-10">
 
 
-                            <span className="py-2 px-6 w-fit  border border-primaryHover rounded-full font-primary hover:bg-primaryHover hover:text-white hover:cursor-pointer">Read More</span>
+                            <span className="py-2 md:py-3 px-6 w-fit  border border-primaryHover rounded-full font-primary hover:bg-primaryHover hover:text-white hover:cursor-pointer">Read More</span>
 
                         </Link>
 
-                        <div className="hidden md:flex mt-4">
+                        <div className="hidden md:flex mt-10">
 
                             <div className="p-7 rounded-full border border-primaryHover hover:border-secondary transition duration-500 ease-in-out transform" onClick={() => { ProjectToggle(-1) }}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
@@ -364,21 +382,6 @@ function Home() {
             </div>
 
 
-            {/* CTA */}
-
-            {/* <div className="bg-cover bg-center bg-secondary bg-opacity-90 flex flex-col justify-center items-center h-[400px]"
-                style={{
-                    backgroundImage: `url(${home_bg_4})`,
-                }}
-            >
-                <h1 className="text-5xl font-style uppercase py-2 text-black">SUTTON PLACE ARE WAITING FOR YOU HERE</h1>
-                <h1 className="text-6xl font-style py-2 text-black">SCHEDULE A TOUR</h1>
-                <button className="py-2 px-4 my-2 bg-black text-white">BOOK A VISIT</button>
-            </div> */}
-
-            {/* features */}
-
-
             <div className="relative h-screen">
                 <div
                     className="absolute inset-0 bg-no-repeat bg-cover bg-fixed bg-center"
@@ -386,13 +389,13 @@ function Home() {
                 />
                 <div className="relative z-10 flex flex-col justify-center items-center h-screen">
 
-                    <div className="md:w-[1000px] overflow-x-scroll no-scrollbar max-w-[85%] flex justify-between">
+                    <div className="md:w-[1000px] overflow-x-scroll no-scrollbar max-w-[85%] flex md:justify-evenly">
 
                         {/* <FeatureCard SVG={corporate_svg} Text={"Corporate Space"} /> */}
                         {/* <FeatureCard SVG={office_svg} Text={"Office Space"} /> */}
                         <FeatureCard SVG={office_svg} Text={"Corporate Space"} />
-                        <FeatureCard SVG={showroom_svg} Text={"Showrooms"} />
-                        <FeatureCard SVG={residency_svg} Text={"Residency"} />
+                        {/* <FeatureCard SVG={showroom_svg} Text={"Showrooms"} /> */}
+                        <FeatureCard SVG={residency_svg} Text={"Supersize Residency"} />
 
                     </div>
                 </div>

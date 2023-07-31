@@ -52,20 +52,20 @@ function Footer({ phoneNumber, Email }) {
                     <div className='flex flex-col ml-4'>
 
                         <h1 className='text-white text-xl font-medium'>Office location</h1>
-                        <a className='text-white font-[500] hover:text-primary' href='https://goo.gl/maps/auwChgwE1F3MRLzHA'>Thaltej, Ahmedabad, 380059</a>
+                        <a className='text-white font-[500] hover:text-primary' href='https://goo.gl/maps/auwChgwE1F3MRLzHA'>Thaltej, Ahmedabad</a>
 
                     </div>
                 </div>
 
             </div>
 
-            <div className='flex justify-between pt-3 w-[83%] mx-auto'>
-                <div className='flex justify-start'>
+            <div className='flex flex-col ms:flex-row justify-between pt-3 w-[83%] mx-auto'>
+                <div className='flex justify-center md:justify-start'>
                     <Link to='/about'><p className='text-center text-white font-medium pt-4 pb-10 pr-3'>About</p></Link>
                     <Link to='/privacy-policy'><p className='text-center text-white font-medium pt-4 pb-10 px-3'>Privacy Policy</p></Link>
                     {/* <Link to='/privacy-policy'><p className='text-center text-white font-medium pt-4 pb-10 px-3'>Privacy Policy</p></Link> */}
                 </div>
-                <p className='text-center text-white font-medium pt-4 pb-10'>© 2023 All rights reserved</p>
+                <p className='text-center text-white font-medium md:pt-4 pb-10'>© 2023 All rights reserved</p>
             </div>
 
         </div>
