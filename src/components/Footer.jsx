@@ -59,7 +59,7 @@ function Footer({ phoneNumber, Email }) {
 
             </div>
 
-            <div className='flex flex-col ms:flex-row justify-between pt-3 w-[83%] mx-auto'>
+            <div className='flex flex-col md:flex-row justify-between pt-3 w-[83%] mx-auto'>
                 <div className='flex justify-center md:justify-start'>
                     <Link to='/about'><p className='text-center text-white font-medium pt-4 pb-10 pr-3'>About</p></Link>
                     <Link to='/privacy-policy'><p className='text-center text-white font-medium pt-4 pb-10 px-3'>Privacy Policy</p></Link>
