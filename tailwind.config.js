@@ -15,6 +15,15 @@ module.exports = {
         pink: '#FFFBF3',
         graytext: '#9ea0a6',
       },
+      animation: {
+        scroll: 'scroll 40s linear infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(calc(-250px * 14))' },
+        },
+      },
     },
     fontFamily: {
       'sans': ['ui-sans-serif', 'system-ui'],
@@ -27,6 +36,7 @@ module.exports = {
       'branding': ['BankGothic'],
       'heading': ['BankGothic'],
       'style': ['Marcellus SC'],
+      'script': ['wonder garden script'],
     }
   },
 

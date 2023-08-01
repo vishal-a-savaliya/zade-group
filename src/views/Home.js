@@ -289,6 +289,7 @@ function Home() {
                     {/* Details */}
 
                     <div key={Projects[ProjectId].id} className="px-5 mt-10 md:w-[45%] flex flex-col justify-start md:mt-28 md:px-20 ">
+
                         <motion.h1
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{
@@ -296,7 +297,8 @@ function Home() {
                                 delay: 0.2,
                             }}
                             initial={{ opacity: 0, x: 20 }}
-                            className="text-4xl md:text-5xl font-style text-primaryHover py-2">{Projects[ProjectId].title}</motion.h1>
+                            className="text-4xl md:text-5xl font-style text-primaryHover py-2 md:pb-3">{Projects[ProjectId].title}
+                        </motion.h1>
 
                         <motion.p
 
@@ -307,19 +309,12 @@ function Home() {
                             }}
                             initial={{ opacity: 0, x: 20 }}
 
-                            className="py-2 font-primary">{Projects[ProjectId].description}</motion.p>
+                            className="py-2 font-primary md:pl-1">{Projects[ProjectId].description}
+                        </motion.p>
 
-                        <motion.p
 
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{
-                                duration: 1,
-                                delay: 0.2,
-                            }}
-                            initial={{ opacity: 0, x: 20 }}
 
-                            className="text-secondary pb-1 pt-3 font-primary">{Projects[ProjectId].location}</motion.p>
-                        <motion.p
+                        <motion.div
 
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{
@@ -328,7 +323,45 @@ function Home() {
                             }}
                             initial={{ opacity: 0, x: 20 }}
 
-                            className="py-1 text-primary font-primary">{Projects[ProjectId].status}</motion.p>
+                            className='flex items-center justify-start pt-4 py-2'>
+
+                            <a href={Projects[ProjectId].locationLink} target="_blank" rel="noreferrer">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#cda24b" class="w-7 h-7">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                </svg>
+
+                            </a>
+
+
+                            <a href={Projects[ProjectId].locationLink} target="_blank" rel="noreferrer">
+                                <p className='ml-3 text-secondary'>{Projects[ProjectId].location}</p>
+                            </a>
+
+                        </motion.div>
+
+                        <motion.div
+
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{
+                                duration: 1,
+                                delay: 0.2,
+                            }}
+                            initial={{ opacity: 0, x: 20 }}
+
+                            className='flex items-center justify-start py-2'>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#cda24b" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+                            </svg>
+
+
+
+                            <p className='ml-3 text-secondary'>{Projects[ProjectId].status}</p>
+
+
+                        </motion.div>
 
                         <motion.div
 
@@ -380,6 +413,11 @@ function Home() {
                 </div>
 
             </div>
+
+
+
+
+            {/* specialties */}
 
 
             <div className="relative h-screen">

@@ -11,7 +11,7 @@ import CTA_bg from '../image/bg-1.png'
 import amenities_section_bg from '../image/landing_bg2.png'
 
 
-import bg from '../image/z2/hero_4.jpeg';
+import bg from '../image/z2/3.jpeg';
 import pattern_image from '../image/z2/pattern.svg';
 
 import img1 from '../image/z2/1.jpeg'
@@ -41,7 +41,7 @@ function Z2() {
 
 
     // const images = [img1, img2, img3, img4, img5, img6, img7, img8];
-    const images = [img3, z2_hall_image, img7];
+    const images = [img3, z2_hall_image, img7, img3, z2_hall_image, img7];
     // const images = [img1, img2, img4, img5, img8];
     // const [current, setCurrent] = useState(0);
 
@@ -109,10 +109,11 @@ function Z2() {
 
                             <div className='flex flex-col justify-center items-center -mt-20'>
 
-                                <h1 className='text-3xl  mt-10 pt-10 pb-2 md:text-6xl text-center font-bold text-white font-style uppercase'>Elevate</h1>
-                                <h1 className='text-3xl md:text-6xl pb-2 text-center font-bold text-white font-style uppercase'> business Growth with</h1>
-                                <h1 className='text-3xl md:text-6xl pb-2 text-center font-bold text-white font-style uppercase'>Corporate Space</h1>
-                                <p className="w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">Discover a new level of elegance and refinement with our latest Corporate Space, designed to exceed your expectations.</p>
+                                <h1 className='text-3xl  mt-10 pt-10 pb-2 md:text-7xl text-center font-bold text-white font-style uppercase'>Z2</h1>
+                                <h1 className='text-3xl  mt-10 pb-2 md:text-5xl text-center font-bold text-white font-style uppercase'>Elevate</h1>
+                                <h1 className='text-3xl md:text-5xl pb-2 text-center font-bold text-white font-style uppercase'> business Growth with</h1>
+                                <h1 className='text-3xl md:text-5xl pb-2 text-center font-bold text-white font-style uppercase'>Corporate Space</h1>
+                                <p className="hidden w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">Discover a new level of elegance and refinement with our latest Corporate Space, designed to exceed your expectations.</p>
                             </div>
 
                             {/* <h1 className='my-10 pt-10 text-4xl text-center font-bold text-secondary font-primary'>Presenting Soon</h1> */}
@@ -146,10 +147,11 @@ function Z2() {
 
                         <div className='flex flex-col justify-center items-center -mt-20'>
 
-                            <h1 className='text-2xl  mt-10 pt-10 pb-2 md:text-6xl text-center font-bold text-white font-style uppercase'>Elevate</h1>
+                            <h1 className='text-6xl  mt-10 pt-10 pb-2 md:text-6xl text-center text-white font-style uppercase'>Z2</h1>
+                            <h1 className='text-2xl pt-8 pb-2 md:text-6xl text-center font-bold text-white font-style uppercase'>Elevate</h1>
                             <h1 className='text-2xl md:text-6xl pb-2 text-center font-bold text-white font-style uppercase'> business Growth with</h1>
                             <h1 className='text-2xl md:text-6xl pb-2 text-center font-bold text-white font-style uppercase'>Corporate Space</h1>
-                            <p className="w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">Discover a new level of elegance and refinement with our latest Corporate Space, designed to exceed your expectations.</p>
+                            <p className="hidden w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">Discover a new level of elegance and refinement with our latest Corporate Space, designed to exceed your expectations.</p>
                         </div>
 
                         {/* <h1 className='my-10 pt-10 text-4xl text-center font-bold text-secondary font-primary'>Presenting Soon</h1> */}
@@ -349,9 +351,9 @@ function Z2() {
                         initial={{ opacity: 0 }}
                         className='md:h-[900px] md:w-[40%] py-10 md:py-0 px-5 md:px-0 flex flex-col justify-center items-start '>
 
-                        <h1 className='text-2xl md:text-lg py-2 font-style text-left text-white'>Introducing</h1>
-                        <h3 className='text-3xl md:text-2xl text-white font-style'>Z2 Corporate Space</h3>
-                        <p className='text-left w-[75%] font-primary py-2 text-graytext'>The Corporate Space is our newest project in construction, offering a state-of-the-art space for businesses and corporations to thrive.</p>
+                        <p className='text-2xl md:text-lg py-2 font-style text-left text-white'>Introducing</p>
+                        <h1 className='text-3xl md:text-3xl text-white font-style'>Z2</h1>
+                        <p className='text-left w-[75%] font-primary py-2 text-graytext'>The <b>Corporate Space</b> where modernity meets excellence to create the perfect environment for businesses, offering a state-of-the-art space for businesses and corporations to thrive success.</p>
 
                         <div className='flex items-center justify-center py-3'>
 
@@ -364,12 +366,20 @@ function Z2() {
 
                         <div className='flex items-center justify-center py-1'>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#cda24b" class="w-7 h-7">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                            </svg>
+                            <a href={Z2.locationLink} target="_blank" rel="noreferrer">
 
-                            <span className='text-xl font-style ml-3 text-white'>{Z2.location}</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#cda24b" class="w-7 h-7">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                </svg>
+
+                            </a>
+
+
+                            <a href={Z2.locationLink} target="_blank" rel="noreferrer">
+                                <span className='text-xl font-style ml-3 text-white'>{Z2.location}</span>
+                            </a>
+
 
                         </div>
 
@@ -396,24 +406,8 @@ function Z2() {
             </div>
 
 
-            {/* <ImageSlider images={images} />
-            <div style={{ height: "2000px" }}></div> */}
 
-            {/* <Icon>name</Icon> */}
-
-            {/* <div className='pt-5 pl-3 md:pl-0 md:pt-10 md:pr-8'>
-                <li className='li'>32 stories Corporate Space</li>
-                <li className='li'>12 feet hight for Each floor</li>
-                <li className='li'>1230 Sq. Ft. to 10,000 Sq. Ft. Corporate Space</li>
-                <li className='li'>5 level basement parking</li>
-                <li className='li'>30 Meter & 12 Metre two road corner</li>
-            </div> */}
-
-
-
-
-
-
+            {/* aminities */}
 
             <div className='md:bg-center bg-gray py-20'
                 style={{
@@ -507,7 +501,7 @@ function Z2() {
 
             </div>
 
-            <Contact id="contact" Email={'sales@zadegroup.in'} Subject={'New inquiry for Z2 Corporate Space'} />
+            <Contact id="contact" page="z2" Email={'sales@zadegroup.in'} Subject={'New inquiry for Z2 Corporate Space'} />
 
             <Footer phoneNumber={"7573030027"} Email={"sales@zadegroup.in"} />
 

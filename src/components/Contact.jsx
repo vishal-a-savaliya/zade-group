@@ -6,7 +6,7 @@ import avatar from '../image/Z GROUP LOGO_SQURE.png'
 
 
 
-function Contact({ Email, Subject }) {
+function Contact({ page = "home", Subject }) {
 
 
     const [data, setData] = useState({
@@ -16,6 +16,33 @@ function Contact({ Email, Subject }) {
         "phone": "",
         "message": ""
     })
+
+    const Details = {
+        z2: {
+            projectName: "Z2",
+            email: "sales@zadegroup.in",
+            contact: ["7573030027"],
+            location: "https://goo.gl/maps/BK2JuYFx4JkdacXRA",
+            address: "Z2, Opp Baghbaan party plot, Zydus Hospital Rd, Thaltej, Ahmedabad, Gujarat 380059",
+        },
+        zluxuria: {
+            projectName: "Z Luxuria",
+            email: "sales@zadegroup.in",
+            contact: ["7573030028"],
+            location: "https://goo.gl/maps/Zsd2pVJPmeursQRY9",
+            address: "Z Luxuria, Zydus Hospital Rd, Thaltej, Ahmedabad, Gujarat 380059",
+        },
+        home: {
+            projectName: "Zade Group",
+            email: "sales@zadegroup.in",
+            contact: ["7573030027", "7573030028"],
+            // contact: ["079 3533 8343", "7435828384"],
+            location: "https://goo.gl/maps/Zsd2pVJPmeursQRY9",
+            address: "Corporate Campus, Nr. Baghban Circle, Zydus Hospital Rd, Thaltej, Ahmedabad, 380059",
+        }
+    }
+
+
 
     const [successMessage, setSuccessMessage] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
@@ -28,6 +55,8 @@ function Contact({ Email, Subject }) {
         });
         // console.log(data)
     };
+
+    const Email = Details[page].email;
 
 
     const HandleFormSubmit = (e) => {
@@ -66,7 +95,7 @@ function Contact({ Email, Subject }) {
             );
     }
 
-
+    console.log(Details[page]["contact"])
 
     return (
         <div id='contact' className='flex flex-col md:flex-row justify-center items-center bg-gray bg-cover bg-center md:bg-opacity-50 py-10 md:py-20'
@@ -94,7 +123,7 @@ function Contact({ Email, Subject }) {
                             delay: 0.2,
                         }}
                         initial={{ opacity: 0, x: -20 }}
-                        className='pt-6 text-graytext font-primary'>We’d love to share more with you about Zade Group. Please complete this form and our dedicated team will get back to you shortly.</motion.p>
+                        className='pt-6 text-graytext font-primary'>We’d love to share more with you about {Details[page].projectName}. Please complete this form and our dedicated team will get back to you shortly.</motion.p>
 
                     <motion.div
 
@@ -125,29 +154,51 @@ function Contact({ Email, Subject }) {
                         }}
                         initial={{ opacity: 0, x: -20 }}
                         className='flex flex-col pt-4'>
-                        <span className='flex items-center pt-4 pb-1'>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 fill-primary">
-                                <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
-                            </svg>
 
-                            <a href='tel:7573030027' className='ml-4 font-primary'>7573030027-28</a>
 
-                        </span>
+                        {
+                            Details[page]["contact"].map((contact, index) => {
+                                return (
+
+                                    <span key={index} className={`flex items-center pb-1 ${index === 0 ? 'pt-3' : 'pt-1'}`}>
+
+                                        <a href={`tel:${contact}`} className='font-primary'>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 fill-primary">
+                                                <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+
+                                        <a href={`tel:${contact}`} className='ml-4 font-primary'>{contact}</a>
+                                    </span>
+
+                                )
+                            })
+                        }
+
+
                         <span className='flex items-center py-1'>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 fill-primary">
-                                <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
-                                <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-                            </svg>
 
-                            <a href='mailto:info@zadegroup.in' className='ml-4 font-primary' >info@zadegroup.in</a>
+                            <a href={`mailto:${Details[page]["email"]}`} >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 fill-primary">
+                                    <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                                    <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                                </svg>
+                            </a>
+
+                            <a href={`mailto:${Details[page]["email"]}`} className='ml-4 font-primary' >{Details[page]["email"]}</a>
 
                         </span>
                         <span className='flex items-start py-1'>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 fill-primary">
-                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-                            </svg>
 
-                            <a href='https://goo.gl/maps/auwChgwE1F3MRLzHA' className='ml-4 font-primary' >Corporate Campus, Nr. Baghban Circle, <br />Zydus Hospital Rd, Thaltej, Ahmedabad <br /> 380059</a>
+                            <a href={`${Details[page]["location"]}`} >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 fill-primary">
+                                    <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                                </svg>
+
+                            </a>
+
+
+                            <a href={`${Details[page]["location"]}`} className='mx-4 font-primary' >{Details[page]["address"]}</a>
 
                         </span>
 

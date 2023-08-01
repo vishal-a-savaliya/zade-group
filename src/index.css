@@ -26,9 +26,15 @@
   font-family: "BankGothic";
   src: url("./fonts/BankGothic\ Regular.ttf");
 }
+
 @font-face {
   font-family: "Euclid";
   src: url("./fonts/EuclidSquare-Regular.ttf");
+}
+
+@font-face {
+  font-family: "wonder garden script";
+  src: url("./fonts/WonderGardenScript-Regular.ttf");
 }
 
 * {
@@ -106,4 +112,25 @@ textarea::placeholder {
 
 .animate-slide-in {
   animation: slide-in 0.5s ease-out;
+}
+
+
+.slider{
+  display: grid;
+  gap: 2rem;
+  grid-auto-flow:column;
+  grid-auto-columns: 23%;
+
+  padding-bottom: 2rem;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain ;
+}
+
+.snaps-inline{
+  scroll-snap-type: inline mandatory;
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
 }

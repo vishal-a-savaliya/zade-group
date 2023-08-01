@@ -1,13 +1,18 @@
-// import { useState, useEffect, useCallback } from 'react'
+// import { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import img1 from '../image/zluxuria/Zluxuria1.jpeg'
 import img2 from '../image/zluxuria/2_lite.jpeg'
-import bg from '../image/Z_Luxuriya_bg_1.jpg'
+import bg from '../image/zluxuria/hero_bg_image_z_luxuria.jpeg'
 import bg_2 from '../image/zluxuria/bg-2.png'
+import specification_bg from '../image/zluxuria/specification.jpeg'
 import amenities_section_bg from '../image/landing_bg2.png'
+import swimming_pool_bg from '../image/zluxuria/swimming_pool.jpeg'
 import CTA_bg from "../image/landing_bg3.jpg"
+
+
+
 import img3 from '../image/zluxuria/Zluxuria2.jpeg';
 import img4 from '../image/zluxuria/Zluxuria6.jpeg';
 import img5 from '../image/zluxuria/Zluxuria5.jpeg';
@@ -27,6 +32,17 @@ function Zluxuria() {
     const ZL = Projects[1];
     const images = [img6, img3, img4, img5];
 
+    // const [scrollY, setScrollY] = useState(0);
+
+    // const handleScroll = () => {
+    //     setScrollY(window.scrollY);
+    // };
+
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => window.removeEventListener('scroll', handleScroll);
+    // }, []);
+
 
     return (
         <motion.div exit={{ opacity: 0 }}>
@@ -35,7 +51,7 @@ function Zluxuria() {
 
             {/* Hero */}
 
-            <div className="relative h-screen">
+            <div className="relative h-screen pt-5">
                 <div
                     className="bg-cover bg-center h-screen w-full md:absolute inset-0 bg-no-repeat md:bg-fixed"
                     style={{
@@ -57,11 +73,12 @@ function Zluxuria() {
                             className="h-full flex flex-col justify-center items-center">
 
                             <div className='flex flex-col justify-center items-center -mt-20'>
-
-                                <h1 className='mt-10 pt-10 pb-2 text-3xl md:text-6xl text-center font-bold text-white font-style uppercase'>ULTIMATE</h1>
-                                <h1 className='text-3xl md:text-6xl text-center font-bold text-white font-style uppercase'> LUXURY LIVING</h1>
-                                <h1 className='text-3xl md:text-6xl text-center font-bold text-white font-style uppercase'>AT SKY</h1>
-                                <p className="w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">Experience the height of luxury with our latest project, designed to inspire and elevate your senses.</p>
+                                <h1 className='mt-10 pt-10 pb-2 text-6xl md:text-7xl text-center md:font-bold text-white font-style uppercase'>Z Luxuria</h1>
+                                <h1 className='mt-5 pb-2 text-3xl md:hidden md:text-5xl text-center text-white font-style uppercase'>ULTIMATE LUXURY LIVING AT SKY</h1>
+                                <h1 className='hidden md:flex mt-5 pb-2 text-3xl md:text-5xl text-center font-bold text-white font-style uppercase'>ULTIMATE LUXURY LIVING</h1>
+                                <h1 className='hidden text-3xl md:text-5xl md:flex text-center font-bold text-white font-style uppercase'>AT SKY</h1>
+                                {/* <h1 className='text-3xl md:text-5xl text-center font-bold text-white font-style uppercase'> </h1> */}
+                                <p className="hidden w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">Experience the height of luxury with our latest project, designed to inspire and elevate your senses.</p>
                             </div>
 
                             {/* <h1 className='my-10 pt-10 text-4xl text-center font-bold text-secondary font-primary'>Presenting Soon</h1> */}
@@ -139,12 +156,12 @@ function Zluxuria() {
 
             {/* details  */}
 
-            <div className=''>
+            <div className='px-10 py-16 md:py-32'>
 
                 <div className='flex flex-col md:flex-row '>
 
 
-                    <div className='w-full h-[700px] md:h-auto md:w-[400px] bg-center bg-cover'
+                    <div className='w-full h-[700px] md:h-auto md:w-[450px] bg-center bg-cover'
                         style={{
                             backgroundImage: `url(${img1})`,
                         }}
@@ -162,9 +179,9 @@ function Zluxuria() {
                         initial={{ opacity: 0 }}
                         className='h-[700px] md:grow flex flex-col justify-center items-center'>
 
-                        <h3 className='text-2xl text-primary font-primary font-semibold'>About z luxuria</h3>
+                        <h3 className='text-2xl text-primary font-primary font-semibold'>About Z Luxuria</h3>
                         <h1 className='text-3xl py-4 font-style text-center text-black'>Introducing our latest project<br /> Luxurious Living</h1>
-                        <p className='w-[85%] md:w-[450px] text-center mx-auto font-primary py-2 text-black'>z luxuria, a luxurious residential tower that will set new standards for opulent living in Ahmedabad. This magnificent 33-story tower offers 56 units with world-class amenities and stunning architectural design.</p>
+                        <p className='w-[85%] md:w-[450px] text-center mx-auto font-primary py-2 text-black'>Z Luxuria, a luxurious residential tower that will set new standards for opulent living in Ahmedabad. This magnificent 33-story tower offers 56 units with world-class amenities and stunning architectural design.</p>
 
                         <div className='flex items-center justify-center py-3 mt-2'>
 
@@ -191,7 +208,7 @@ function Zluxuria() {
                     </motion.div>
 
 
-                    <div className='hidden md:block w-[400px] bg-center bg-cover'
+                    <div className='hidden md:block w-[450px] bg-center bg-cover'
                         style={{
                             backgroundImage: `url(${img2})`,
                         }}
@@ -203,53 +220,112 @@ function Zluxuria() {
 
             {/* Amenities */}
 
-            <div className='bg-center bg-black md:px-16 py-20'
+            <div className='bg-center bg-black'
+            >
+
+                <div className="py-32">
+
+                    <h3 className="text-5xl md:hidden text-primary font-style -pb-10 z-30">gallery</h3>
+                    <div className="flex justify-center h-[300px] md:h-[500px] md:py-0">
+                        <h3 className="hidden md:block text-5xl md:text-7xl text-primary font-style absolute z-30 md:left-24">gallery</h3>
+
+                        <ImageSlider images={images} width={800} height={500} />
+
+                    </div>
+                </div>
+
+            </div>
+
+            {/* <div className="relative h-[80vh]">
+                <div
+                    className="bg-cover bg-center h-screen w-full md:absolute inset-0 bg-no-repeat"
+                    style={{
+                        backgroundImage: `url(${bg})`,
+                        transform: `translateY(${scrollY * 0.5}px)`,
+                    }}>
+
+                </div>
+            </div> */}
+
+            <div className="relative overflow-hidden">
+                <div
+                    className="absolute inset-0 bg-cover bg-center filter brightness-75"
+                    style={{
+                        backgroundImage: `url(${specification_bg})`,
+                    }}
+                ></div>
+                <div className="relative min-h-[300px] md:min-h-[80vh] flex items-center justify-center">
+                    {/* <h1 className="text-white text-4xl font-bold">Welcome to Parallax Effect</h1> */}
+                    <h1 className='text-7xl md:text-[10rem] z-40 font-script text-white text-center'>Amenities & Specification</h1>
+                </div>
+            </div>
+
+
+            <div className='relative bg-center bg-black'
                 style={{
                     backgroundImage: `url(${amenities_section_bg})`,
                 }}
             >
-                <h1 className='text-3xl md:text-5xl font-style text-white text-center'>AMENITIES</h1>
-                <p className='text-xl md:text-2xl font-style text-white text-center py-2'>Our never ending list of stunning amenities</p>
-                {/* <FontAwesomeIcon icon={faHeart} /> */}
+                <h1 className='absolute text-3xl md:text-6xl text-white font-bold text-center uppercase z-30 -top-5 md:-top-8 md:right-10 pl-5 md:pl-0'>Amenities</h1>
+                <div className="flex md:px-16 py-20">
 
-                {/* <FontAwesomeIcon icon="fa-sharp fa-regular fa-shield-halved" /> */}
-                {/* <FontAwesomeIcon icon="fa-regular fa-eye" /> */}
-                {/* <FontAwesomeIcon icon="fa-sharp fa-regular fa-bus-simple" /> */}
-                <div className='flex w-[95%] md:w-[1200px] flex-wrap mx-auto py-10'>
+                    {/* <p className='text-xl md:text-2xl font-style text-white text-center py-2'>Our never ending list of stunning amenities</p> */}
+                    <div className='hidden md:block md:w-[15%] relative mx-auto'>
+                        <motion.p
 
-                    {
-                        Amenities.zluxuria ? Amenities.zluxuria.map((item, index) => {
-                            return (
-                                <motion.div
+                            whileInView={{ opacity: 1 }}
+                            transition={{
+                                duration: 2,
+                                delay: 0.5,
+                                ease: [0.5, 0.71, 1, 1.5],
+                            }}
+                            initial={{ opacity: 0 }}
 
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 1,
-                                        delay: 0.3,
-                                        // ease: [0.5, 0.71, 1, 1.5],
-                                    }}
-                                    initial={{ opacity: 0, y: 30 }}
+                            className='sticky flex justify-center items-center top-10 mt-14 mr-[45%] p-16 text-3xl font-style text-primaryHover border-primaryHover -rotate-90'>Amenities</motion.p>
+                    </div>
 
-                                    key={index} className="flex justify-center items-center flex-col py-2 px-2 mx-1 my-1 w-[45%] md:w-[24%] h-[200px] border border-primaryHover">
-                                    <FontAwesomeIcon className="md:hidden" icon={item.SVG} size="2x" style={{ color: '#cda24b' }} />
-                                    {item.SVG}
-                                    <h3 className='text-white text-center pt-2'>{item.name}</h3>
-                                </motion.div>
-                            )
-                        }) : null
-                    }
+                    <div className='flex w-[90%] md:w-[85%] flex-wrap mx-auto md:py-10'>
+
+                        {
+                            Amenities.zluxuria ? Amenities.zluxuria.map((item, index) => {
+                                return (
+                                    <motion.div
+
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{
+                                            duration: 1,
+                                            delay: 0.3,
+                                            // ease: [0.5, 0.71, 1, 1.5],
+                                        }}
+                                        initial={{ opacity: 0, y: 30 }}
+
+                                        key={index} className="flex justify-center items-center flex-col py-2 px-2 mx-1 my-1 w-[45%] md:w-[24%] h-[200px] border border-primaryHover">
+                                        <FontAwesomeIcon className="md:hidden" icon={item.SVG} size="2x" style={{ color: '#cda24b' }} />
+                                        {item.SVG}
+                                        <h3 className='text-white text-center pt-2'>{item.name}</h3>
+                                    </motion.div>
+                                )
+                            }) : null
+                        }
+
+                    </div>
 
                 </div>
 
+                <div className='flex justify-end md:pl-16 pb-24'>
+                    <div className='flex justify-center  w-full md:w-[85%] h-auto md:h-[600px] bg-center' style={{
+                        backgroundImage: `url(${swimming_pool_bg})`,
+                    }}>
+                    </div>
 
+
+
+                </div>
 
             </div>
 
-            <div className="flex justify-center py-12 h-[300px] md:h-[500px] md:py-0 md:px-10">
 
-                <ImageSlider images={images} width={600} height={400} />
-
-            </div>
+            {/* CTA */}
 
             <div className='md:bg-cover bg-center py-20 flex flex-col justify-center items-center bg-primary'
                 style={{
@@ -286,7 +362,7 @@ function Zluxuria() {
 
             </div>
 
-            <Contact id="contact" Email={'sales@zadegroup.in'} Subject={'New inquiry for z luxuria'} />
+            <Contact id="contact" page={"zluxuria"} Email={'sales@zadegroup.in'} Subject={'New inquiry for z luxuria'} />
 
             <Footer phoneNumber={"7573030028"} Email={"sales@zadegroup.in"} />
 
