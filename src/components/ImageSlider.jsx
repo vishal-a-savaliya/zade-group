@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 function FullScreenImage({ image, onClose }) {
     return (
         <div
-            className="fixed inset-0 flex justify-center items-center bg-black z-50"
+            className="fixed inset-0 flex justify-center items-center bg-opacity-90 bg-[#000] z-50"
             onClick={onClose}
         >
             <img

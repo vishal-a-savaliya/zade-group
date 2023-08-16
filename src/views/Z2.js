@@ -3,7 +3,7 @@
 
 import { motion } from "framer-motion"
 import { Projects, Amenities } from '../data/ProjectDetails'
-import { ProjectUpdates } from "../data/ProjectUpdate"
+// import { ProjectUpdates } from "../data/ProjectUpdate"
 
 import ImageSlider from "../components/ImageSlider"
 
@@ -12,7 +12,7 @@ import amenities_section_bg from '../image/landing_bg2.png'
 
 
 import bg from '../image/z2/3.jpeg';
-import pattern_image from '../image/z2/pattern.svg';
+// import pattern_image from '../image/z2/pattern.svg';
 
 import img1 from '../image/z2/1.jpeg'
 // import img2 from '../image/z2/2.jpeg'
@@ -236,7 +236,7 @@ function Z2() {
 
             {/* Progress */}
 
-            <div className="flex flex-col items-center mt-10 mb-20" >
+            {/* <div className="flex flex-col items-center mt-10 mb-20" >
 
                 <div>
                     <h1 className="font-style text-4xl md:text-6xl my-5 pb-10 text-center">updates so far</h1>
@@ -250,7 +250,7 @@ function Z2() {
                         <div className="flex items-center flex-col" key={index}>
                             <div className="w-2 flex-grow-0">
                                 {index !== 0 && <div className="w-[1px] h-[150px] bg-gray-400 mx-auto border-dashed border-l-2 border-black"></div>}
-                            </div> {/* Vertical line */}
+                            </div> 
 
 
                             <div className={index % 2 === 0 ? 'flex flex-col  md:flex-row-reverse w-full' : 'flex flex-col md:flex-row w-full'}>
@@ -274,7 +274,7 @@ function Z2() {
                     ))}
 
                 </div>
-            </div>
+            </div> */}
 
 
 
@@ -407,7 +407,7 @@ function Z2() {
 
 
 
-            {/* aminities */}
+            {/* amenities */}
 
             <div className='md:bg-center bg-gray py-20'
                 style={{

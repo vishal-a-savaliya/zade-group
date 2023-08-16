@@ -166,9 +166,9 @@ z"/>
 
                         <h1 className="py-2 text-3xl font-style uppercase">Projects</h1>
 
-                        <Link to="/corporate-Space" className="text-3xl font-style hover:text-primary hover:cursor-pointer uppercase pl-10 py-2">Z2</Link>
+                        <Link to="/z2" className="text-3xl font-style hover:text-primary hover:cursor-pointer uppercase pl-10 py-2">Z2</Link>
 
-                        <Link to="/luxurious-living" className="text-3xl font-style hover:text-primary hover:cursor-pointer uppercase pl-10 py-2">Z luxuria</Link>
+                        <Link to="/zluxuria" className="text-3xl font-style hover:text-primary hover:cursor-pointer uppercase pl-10 py-2">Z Luxuria</Link>
 
                         {/* <Link to="/" className="text-3xl font-style hover:text-primary hover:cursor-pointer uppercase py-2">Contact</Link> */}
 

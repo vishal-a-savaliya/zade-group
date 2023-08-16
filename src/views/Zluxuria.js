@@ -8,7 +8,6 @@ import bg from '../image/zluxuria/hero_bg_image_z_luxuria.jpeg'
 import bg_2 from '../image/zluxuria/bg-2.png'
 import specification_bg from '../image/zluxuria/specification.jpeg'
 import amenities_section_bg from '../image/landing_bg2.png'
-import swimming_pool_bg from '../image/zluxuria/swimming_pool.jpeg'
 import CTA_bg from "../image/landing_bg3.jpg"
 
 
@@ -18,6 +17,16 @@ import img4 from '../image/zluxuria/Zluxuria6.jpeg';
 import img5 from '../image/zluxuria/Zluxuria5.jpeg';
 import img6 from '../image/zluxuria/Zluxuria4.jpeg';
 
+// import amenities_img1 from '../image/zluxuria/zluzuria_specification1.jpeg'
+// import amenities_img2 from '../image/zluxuria/zluzuria_specification2.jpeg'
+// import amenities_img3 from '../image/zluxuria/zluzuria_specification3.jpeg'
+// import amenities_img4 from '../image/zluxuria/zluzuria_specification4.jpeg'
+// import amenities_img5 from '../image/zluxuria/zluzuria_specification5.jpeg'
+// import amenities_img6 from '../image/zluxuria/zluzuria_specification6.jpeg'
+// import amenities_img7 from '../image/zluxuria/zluzuria_specification7.jpeg'
+import amenities_img8 from '../image/zluxuria/zluxuria_specification8.jpeg'
+
+
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Contact from '../components/Contact'
@@ -25,23 +34,28 @@ import ImageSlider from "../components/ImageSlider"
 
 
 import { Projects, Amenities } from '../data/ProjectDetails'
+// import { Projects, AmenitiesDetails } from '../data/ProjectDetails'
 
 function Zluxuria() {
 
 
     const ZL = Projects[1];
     const images = [img6, img3, img4, img5];
+    // const specification_images = [{ image: amenities_img7, title: "DOUBLE HEIGHT ENTRANCE FOYER", description: "Make a striking first impression with our double-height entrance foyer, welcoming you and your guests to a space designed to leave a lasting memory." },
+    // { image: amenities_img6, title: "DOUBLE HEIGHT WAITING & RECEPTION AREA", description: "Elevate your guests' experience in our double-height waiting and reception area, Get ready to be impressed as you and your guests are treated to the utmost hospitality and warmth." },
+    // { image: amenities_img1, title: "DOUBLE HEIGHT OWNER'S LOUNGE", description: "Turn every special occasion into a grand memory with a venue that is perfect for all your gatherings and celebrations." }];
 
-    // const [scrollY, setScrollY] = useState(0);
-
-    // const handleScroll = () => {
-    //     setScrollY(window.scrollY);
-    // };
+    // const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     // useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => window.removeEventListener('scroll', handleScroll);
-    // }, []);
+    //     // Function to handle the automatic sliding every 5 seconds
+    //     const interval = setInterval(() => {
+    //         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % specification_images.length);
+    //     }, 5000);
+
+    //     // Clear the interval when the component unmounts
+    //     return () => clearInterval(interval);
+    // }, [specification_images.length]);
 
 
     return (
@@ -236,17 +250,6 @@ function Zluxuria() {
 
             </div>
 
-            {/* <div className="relative h-[80vh]">
-                <div
-                    className="bg-cover bg-center h-screen w-full md:absolute inset-0 bg-no-repeat"
-                    style={{
-                        backgroundImage: `url(${bg})`,
-                        transform: `translateY(${scrollY * 0.5}px)`,
-                    }}>
-
-                </div>
-            </div> */}
-
             <div className="relative overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center filter brightness-75"
@@ -269,7 +272,6 @@ function Zluxuria() {
                 <h1 className='absolute text-3xl md:text-6xl text-white font-bold text-center uppercase z-30 -top-5 md:-top-8 md:right-10 pl-5 md:pl-0'>Amenities</h1>
                 <div className="flex md:px-16 py-20">
 
-                    {/* <p className='text-xl md:text-2xl font-style text-white text-center py-2'>Our never ending list of stunning amenities</p> */}
                     <div className='hidden md:block md:w-[15%] relative mx-auto'>
                         <motion.p
 
@@ -295,7 +297,6 @@ function Zluxuria() {
                                         transition={{
                                             duration: 1,
                                             delay: 0.3,
-                                            // ease: [0.5, 0.71, 1, 1.5],
                                         }}
                                         initial={{ opacity: 0, y: 30 }}
 
@@ -314,7 +315,7 @@ function Zluxuria() {
 
                 <div className='flex justify-end md:pl-16 pb-24'>
                     <div className='flex justify-center  w-full md:w-[85%] h-auto md:h-[600px] bg-center' style={{
-                        backgroundImage: `url(${swimming_pool_bg})`,
+                        backgroundImage: `url(${amenities_img8})`,
                     }}>
                     </div>
 
@@ -323,6 +324,125 @@ function Zluxuria() {
                 </div>
 
             </div>
+
+
+            {/* <div className='relative bg-center bg-black'
+                style={{
+                    backgroundImage: `url(${amenities_section_bg})`,
+                }}
+            >
+                <h1 className='absolute text-3xl md:text-6xl text-white font-bold text-center uppercase z-30 -top-5 md:-top-8 md:right-10 pl-5 md:pl-0'>Amenities</h1>
+
+                <div className="flex flex-col md:px-16 py-32">
+
+                    <div className="flex">
+
+                        <div className="relative w-full h-[900px] overflow-hidden">
+                            {specification_images.map((obj, index) => (
+                                <div
+                                    key={index}
+                                    className={`absolute top-0 left-0 w-full h-full transition-opacity object-cover duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                                        }`}
+                                >
+                                    <img src={obj.image} alt={`z luxuria amenities ${index + 1}`} className="w-full h-full object-cover" />
+                                    <div className="absolute top-0 left-0 w-full h-full bg-[#000] opacity-60"></div>
+                                    <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-primary z-10">
+                                        <p className="text-5xl font-style text-center">{obj.title}</p>
+                                        <p className="text-3xl text-center py-7 px-16 text-primaryHover font-style w-[80%]">{obj.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                    </div>
+
+                    {
+                        AmenitiesDetails && AmenitiesDetails["zluxuria"].map((item, index) => {
+                            if (index % 2 === 0) {
+                                return (
+                                    <div className="flex my-12 shadow-md">
+
+                                        <div className="w-[30%] bg-white">
+                                            <div className='h-full px-10 flex justify-center flex-col'>
+                                                <motion.div
+                                                    whileInView={{ opacity: 1, x: 0 }}
+                                                    transition={{
+                                                        duration: 0.7,
+                                                        delay: 0.1,
+                                                        ease: [0.5, 0.71, 1, 1.5],
+                                                    }}
+                                                    initial={{ opacity: 0, x: -10 }}
+                                                    className='flex items-center'>
+                                                    <div className='p-5 border-2 border-primary rounded-full w-fit'>
+                                                        {item.svg}
+                                                    </div>
+                                                    <h3 className='text-2xl pl-7 font-semibold text-primary'>{item.name}</h3>
+                                                </motion.div>
+                                                <motion.p whileInView={{ opacity: 1, x: 0 }}
+                                                    transition={{
+                                                        duration: 0.7,
+                                                        delay: 0.2,
+                                                        ease: [0.5, 0.71, 1, 1.5],
+                                                    }}
+                                                    initial={{ opacity: 0, x: -10 }} className='pt-7 text-lg text-left'>{item.description}</motion.p>
+                                            </div>
+                                        </div>
+
+
+                                        <div className="w-[70%] bg-gray h-full z-30">
+
+                                            <img src={item.image} alt={`z luxuria ${item.name}`} className="object-cover" />
+
+                                        </div>
+
+                                    </div>
+                                )
+                            } else {
+                                return (
+                                    <div className="flex shadow-md">
+
+                                        <div className="w-[70%] bg-gray h-full z-30">
+
+                                            <img src={item.image} alt={`z luxuria ${item.name}`} className="object-cover" />
+
+                                        </div>
+
+                                        <div className="w-[30%] bg-white">
+                                            <div className='h-full px-10 flex justify-center flex-col'>
+                                                <motion.div
+                                                    whileInView={{ opacity: 1, x: 0 }}
+                                                    transition={{
+                                                        duration: 0.7,
+                                                        delay: 0.1,
+                                                        ease: [0.5, 0.71, 1, 1.5],
+                                                    }}
+                                                    initial={{ opacity: 0, x: -10 }}
+                                                    className='flex items-center'>
+                                                    <div className='p-5 border-2 border-primary rounded-full w-fit'>
+                                                        {item.svg}
+                                                    </div>
+                                                    <h3 className='text-2xl pl-7 font-semibold text-primary'>{item.name}</h3>
+                                                </motion.div>
+                                                <motion.p whileInView={{ opacity: 1, x: 0 }}
+                                                    transition={{
+                                                        duration: 0.7,
+                                                        delay: 0.2,
+                                                        ease: [0.5, 0.71, 1, 1.5],
+                                                    }}
+                                                    initial={{ opacity: 0, x: -10 }} className='pt-7 text-lg text-left'>{item.description}</motion.p>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                )
+                            }
+                        })
+                    }
+
+                </div>
+
+            </div> */}
 
 
             {/* CTA */}

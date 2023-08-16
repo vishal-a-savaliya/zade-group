@@ -31,9 +31,9 @@ function App() {
       <Routes location={location} key={location.key}>
 
         <Route path="/" element={<Home />} />
-        <Route path="/corporate-Space" element={<Z2 />} />
+        <Route path="/z2" element={<Z2 />} />
 
-        <Route path="/luxurious-living" element={<Zluxuria />} />
+        <Route path="/zluxuria" element={<Zluxuria />} />
         <Route path="/about" element={<About />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 

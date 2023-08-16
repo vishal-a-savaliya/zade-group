@@ -118,6 +118,9 @@ function Home() {
             </div>
 
 
+            {/* About */}
+
+
             <div className="w-full bg-white">
 
                 <div className="md:bg-cover md:bg-center flex flex-col justify-center items-center w-full py-10"
@@ -230,7 +233,7 @@ function Home() {
 
                 <div className="flex justify-center items-center">
 
-                    <div className="flex flex-col items-center md:relative md:-bottom-12 md:left-20 md:w-[80%] mx-auto md:z-20">
+                    <div className="flex flex-col items-center md:relative md:-bottom-12 md:left-20 md:w-[80%] mx-auto md:z-30">
                         <motion.h1
                             className="text-3xl md:text-6xl font-style font-extrabold text-primaryHover uppercase">zade group</motion.h1>
                         <motion.h1
@@ -244,46 +247,47 @@ function Home() {
 
                     {/* image  */}
 
-                    <Link to={Projects[ProjectId].link} className="md:w-[55%] relative h-[650px] md:h-[1100px] hover:cursor-pointer">
-                        <div className="w-full h-full">
-                            <motion.div
-                                key={Projects[ProjectId].id}
-                                className={`absolute w-full h-full rounded-sm opacity-0 bg-no-repeat bg-cover hover:cursor-pointer`}
-                                style={{
-                                    backgroundImage: `url(${Projects[ProjectId].image})`,
-                                }}
-                                animate={{ opacity: 1 }}
-                                initial={{ opacity: 0 }}
-                                transition={{ delay: 0.5, duration: 2 }}
-                            ></motion.div>
+                    <div className="md:w-[55%] relative h-[650px] md:h-[1100px] hover:cursor-pointer z-20">
 
-                            <div
-                                className="relative z-10 flex flex-col justify-end items-end h-full"
-                            >
-                                <div className="px-5 md:px-12 py-10 flex flex-col justify-center items-center">
-                                    <div>
-                                        <h1 className="text-4xl text-[#000] font-style">~ {Projects[ProjectId].id} ~</h1>
-                                        <h1 className="text-2xl text-[#000] font-style">{Projects[ProjectId].title}</h1>
+                        <Link to={Projects[ProjectId].link}>
+                            <div className="w-full h-full">
+                                <motion.div
+                                    key={Projects[ProjectId].id}
+                                    className={`w-full h-full rounded-sm opacity-0 bg-no-repeat bg-cover hover:cursor-pointer`}
+                                    style={{
+                                        backgroundImage: `url(${Projects[ProjectId].image})`,
+                                    }}
+                                    animate={{ opacity: 1 }}
+                                    initial={{ opacity: 0 }}
+                                    transition={{ delay: 0.5, duration: 2 }}
+                                ></motion.div>
+                            </div>
+                        </Link>
+
+                        <div className="absolute bottom-0 right-0 flex flex-col justify-end items-end">
+                            <div className="px-5 md:px-12 py-10 flex flex-col justify-center items-center">
+                                <div>
+                                    <h1 className="text-4xl text-[#000] font-style">~ {Projects[ProjectId].id} ~</h1>
+                                    <h1 className="text-2xl text-[#000] font-style">{Projects[ProjectId].title}</h1>
+                                </div>
+
+                                <div className="flex justify-start md:hidden w-full mt-4 z-50">
+
+                                    <div className="p-3 rounded-full border border-primaryHover hover:border-secondary transition duration-500 ease-in-out transform" onClick={(e) => { e.stopPropagation(); ProjectToggle(-1); }}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                                        </svg>
+                                    </div>
+                                    <div className="ml-2 p-3 rounded-full border border-primaryHover hover:border-secondary transition duration-500 ease-in-out transform" onClick={() => { ProjectToggle(1) }}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                        </svg>
                                     </div>
 
-                                    <div className="flex justify-start md:hidden w-full mt-4">
-
-                                        <div className="p-3 rounded-full border border-primaryHover hover:border-secondary transition duration-500 ease-in-out transform" onClick={() => { ProjectToggle(-1) }}>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
-                                            </svg>
-                                        </div>
-                                        <div className="ml-2 p-3 rounded-full border border-primaryHover hover:border-secondary transition duration-500 ease-in-out transform" onClick={() => { ProjectToggle(1) }}>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                                            </svg>
-                                        </div>
-
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </Link>
+                    </div>
 
 
                     {/* Details */}
