@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 // import transition from 'tailwindcss/plugin/transition';
 
 //Data
@@ -49,7 +49,7 @@ function Home() {
     // const [imageLoaded, setImageLoaded] = useState(false)
     // const [backgroundImage, setBackgroundImage] = useState(`url(${Projects[0].image})`);
 
-    const ProjectToggle = useCallback((Action) => {
+    const ProjectToggle = (Action) => {
 
         // setImageLoaded(false);
 
@@ -65,14 +65,22 @@ function Home() {
             // console.log(backgroundImage);
             // setImageLoaded(true)
         }
-    }, [ProjectId])
+    }
+
+
+    useLayoutEffect(() => {
+        console.log("set");
+        const interval = setInterval(() => {
+            setProjectId(prevProjectId => prevProjectId === Projects.length - 1 ? 0 : prevProjectId + 1);
+        }, 7000);
+        return () => { clearInterval(interval); console.log("removed") };
+    });
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            ProjectToggle(1);
-        }, 7000);
-        return () => clearInterval(interval);
-    }, [ProjectToggle]);
+        setProjectId(1);
+        window.scrollTo(0, 0);
+        // console.log(location.pathname);
+    }, []);
 
     return (
 
@@ -239,6 +247,7 @@ function Home() {
                         <motion.h1
                             className="text-2xl mb-4 md:text-7xl md:pt-2 font-style font-semibold text-[#181D24] uppercase">Presenting</motion.h1>
                     </div>
+                    {/* <motion.h1 className="text-2xl mb-4 md:text-[10rem] md:pt-2 font-script text-[#181D24]">presenting</motion.h1> */}
 
                 </div>
 
@@ -248,11 +257,11 @@ function Home() {
                     {/* image  */}
 
                     <div className="md:w-[55%] relative h-[650px] md:h-[1100px] hover:cursor-pointer z-20">
-
                         <Link to={Projects[ProjectId].link}>
+
                             <div className="w-full h-full">
                                 <motion.div
-                                    key={Projects[ProjectId].id}
+                                    // key={Projects[ProjectId].id}
                                     className={`w-full h-full rounded-sm opacity-0 bg-no-repeat bg-cover hover:cursor-pointer`}
                                     style={{
                                         backgroundImage: `url(${Projects[ProjectId].image})`,
@@ -267,13 +276,13 @@ function Home() {
                         <div className="absolute bottom-0 right-0 flex flex-col justify-end items-end">
                             <div className="px-5 md:px-12 py-10 flex flex-col justify-center items-center">
                                 <div>
-                                    <h1 className="text-4xl text-[#000] font-style">~ {Projects[ProjectId].id} ~</h1>
-                                    <h1 className="text-2xl text-[#000] font-style">{Projects[ProjectId].title}</h1>
+                                    <h1 className="text-2xl md:text-4xl text-[#000] font-style text-center">~ {Projects[ProjectId].id} ~</h1>
+                                    <h1 className="text-3xl md:text-5xl text-[#000] font-style text-center">{Projects[ProjectId].title}</h1>
                                 </div>
 
-                                <div className="flex justify-start md:hidden w-full mt-4 z-50">
+                                <div className="flex justify-center md:hidden w-full mt-4 z-50">
 
-                                    <div className="p-3 rounded-full border border-primaryHover hover:border-secondary transition duration-500 ease-in-out transform" onClick={(e) => { e.stopPropagation(); ProjectToggle(-1); }}>
+                                    <div className="p-3 rounded-full border border-primaryHover hover:border-secondary transition duration-500 ease-in-out transform" onClick={() => { ProjectToggle(-1); }}>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
                                         </svg>
@@ -424,19 +433,19 @@ function Home() {
             {/* specialties */}
 
 
-            <div className="relative h-screen">
+            <div className="relative h-[85vh]">
                 <div
                     className="absolute inset-0 bg-no-repeat bg-cover bg-fixed bg-center"
                     style={{ backgroundImage: `url(${home_bg_2})` }}
                 />
-                <div className="relative z-10 flex flex-col justify-center items-center h-screen">
+                <div className="relative z-10 flex flex-col justify-center items-center h-[85vh]">
 
                     <div className="md:w-[1000px] overflow-x-scroll no-scrollbar max-w-[85%] flex md:justify-evenly">
 
                         {/* <FeatureCard SVG={corporate_svg} Text={"Corporate Space"} /> */}
                         {/* <FeatureCard SVG={office_svg} Text={"Office Space"} /> */}
-                        <FeatureCard SVG={office_svg} Text={"Corporate Space"} />
                         {/* <FeatureCard SVG={showroom_svg} Text={"Showrooms"} /> */}
+                        <FeatureCard SVG={office_svg} Text={"Corporate Space"} />
                         <FeatureCard SVG={residency_svg} Text={"Supersize Residency"} />
 
                     </div>

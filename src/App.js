@@ -5,7 +5,7 @@ import Home from "./views/Home";
 import Z2 from './views/Z2';
 import Zluxuria from './views/Zluxuria';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router';
+// import { useNavigate } from 'react-router';
 import About from './views/About';
 import PrivacyPolicy from './views/PrivacyPolicy';
 
@@ -15,11 +15,12 @@ function App() {
 
 
   const location = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [navigate]);
+    // console.log(location.pathname);
+  }, [location.pathname]);
 
 
 

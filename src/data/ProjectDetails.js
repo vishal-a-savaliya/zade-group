@@ -30,7 +30,7 @@ library.add(far, fas);
 
 export const Projects = [
     {
-        title: "Z2 The Corporate Space",
+        title: "Z2",
         id: "01",
         description: "The Z2, Corporate Space is our newest project in construction, offering a state-of-the-art space for businesses and corporations to thrive. This stunning 32-story building boasts a grand height of 12 feet per floor, providing space for businesses of all sizes",
         location: "Thaltej, Ahmedabad",

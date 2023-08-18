@@ -1,6 +1,6 @@
-// import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion } from "framer-motion"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import img1 from '../image/zluxuria/Zluxuria1.jpeg'
 import img2 from '../image/zluxuria/2_lite.jpeg'
@@ -17,14 +17,14 @@ import img4 from '../image/zluxuria/Zluxuria6.jpeg';
 import img5 from '../image/zluxuria/Zluxuria5.jpeg';
 import img6 from '../image/zluxuria/Zluxuria4.jpeg';
 
-// import amenities_img1 from '../image/zluxuria/zluzuria_specification1.jpeg'
+import amenities_img1 from '../image/zluxuria/zluxuria_specification1.jpeg'
 // import amenities_img2 from '../image/zluxuria/zluzuria_specification2.jpeg'
 // import amenities_img3 from '../image/zluxuria/zluzuria_specification3.jpeg'
 // import amenities_img4 from '../image/zluxuria/zluzuria_specification4.jpeg'
 // import amenities_img5 from '../image/zluxuria/zluzuria_specification5.jpeg'
-// import amenities_img6 from '../image/zluxuria/zluzuria_specification6.jpeg'
-// import amenities_img7 from '../image/zluxuria/zluzuria_specification7.jpeg'
-import amenities_img8 from '../image/zluxuria/zluxuria_specification8.jpeg'
+import amenities_img6 from '../image/zluxuria/zluxuria_specification6.jpeg'
+import amenities_img7 from '../image/zluxuria/zluxuria_specification7.jpeg'
+// import amenities_img8 from '../image/zluxuria/zluxuria_specification8.jpeg'
 
 
 import Footer from '../components/Footer'
@@ -33,17 +33,17 @@ import Contact from '../components/Contact'
 import ImageSlider from "../components/ImageSlider"
 
 
-import { Projects, Amenities } from '../data/ProjectDetails'
-// import { Projects, AmenitiesDetails } from '../data/ProjectDetails'
+// import { Projects, Amenities } from '../data/ProjectDetails'
+import { Projects, AmenitiesDetails } from '../data/ProjectDetails'
 
 function Zluxuria() {
 
 
     const ZL = Projects[1];
     const images = [img6, img3, img4, img5];
-    // const specification_images = [{ image: amenities_img7, title: "DOUBLE HEIGHT ENTRANCE FOYER", description: "Make a striking first impression with our double-height entrance foyer, welcoming you and your guests to a space designed to leave a lasting memory." },
-    // { image: amenities_img6, title: "DOUBLE HEIGHT WAITING & RECEPTION AREA", description: "Elevate your guests' experience in our double-height waiting and reception area, Get ready to be impressed as you and your guests are treated to the utmost hospitality and warmth." },
-    // { image: amenities_img1, title: "DOUBLE HEIGHT OWNER'S LOUNGE", description: "Turn every special occasion into a grand memory with a venue that is perfect for all your gatherings and celebrations." }];
+    const specification_images = [{ image: amenities_img7, title: "DOUBLE HEIGHT ENTRANCE FOYER", description: "Make a striking first impression with our double-height entrance foyer, welcoming you and your guests to a space designed to leave a lasting memory." },
+    { image: amenities_img6, title: "DOUBLE HEIGHT WAITING & RECEPTION AREA", description: "Elevate your guests' experience in our double-height waiting and reception area, Get ready to be impressed as you and your guests are treated to the utmost hospitality and warmth." },
+    { image: amenities_img1, title: "DOUBLE HEIGHT OWNER'S LOUNGE", description: "Turn every special occasion into a grand memory with a venue that is perfect for all your gatherings and celebrations." }];
 
     // const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -56,6 +56,44 @@ function Zluxuria() {
     //     // Clear the interval when the component unmounts
     //     return () => clearInterval(interval);
     // }, [specification_images.length]);
+
+
+
+
+    const [current, setCurrent] = useState(0);
+
+
+    const prevSlide = () => {
+        setCurrent(current === 0 ? specification_images.length - 1 : current - 1);
+    };
+
+    const nextSlide = useCallback(() => {
+        setCurrent(current === specification_images.length - 1 ? 0 : current + 1);
+    }, [current, specification_images.length]);
+
+    const handleTouchStart = (e) => {
+        setTouchStartX(e.touches[0].clientX);
+    };
+
+    const handleTouchEnd = (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchDistance = touchEndX - touchStartX;
+
+        if (touchDistance > 50) {
+            prevSlide();
+        } else if (touchDistance < -50) {
+            nextSlide();
+        }
+    };
+
+    const [touchStartX, setTouchStartX] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [nextSlide]);
 
 
     return (
@@ -264,7 +302,7 @@ function Zluxuria() {
             </div>
 
 
-            <div className='relative bg-center bg-black'
+            {/* <div className='relative bg-center bg-black'
                 style={{
                     backgroundImage: `url(${amenities_section_bg})`,
                 }}
@@ -323,10 +361,10 @@ function Zluxuria() {
 
                 </div>
 
-            </div>
+            </div> */}
 
 
-            {/* <div className='relative bg-center bg-black'
+            <div className='relative bg-center bg-black'
                 style={{
                     backgroundImage: `url(${amenities_section_bg})`,
                 }}
@@ -335,7 +373,7 @@ function Zluxuria() {
 
                 <div className="flex flex-col md:px-16 py-32">
 
-                    <div className="flex">
+                    {/* <div className="flex">
 
                         <div className="relative w-full h-[900px] overflow-hidden">
                             {specification_images.map((obj, index) => (
@@ -346,24 +384,62 @@ function Zluxuria() {
                                 >
                                     <img src={obj.image} alt={`z luxuria amenities ${index + 1}`} className="w-full h-full object-cover" />
                                     <div className="absolute top-0 left-0 w-full h-full bg-[#000] opacity-60"></div>
-                                    <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-primary z-10">
+                                    <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-white z-10">
                                         <p className="text-5xl font-style text-center">{obj.title}</p>
-                                        <p className="text-3xl text-center py-7 px-16 text-primaryHover font-style w-[80%]">{obj.description}</p>
+                                        <p className="text-3xl text-center py-7 px-16 text-white font-[300] font-style w-[80%]">{obj.description}</p>
                                     </div>
                                 </div>
                             ))}
                         </div>
 
+                    </div> */}
+
+                    <div className="relative my-8">
+                        <div className='w-full bg-cover bg-center h-[95vh] bg-gray'
+                            style={{
+                                backgroundImage: `url(${specification_images[current].image})`,
+                            }}></div>
+
+                        <div className="hidden md:block absolute md:top-1/2 transform -translate-y-1/2 left-0 md:z-30">
+                            <button className="ml-3 p-5 rounded-full border border-primary hover:border-white transition duration-500 ease-in-out absolute top-1/2 left-0 transform -translate-y-1/2 focus:outline-none" onClick={prevSlide}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div className="absolute top-0 left-0 w-full h-full bg-[#000] opacity-40"></div>
+                        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-white z-50 md:z-10" onTouchStart={handleTouchStart}
+                            onTouchEnd={handleTouchEnd}>
+                            <p className="text-3xl px-1 md:px-0 md:text-5xl font-style text-center">{specification_images[current].title}</p>
+                            <p className="text-xl md:text-3xl text-center py-7 px-2 md:px-16 text-white font-[300] font-style md:w-[80%]">{specification_images[current].description}</p>
+                        </div>
+
+                        <div className="hidden md:block absolute md:top-1/2 transform -translate-y-1/2 right-0 z-30">
+                            <button className="mr-3 p-5 rounded-full border border-primary hover:border-white transition duration-500 ease-in-out absolute top-1/2 right-0 transform -translate-y-1/2 focus:outline-none" onClick={nextSlide}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 md:z-30">
+                            {specification_images.map((_, index) => (
+                                <button key={index} className={`h-3 w-3 rounded-full ${index === current ? 'bg-white' : 'bg-[#FFFFFF33]'}`} onClick={() => setCurrent(index)}></button>
+                            ))}
+                        </div>
                     </div>
+
+
 
                     {
                         AmenitiesDetails && AmenitiesDetails["zluxuria"].map((item, index) => {
                             if (index % 2 === 0) {
                                 return (
-                                    <div className="flex my-12 shadow-md">
+                                    <div className="mx-4 md:mx-0 flex flex-col-reverse md:flex-row my-12 shadow-md bg-transparent">
 
-                                        <div className="w-[30%] bg-white">
-                                            <div className='h-full px-10 flex justify-center flex-col'>
+                                        <div className="md:w-[30%] bg-white rounded-b-md md:rounded-b-none">
+                                            <div className='h-full px-5 md:px-10 py-7 md:py-0 flex justify-center flex-col'>
                                                 <motion.div
                                                     whileInView={{ opacity: 1, x: 0 }}
                                                     transition={{
@@ -389,9 +465,9 @@ function Zluxuria() {
                                         </div>
 
 
-                                        <div className="w-[70%] bg-gray h-full z-30">
+                                        <div className="md:w-[70%] bg-gray h-full z-30 rounded-t-md md:rounded-t-none">
 
-                                            <img src={item.image} alt={`z luxuria ${item.name}`} className="object-cover" />
+                                            <img src={item.image} alt={`z luxuria ${item.name}`} className="object-cover rounded-t-md md:rounded-t-none" />
 
                                         </div>
 
@@ -399,16 +475,16 @@ function Zluxuria() {
                                 )
                             } else {
                                 return (
-                                    <div className="flex shadow-md">
+                                    <div className="mx-4 md:mx-0 flex flex-col md:flex-row shadow-md bg-transparent">
 
-                                        <div className="w-[70%] bg-gray h-full z-30">
+                                        <div className="md:w-[70%] bg-gray h-full z-30 rounded-t-md md:rounded-t-none">
 
-                                            <img src={item.image} alt={`z luxuria ${item.name}`} className="object-cover" />
+                                            <img src={item.image} alt={`z luxuria ${item.name}`} className="object-cover rounded-t-md md:rounded-t-none" />
 
                                         </div>
 
-                                        <div className="w-[30%] bg-white">
-                                            <div className='h-full px-10 flex justify-center flex-col'>
+                                        <div className="md:w-[30%] bg-white rounded-b-md md:rounded-b-none">
+                                            <div className='h-full px-5 md:px-10 py-7 md:py-0 flex justify-center  flex-col'>
                                                 <motion.div
                                                     whileInView={{ opacity: 1, x: 0 }}
                                                     transition={{
@@ -440,9 +516,11 @@ function Zluxuria() {
                         })
                     }
 
+
+
                 </div>
 
-            </div> */}
+            </div>
 
 
             {/* CTA */}
