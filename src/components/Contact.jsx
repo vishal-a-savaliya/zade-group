@@ -37,7 +37,7 @@ function Contact({ page = "home", Subject }) {
             email: "sales@zadegroup.in",
             contact: ["7573030027", "7573030028"],
             // contact: ["079 3533 8343", "7435828384"],
-            location: "https://goo.gl/maps/Zsd2pVJPmeursQRY9",
+            location: "https://goo.gl/maps/4y4iq9cLUZpNLQnL8",
             address: "Corporate Campus, Nr. Baghban Circle, Zydus Hospital Rd, Thaltej, Ahmedabad, 380059",
         }
     }

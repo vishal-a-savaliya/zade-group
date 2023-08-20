@@ -503,7 +503,8 @@ function Z2() {
 
             <Contact id="contact" page="z2" Email={'sales@zadegroup.in'} Subject={'New inquiry for Z2 Corporate Space'} />
 
-            <Footer phoneNumber={"7573030027"} Email={"sales@zadegroup.in"} />
+            {/* <Footer phoneNumber={"7573030027"} Email={"sales@zadegroup.in"} /> */}
+            <Footer phoneNumber={"7573030027-28"} Email={"info@zadegroup.in"} />
 
         </motion.div>
     )

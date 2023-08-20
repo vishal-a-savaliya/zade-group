@@ -562,7 +562,8 @@ function Zluxuria() {
 
             <Contact id="contact" page={"zluxuria"} Email={'sales@zadegroup.in'} Subject={'New inquiry for z luxuria'} />
 
-            <Footer phoneNumber={"7573030028"} Email={"sales@zadegroup.in"} />
+            {/* <Footer phoneNumber={"7573030028"} Email={"sales@zadegroup.in"} /> */}
+            <Footer phoneNumber={"7573030027-28"} Email={"info@zadegroup.in"} />
 
         </motion.div >
     )
