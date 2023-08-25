@@ -32,7 +32,7 @@ export const Projects = [
     {
         title: "Z2",
         id: "01",
-        description: "The Z2, Corporate Space is our newest project in construction, offering a state-of-the-art space for businesses and corporations to thrive. This stunning 32-story building boasts a grand height of 12 feet per floor, providing space for businesses of all sizes",
+        description: "The Z2, Corporate Space is our newest project in construction, offering a state-of-the-art space for businesses and corporations to thrive. This stunning 32-story building boasts a grand height of 11 feet per floor, providing space for businesses of all sizes",
         location: "Thaltej, Ahmedabad",
         locationLink: "https://goo.gl/maps/BK2JuYFx4JkdacXRA",
         status: "Newly Launched",
@@ -73,7 +73,7 @@ export const Projects = [
             },
             {
                 0: 56,
-                1: "Units"
+                1: "Units ( 2 Apartment Per Floor )"
             },
             {
                 0: "4, 6 & 7",
