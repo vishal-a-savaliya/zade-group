@@ -69,11 +69,11 @@ function Home() {
 
 
     useLayoutEffect(() => {
-        console.log("set");
+        // console.log("set");
         const interval = setInterval(() => {
             setProjectId(prevProjectId => prevProjectId === Projects.length - 1 ? 0 : prevProjectId + 1);
         }, 7000);
-        return () => { clearInterval(interval); console.log("removed") };
+        return () => { clearInterval(interval); };
     });
 
     useEffect(() => {

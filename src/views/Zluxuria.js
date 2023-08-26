@@ -25,6 +25,7 @@ import amenities_img1 from '../image/zluxuria/zluxuria_specification1.jpeg'
 import amenities_img6 from '../image/zluxuria/zluxuria_specification6.jpeg'
 import amenities_img7 from '../image/zluxuria/zluxuria_specification7.jpeg'
 // import amenities_img8 from '../image/zluxuria/zluxuria_specification8.jpeg'
+import brochure_cover from '../image/zluxuria/brochure_3d.png'
 
 
 import Footer from '../components/Footer'
@@ -35,6 +36,7 @@ import ImageSlider from "../components/ImageSlider"
 
 // import { Projects, Amenities } from '../data/ProjectDetails'
 import { Projects, AmenitiesDetails } from '../data/ProjectDetails'
+import Brochure from '../components/Brochure'
 
 function Zluxuria() {
 
@@ -61,6 +63,7 @@ function Zluxuria() {
 
 
     const [current, setCurrent] = useState(0);
+    const [DBVisible, setDBVisible] = useState(false)
 
 
     const prevSlide = () => {
@@ -94,6 +97,19 @@ function Zluxuria() {
         }, 5000);
         return () => clearInterval(interval);
     }, [nextSlide]);
+
+    const animate = {
+        initial: {
+            opacity: 0,
+        },
+        animate: {
+            opacity: 1,
+            transition: {
+                duration: 5,
+                ease: "easeInOut"
+            },
+        },
+    }
 
 
     return (
@@ -238,7 +254,7 @@ function Zluxuria() {
                         <div className='flex items-center justify-center py-3 mt-2'>
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#cda24b" class="w-8 h-8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+                                <path stroke-linecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
                             </svg>
                             <h1 className='text-xl font-style ml-3'>{ZL.status}</h1>
 
@@ -247,8 +263,8 @@ function Zluxuria() {
                         <div className='flex items-center justify-center py-1'>
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#cda24b" class="w-7 h-7">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                <path stroke-linecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                             </svg>
 
                             <span className='text-xl font-style ml-3'>{ZL.location}</span>
@@ -403,7 +419,7 @@ function Zluxuria() {
                         <div className="hidden md:block absolute md:top-1/2 transform -translate-y-1/2 left-0 md:z-30">
                             <button className="ml-3 p-5 rounded-full border border-primary hover:border-white transition duration-500 ease-in-out absolute top-1/2 left-0 transform -translate-y-1/2 focus:outline-none" onClick={prevSlide}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                                    <path stroke-linecap="round" strokeLinejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
                                 </svg>
                             </button>
                         </div>
@@ -418,7 +434,7 @@ function Zluxuria() {
                         <div className="hidden md:block absolute md:top-1/2 transform -translate-y-1/2 right-0 z-30">
                             <button className="mr-3 p-5 rounded-full border border-primary hover:border-white transition duration-500 ease-in-out absolute top-1/2 right-0 transform -translate-y-1/2 focus:outline-none" onClick={nextSlide}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                                    <path stroke-linecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                 </svg>
                             </button>
                         </div>
@@ -436,7 +452,7 @@ function Zluxuria() {
                         AmenitiesDetails && AmenitiesDetails["zluxuria"].map((item, index) => {
                             if (index % 2 === 0) {
                                 return (
-                                    <div className="mx-4 md:mx-0 flex flex-col-reverse md:flex-row my-12 shadow-md bg-transparent">
+                                    <div key={index} className="mx-4 md:mx-0 flex flex-col-reverse md:flex-row my-12 shadow-md bg-transparent">
 
                                         <div className="md:w-[30%] bg-white rounded-b-md md:rounded-b-none">
                                             <div className='h-full px-5 md:px-10 py-7 md:py-0 flex justify-center flex-col'>
@@ -475,7 +491,7 @@ function Zluxuria() {
                                 )
                             } else {
                                 return (
-                                    <div className="mx-4 md:mx-0 flex flex-col md:flex-row shadow-md bg-transparent">
+                                    <div key={index} className="mx-4 md:mx-0 flex flex-col md:flex-row shadow-md bg-transparent">
 
                                         <div className="md:w-[70%] bg-gray h-full z-30 rounded-t-md md:rounded-t-none">
 
@@ -522,6 +538,45 @@ function Zluxuria() {
 
             </div>
 
+            <div className="relative h-[85vh]">
+                <div
+                    className="absolute inset-0 bg-no-repeat bg-cover bg-fixed bg-center"
+                    style={{ backgroundImage: `url(${img4})` }}
+                />
+                <div className="relative z-10 flex flex-col justify-center items-center h-[85vh]">
+
+                    <div className="max-w-[85%]">
+
+                        <div className="w-[250px] py-5 md:w-full rounded-sm shadow-md bg-secondary flex flex-col justify-center items-center transition duration-500 ease-in-out transform hover:cursor-pointer" onClick={() => { setDBVisible(true) }}>
+
+                            <div className="h-[full] flex justify-center items-center py-4 px-10">
+                                <motion.img
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        duration: 1.5,
+                                        delay: 0.2,
+                                    }}
+                                    initial={{ opacity: 0, y: 10 }} src={brochure_cover} className='fill-primary w-44' alt='icon' />
+                                {/* {SVG} */}
+                            </div>
+
+                            <div className="px-4 my-5 hover:cursor-pointer">
+                                <motion.h1
+                                    variants={animate}
+                                    className="text-xl text-center text-white font-style"
+                                    onClick={() => { setDBVisible(true) }}
+                                >Download Brochure</motion.h1>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <Brochure DBVisible={DBVisible} setDBVisible={setDBVisible} Page={"zluxuria"} />
+
+            {/* {console.log(DBVisible)} */}
 
             {/* CTA */}
 
@@ -559,6 +614,7 @@ function Zluxuria() {
                     href="#contact" className='bg-white text-lg mt-8 py-2 px-6 uppercase hover:cursor-pointer hover:bg-black hover:shadow-md hover:text-white '>Inquire Now</motion.a>
 
             </div>
+
 
             <Contact id="contact" page={"zluxuria"} Email={'sales@zadegroup.in'} Subject={'New inquiry for z luxuria'} />
 

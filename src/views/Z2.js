@@ -1,4 +1,5 @@
 // import { useState, useEffect, useCallback } from 'react'
+import { useState } from 'react'
 
 
 import { motion } from "framer-motion"
@@ -25,12 +26,14 @@ import img7 from '../image/z2/7.jpeg'
 
 import bg_2 from '../image/zluxuria/bg-2.png'
 import z2_hall_image from '../image/z2/z2_hall.jpeg'
+import brochure_cover from '../image/z2/Brochure_cover_3d.png'
 
 // import corporate_bg_image from '../image/z2/corponare_place_background_image.jpeg'
 
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Contact from '../components/Contact'
+import Brochure from "../components/Brochure"
 // import ImageSlider from '../components/ImageSlider'
 
 
@@ -44,6 +47,8 @@ function Z2() {
     const images = [img3, z2_hall_image, img7, img3, z2_hall_image, img7];
     // const images = [img1, img2, img4, img5, img8];
     // const [current, setCurrent] = useState(0);
+
+    const [DBVisible, setDBVisible] = useState(false)
 
 
 
@@ -78,6 +83,19 @@ function Z2() {
     //     }, 3000);
     //     return () => clearInterval(interval);
     // }, [nextSlide]);
+
+    const animate = {
+        initial: {
+            opacity: 0,
+        },
+        animate: {
+            opacity: 1,
+            transition: {
+                duration: 5,
+                ease: "easeInOut"
+            },
+        },
+    }
 
 
 
@@ -462,6 +480,46 @@ function Z2() {
 
 
             </div>
+
+
+            <div className="relative h-[85vh]">
+                <div
+                    className="absolute inset-0 bg-no-repeat bg-cover bg-fixed bg-center"
+                    style={{ backgroundImage: `url(${img3})` }}
+                />
+                <div className="relative z-10 flex flex-col justify-center items-center h-[85vh]">
+
+                    <div className="max-w-[85%]">
+
+                        <div className="w-[250px] py-10 md:w-full rounded-sm shadow-md bg-secondary flex flex-col justify-center items-center transition duration-500 ease-in-out transform hover:cursor-pointer" onClick={() => { setDBVisible(true) }}>
+
+                            <div className="h-[full] flex justify-center items-center py-4 px-10">
+                                <motion.img
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        duration: 1.5,
+                                        delay: 0.2,
+                                    }}
+                                    initial={{ opacity: 0, y: 10 }} src={brochure_cover} className='fill-primary w-44' alt='icon' />
+                                {/* {SVG} */}
+                            </div>
+
+                            <div className="px-4 my-5 hover:cursor-pointer">
+                                <motion.h1
+                                    variants={animate}
+                                    className="text-xl text-center text-white font-style"
+                                    onClick={() => { setDBVisible(true) }}
+                                >Download Brochure</motion.h1>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <Brochure DBVisible={DBVisible} setDBVisible={setDBVisible} Page={"z2"} />
+
 
 
             {/* CTA */}
