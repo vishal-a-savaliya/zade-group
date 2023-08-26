@@ -64,7 +64,7 @@ const InitialTransition = () => {
             <motion.svg variants={textContainer} className="absolute flex" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                 width="200px" viewBox="0 0 747 742">
 
-                <motion.path stroke="#CCA34B" stroke-width="4" variants={pathVariants}
+                <motion.path stroke="#CCA34B" strokeWidth="4" variants={pathVariants}
                     d="M1.000000,372.333313 
 	C1.000000,373.555542 1.000000,373.111115 1.000000,372.333313 
 	C4.068027,375.578461 2.420917,374.902435 0.999996,374.000000 
@@ -81,7 +81,7 @@ const InitialTransition = () => {
 	C317.483246,688.932251 267.903046,639.345215 218.320175,589.760803 
 	C147.302704,518.741333 76.285782,447.721222 5.230417,376.739655 
 z"/>
-                <motion.path stroke="#CCA34B" stroke-width="4" variants={pathVariants}
+                <motion.path stroke="#CCA34B" strokeWidth="4" variants={pathVariants}
 
                     d="
 M373.599976,1.000006 

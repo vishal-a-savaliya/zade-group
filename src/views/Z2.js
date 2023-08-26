@@ -111,7 +111,7 @@ function Z2() {
                         backgroundImage: `url(${bg})`,
                     }}>
                     {/* <Navbar /> */}
-                    <div class="w-full h-full flex  justify-center items-center backdrop-brightness-50">
+                    <div className="w-full h-full flex  justify-center items-center backdrop-brightness-50">
                         <motion.div
 
                             animate={{ opacity: 1 }}
@@ -149,7 +149,7 @@ function Z2() {
                     backgroundImage: `url(${bg})`,
                 }}>
                 {/* <Navbar /> */}
-                <div class="w-full h-full flex  justify-center items-center backdrop-brightness-50 py-36">
+                <div className="w-full h-full flex  justify-center items-center backdrop-brightness-50 py-36">
                     <motion.div
 
                         animate={{ opacity: 1 }}
@@ -207,6 +207,7 @@ function Z2() {
                             if (index === Z2.details.length - 1) {
                                 return (
                                     <motion.div
+                                        key={index}
                                         whileInView={{ opacity: 1 }}
                                         transition={{
                                             duration: 1,
@@ -224,6 +225,7 @@ function Z2() {
                             } else {
                                 return (
                                     <motion.div
+                                        key={index}
                                         whileInView={{ opacity: 1 }}
                                         transition={{
                                             duration: 1,
@@ -375,8 +377,8 @@ function Z2() {
 
                         <div className='flex items-center justify-center py-3'>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#cda24b" class="w-8 h-8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#cda24b" className="w-8 h-8">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
                             </svg>
                             <h1 className='text-xl font-style ml-3 text-white'>{Z2.status}</h1>
 
@@ -386,9 +388,9 @@ function Z2() {
 
                             <a href={Z2.locationLink} target="_blank" rel="noreferrer">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#cda24b" class="w-7 h-7">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#cda24b" className="w-7 h-7">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                 </svg>
 
                             </a>

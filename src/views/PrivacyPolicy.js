@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
                         backgroundImage: `url(${bg})`,
                     }}>
                     {/* <Navbar /> */}
-                    <div class="w-full h-full flex  justify-center items-center backdrop-brightness-50">
+                    <div className="w-full h-full flex  justify-center items-center backdrop-brightness-50">
                         <motion.div
                             animate={{ opacity: 1 }}
                             transition={{

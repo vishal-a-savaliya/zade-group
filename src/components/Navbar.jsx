@@ -81,8 +81,8 @@ const Navbar = () => {
                         >
                             <img className="hidden md:block" alt="Menu" src="https://img.icons8.com/ios-filled/50/null/skyscrapers.png" />
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="md:hidden w-8 h-8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="md:hidden w-8 h-8">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                             </svg>
 
                         </button>
@@ -109,8 +109,8 @@ const Navbar = () => {
                         onClick={handleToggle}
                         aria-label="Toggle Menu"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8 hover:stroke-primary">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8 hover:stroke-primary">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
 
                     </button>
@@ -123,7 +123,7 @@ const Navbar = () => {
                         <motion.svg className="flex" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             width="200px" fill="#f8f8f8" viewBox="0 0 747 742">
 
-                            <motion.path stroke="#CCA34B" stroke-width="4" variants={pathVariants}
+                            <motion.path stroke="#CCA34B" strokeWidth="4" variants={pathVariants}
 
 
                                 d="M1.000000,372.333313
@@ -142,7 +142,7 @@ const Navbar = () => {
                             C317.483246,688.932251 267.903046,639.345215 218.320175,589.760803
                             C147.302704,518.741333 76.285782,447.721222 5.230417,376.739655 
 z"/>
-                            <motion.path stroke="#CCA34B" stroke-width="4" variants={pathVariants}
+                            <motion.path stroke="#CCA34B" strokeWidth="4" variants={pathVariants}
 
                                 d="
 M373.599976,1.000006 
