@@ -108,7 +108,8 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
             } catch (error) {
                 console.error('Error:', error);
                 setSubmitting(false);
-                setErrorMessage('An error occurred while submitting the form.');
+                setSuccessMessage('An error occurred while submitting the form.');
+                setTimeout(() => { setSuccessMessage(null) }, 5000)
             }
         }
     }
