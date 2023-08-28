@@ -61,9 +61,9 @@ function About() {
 
             <div className="max-w-[1000px] mx-auto px-4 mb-20 md:px-6 lg:px-8 text font-primary">
                 <h1 className="text-3xl md:text-5xl text-center text-primary font-style text-gray-800 mb-5 md:mb-10">
-                    Visit Our Office
+                    Visit Our Corporate Campus
                 </h1>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14684.99616276178!2d72.4998164!3d23.0513296!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b98d8b3ca05%3A0xcd5408ab37917bd0!2sZADE%20CORPORATE%20CAMPUS!5e0!3m2!1sen!2sin!4v1690098823012!5m2!1sen!2sin" width="100%" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy" title='Zade group office' className='mx-auto shadow-sm' ></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14684.99616276178!2d72.4998164!3d23.0513296!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b98d8b3ca05%3A0xcd5408ab37917bd0!2sZADE%20CORPORATE%20CAMPUS!5e0!3m2!1sen!2sin!4v1690098823012!5m2!1sen!2sin" width="100%" height="450" style={{ border: 0 }} allowFullScreen="" loading="lazy" title='Zade group corporate campus' className='mx-auto shadow-sm' ></iframe>
             </div>
 
             <Contact />
