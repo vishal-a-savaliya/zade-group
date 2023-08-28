@@ -35,7 +35,7 @@ export const Projects = [
         description: "The Z2, Corporate Space is our newest project in construction, offering a state-of-the-art space for businesses and corporations to thrive. This stunning 32-story building boasts a grand height of 11 feet per floor, providing space for businesses of all sizes",
         location: "Thaltej, Ahmedabad",
         locationLink: "https://goo.gl/maps/BK2JuYFx4JkdacXRA",
-        status: "Newly Launched",
+        status: "Under Construction",
         link: "/z2",
         image: z2_image,
         details: [
@@ -63,7 +63,7 @@ export const Projects = [
         description: "Introducing our latest project, Z Luxuria a luxurious residential tower that will set new standards for opulent living in Ahmedabad. This magnificent 33-story tower offers 56 units with world-class amenities and stunning architectural design.",
         location: "Thaltej, Ahmedabad",
         locationLink: "https://goo.gl/maps/Zsd2pVJPmeursQRY9",
-        status: "Newly Launched",
+        status: "Under Construction",
         link: "/zluxuria",
         image: zluxuria_image,
         details: [
@@ -76,12 +76,12 @@ export const Projects = [
                 1: "Units ( 2 Apartment Per Floor )"
             },
             {
-                0: "4, 6 & 7",
+                0: "4, 6 & 7 BHK",
                 1: "Penthouse and Duplex Residency"
             },
             {
                 0: 4,
-                1: "Level basement parking"
+                1: "4 level Lavish Parking"
             },
         ]
     }
