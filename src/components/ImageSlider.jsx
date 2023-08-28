@@ -80,7 +80,7 @@ function FullScreenImage({ image, index, onClose }) {
                 </button>
             </div>
 
-            <div className="absolute top-0 left-0 w-full h-full bg-[#000] opacity-40"></div>
+            {/* <div className="absolute top-0 left-0 w-full h-full bg-[#000] opacity-40"></div> */}
 
             <div className="hidden md:block absolute md:top-1/2 transform -translate-y-1/2 right-0 z-30">
                 <button className="mr-3 p-5 rounded-full border border-primary hover:border-white transition duration-500 ease-in-out absolute top-1/2 right-0 transform -translate-y-1/2 focus:outline-none" onClick={nextSlide}>
