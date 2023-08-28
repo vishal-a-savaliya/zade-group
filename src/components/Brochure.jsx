@@ -203,7 +203,7 @@ z"/>
 
                             </motion.svg>}
 
-                            <div className='relative w-full h-full mb-3' style={{ display: isLoading ? 'none' : 'block' }}>
+                            <div className='relative w-full h-full mb-5 md:mb-1 md:-mt-5' style={{ display: isLoading ? 'none' : 'block' }}>
                                 <a href={`https://drive.google.com/uc?export=download&id=${details[Page].ID}`} target="_blank" rel="noopener noreferrer" className='absolute  z-50 md:z-30 right-5 md:right-10 bottom-7 p-3 md:p-4 rounded-full border border-primary hover:border-primaryHover bg-blur-sm bg-opacity-75 transition duration-500 ease-in-out'>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth={1.5} fill='none' className="w-6 h-6 stroke-primary hover:stroke-primaryHover transition duration-500 ease-in-out">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -217,7 +217,7 @@ z"/>
                                     height="100%"
                                     title={details[Page].fileName}
                                     onLoad={() => setIsLoading(false)}
-                                    className='rounded-md shadow-md mb-2'
+                                    className='rounded-md shadow-md'
                                 ></iframe>
 
                             </div>
