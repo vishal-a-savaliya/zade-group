@@ -12,7 +12,7 @@ function Footer({ phoneNumber, Email }) {
             <div className='flex items-center flex-col tex-white my-16'>
                 <a href='tel:7573030027' target='_black' className='text-primary hover:text-primaryHover hover:cursor-pointer text-4xl md:text-5xl font-style'>7573030027-28</a>
                 <h2 className='my-3 text-4xl font-style text-white pt-7'>Zade Group</h2>
-                <a href='https://goo.gl/maps/4y4iq9cLUZpNLQnL8' target='_black' className='text-white hover:text-primaryHover md:w-[40%] md:max-w-[600px] px-4 text-center text-xl font-style transition duration-500 ease-in-out transform'>Corporate Campus, Nr. Baghban Circle, Zydus Hospital Rd, Thaltej, Ahmedabad, 380059</a>
+                <a href='https://goo.gl/maps/4y4iq9cLUZpNLQnL8' target='_black' className='text-white hover:text-primaryHover md:w-[40%] md:max-w-[600px] px-4 text-center text-xl font-style transition duration-500 ease-in-out transform'>Corporate Campus, Nr. Baghban Party Plot, Zydus Hospital Rd, Thaltej, Ahmedabad, 380059</a>
                 <a href='https://goo.gl/maps/4y4iq9cLUZpNLQnL8' target='_black' className='decoration-none text-primaryHover border rounded-full border-primaryHover hover:text-white hover:border-white transition duration-500 ease-in-out transform py-2 my-6 px-4 text-xl font-style'>get direction</a>
                 <a href='mailto:info@zadegroup.in' target='_black' className='pb-4 text-white text-xl font-style hover:text-primaryHover transition duration-500 ease-in-out transform'>info@zadegroup.in</a>
             </div>
