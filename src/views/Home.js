@@ -256,7 +256,7 @@ function Home() {
 
                     {/* image  */}
 
-                    <div className="md:w-[55%] relative h-[650px] md:h-[1100px] hover:cursor-pointer z-20">
+                    <div className="md:w-[55%] relative h-[650px] md:h-[1200px] hover:cursor-pointer z-20">
                         <Link to={Projects[ProjectId].link}>
 
                             <div className="w-full h-full">
