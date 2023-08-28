@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 
 
@@ -29,16 +29,18 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
     const [success, setsuccess] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
-    const details = {
-        z2: {
-            fileName: "Z2 Brochure",
-            ID: "1sGUuKkQQZr5fyAE5nKIZ2NLOThEwbbmq"
-        },
-        zluxuria: {
-            fileName: "Z Luxuria Brochure",
-            ID: "1INHaLsrlozei8DZtD6K6cbSN8VVvnzBc"
-        }
-    }
+    const details = useMemo(() => {
+        return {
+            z2: {
+                fileName: "Z2 Brochure",
+                ID: "1sGUuKkQQZr5fyAE5nKIZ2NLOThEwbbmq"
+            },
+            zluxuria: {
+                fileName: "Z Luxuria Brochure",
+                ID: "1INHaLsrlozei8DZtD6K6cbSN8VVvnzBc"
+            }
+        };
+    }, []);
 
     const handelBack = () => {
         setDBVisible(false);
@@ -54,7 +56,7 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
             page: Page,
             MailFor: details[Page].fileName
         });
-    }, [Page])
+    }, [Page, details])
 
 
 
