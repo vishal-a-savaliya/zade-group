@@ -26,7 +26,7 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
 
     const [submitting, setSubmitting] = useState(false);
     const [successMessage, setSuccessMessage] = useState(null);
-    const [success, setsuccess] = useState(true);
+    const [success, setsuccess] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
     const details = {
@@ -215,6 +215,7 @@ z"/>
                                     src={`https://drive.google.com/file/d/${details[Page].ID}/preview`}
                                     width="100%"
                                     height="100%"
+                                    title={details[Page].fileName}
                                     onLoad={() => setIsLoading(false)}
                                     className='rounded-md shadow-md mb-2'
                                 ></iframe>
