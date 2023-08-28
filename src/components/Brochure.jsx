@@ -51,7 +51,8 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
             name: '',
             email: '',
             mobile: '',
-            page: Page
+            page: Page,
+            MailFor: details[Page].fileName
         });
     }, [Page])
 
@@ -63,6 +64,7 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
         name: '',
         email: '',
         mobile: '',
+        page: Page,
         MailFor: details[Page].fileName
     });
 
@@ -83,7 +85,7 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
             errors.email = "Please enter a valid email.";
         }
 
-        const mobileRegex = /^[0-9]{10}$/; // Adjust this regex if needed, assuming 10 digit mobile number
+        const mobileRegex = /^(\+\d{1,4})?[\s-]?(\d{10})$/; // Adjust this regex if needed, assuming 10 digit mobile number
         if (!mobileRegex.test(data.mobile)) {
             isValid = false;
             errors.mobile = "Please enter a valid mobile number.";
@@ -119,7 +121,8 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
                             name: '',
                             email: '',
                             mobile: '',
-                            page: Page
+                            page: Page,
+                            MailFor: details[Page].fileName
                         });
                         setSubmitting(false);
                     })
