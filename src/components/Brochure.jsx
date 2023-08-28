@@ -245,7 +245,7 @@ z"/>
 
                                     <div className='my-3 mt-7'>
                                         <button type="submit" className="border-primary border rounded-full text-[#000] py-3 px-6 uppercase hover:bg-primaryHover hover:text-white transition duration-500 ease-in-out">
-                                            {submitting ? "Loading..." : "Get Brochure"}
+                                            {submitting ? "Brochure Is On The Way..." : "Get Brochure"}
                                         </button>
                                     </div>
                                     <div className="w-full flex mb-4 md:items-baseline flex-col">
