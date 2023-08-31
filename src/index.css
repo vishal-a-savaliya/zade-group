@@ -1,5 +1,4 @@
-/* @import url(//db.onlinewebfonts.com/c/adfd298e421945768d7bf13da3ee8a45?family=BankGothic+Md+BT); */
-@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap');
 
 
 @tailwind base;
@@ -22,15 +21,7 @@
     }
   }
 
-@font-face {
-  font-family: "BankGothic";
-  src: url("./fonts/BankGothic\ Regular.ttf");
-}
 
-@font-face {
-  font-family: "Euclid";
-  src: url("./fonts/EuclidSquare-Regular.ttf");
-}
 
 @font-face {
   font-family: "wonder garden script";
@@ -38,7 +29,7 @@
 }
 
 * {
-  font-family: "Euclid";
+  font-family: 'Poppins', sans-serif;
 }
 
 html,
