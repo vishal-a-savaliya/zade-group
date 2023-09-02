@@ -1,8 +1,6 @@
 import z2_image from '../image/z2/8.jpeg';
 import zluxuria_image from '../image/zluxuria/Zluxuria1.jpeg';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
+
 
 import { AiOutlineCar, AiOutlineFundProjectionScreen, AiOutlineContainer } from 'react-icons/ai';
 import { MdSecurity, MdOutlineDesk, MdOutlineMeetingRoom, MdOutlineElevator } from 'react-icons/md';
@@ -25,8 +23,6 @@ import amenities_img4 from '../image/zluxuria/zluxuria_specification4.jpeg'
 import amenities_img5 from '../image/zluxuria/zluxuria_specification5.jpeg'
 import amenities_img8 from '../image/zluxuria/zluxuria_specification8.jpeg'
 
-
-library.add(far, fas);
 
 export const Projects = [
     {
@@ -81,7 +77,7 @@ export const Projects = [
             },
             {
                 0: 4,
-                1: "4 level Lavish Parking"
+                1: "Level Lavish Parking"
             },
         ]
     }

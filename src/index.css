@@ -6,21 +6,6 @@
 @tailwind utilities;
 
 
-@layer utilities {
-    @variants responsive {
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
-
-      /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-      }
-    }
-  }
-
 
 
 @font-face {
@@ -70,7 +55,11 @@ body {
   }
 
   .input {
-    @apply w-full border-2 border-primaryHover focus:border-primary font-primary font-normal  text-sm outline-none text-black py-1 px-3 leading-8 transition-colors duration-700 ease-in-out;
+    @apply w-full border-2 border-primaryHover focus:border-primary font-normal  text-sm outline-none text-textBlackDark py-1 px-3 leading-8 transition-colors duration-700 ease-in-out;
+  }
+
+  .input::placeholder{
+    @apply font-primary;
   }
 
   .li {
@@ -80,6 +69,24 @@ body {
   .primaryFont{
     @apply font-family
   }
+
+  .primaryBlack{
+    @apply font-primary text-textBlackDark;
+  }
+
+  .primaryLight{
+    @apply font-primary text-textBlackLight;
+  }
+
+  .button-tomato{
+    @apply py-5 px-10 bg-tomato text-white font-primary font-semibold hover:bg-tomatoHover hover:cursor-pointer;
+  }
+
+  .button-gold{
+    @apply py-5 px-10 bg-gold text-white font-primary font-semibold hover:bg-goldHover hover:cursor-pointer;
+  }
+
+
 }
 
 input::placeholder {

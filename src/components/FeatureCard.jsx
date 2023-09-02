@@ -16,7 +16,7 @@ const animate = {
 
 function FeatureCard({ SVG, Text }) {
     return (
-        <div className="w-[250px] mr-8 md:mr-0 md:w-[25%] bg-secondary h-[320px] shadow-sm flex flex-col justify-center items-center hover:bg-opacity-80 transition duration-500 ease-in-out transform">
+        <div className="w-[250px] mr-8 md:mr-0 md:w-[25%] bg-white h-[320px] shadow-sm flex flex-col justify-center items-center transition duration-500 ease-in-out transform">
 
             <div className="h-[60%] flex justify-end items-end">
                 <motion.img
@@ -32,7 +32,7 @@ function FeatureCard({ SVG, Text }) {
             <div className="h-[40%] px-10 py-5">
                 <motion.h1
                     variants={animate}
-                    className="text-xl text-center text-white font-primary"
+                    className="text-3xl font-semibold text-center text-textBlackDark font-primary"
                 >{Text}</motion.h1>
             </div>
 
