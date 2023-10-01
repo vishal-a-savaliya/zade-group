@@ -229,7 +229,8 @@ function Zluxuria() {
 
                         <img src={z_luxuria_logo} className='w-[250px] pb-8' alt="Z Luxuria logo" />
                         <h2 className='hidden text-5xl py-7 text-center font-semibold leading-[1.1] primaryBlack'>Introducing our latest project <span className='font-primary text-gold'>Z Luxuria</span></h2>
-                        <p className='w-[85%] md:w-[550px] text-center mx-auto text-secondaryBlack'>Z Luxuria nestled in the heart of Ahmedabad, our 33-story masterpiece in Thaltej stands tall with 56 luxurious units, ranging from 4 BHK, 6 BHK, and 7 BHK with world-class amenities and stunning architectural design. Surrounded by natural beauty and spread across expansive grounds, it's more than just a residence <br /> <span className='text-goldHover'>- it's a lifestyle.</span></p>
+                        <p className='w-[85%] md:w-[550px] text-center mx-auto text-textBlackDark text-lg'>Our 33-story masterpiece in Thaltej stands tall with 56 luxurious units, ranging from 4 BHK, 6 BHK, and 7 BHK with world-class amenities and stunning architectural design.</p>
+                        <p className='w-[85%] md:w-[550px] text-center mx-auto text-textBlackDark text-lg pt-2 pb-4'>Surrounded by natural beauty and spread across expansive grounds, it's more than just a residence <span className='text-goldHover font-primary'>- it's a lifestyle.</span></p>
 
                         <div className='flex items-center justify-center py-3 mt-2'>
 
