@@ -57,12 +57,17 @@ function Zluxuria() {
     const ZL = Projects[1];
     const images = [img6, img3, img4, img5];
     const specification_images = [{
-        image: amenities_img7, title: "Double height entrance foyer", description: "Make a striking first impression with our double-height entrance foyer, welcoming you and your guests to a space designed to leave a lasting memory."
+        image: amenities_img7,
+        title: "Double height entrance foyer",
+        description: "Make a striking first impression with our double-height entrance foyer, welcoming you and your guests to a space designed to leave a lasting memory.",
+        details: "25'ft Double Height Foyer"
+
     },
     {
-        image: amenities_img6, title: "Double height waiting & reception area", description: "Elevate your guests' experience in our double-height waiting and reception area, Get ready to be impressed as you and your guests are treated to the utmost hospitality and warmth."
+        image: amenities_img6, title: "Double height waiting & reception area", description: "Elevate your guests' experience in our double-height waiting and reception area, Get ready to be impressed as you and your guests are treated to the utmost hospitality and warmth.",
+        details: "25'ft Double Height Foyer"
     },
-    { image: amenities_img1, title: "Double height owner's lounge", description: "Turn every special occasion into a grand memory with a venue that is perfect for all your gatherings and celebrations." }];
+    { image: amenities_img1, title: "Double height owner's lounge", description: "Turn every special occasion into a grand memory with a venue that is perfect for all your gatherings and celebrations.", details: "25'ft Double Height Foyer" }];
 
     // const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -143,7 +148,7 @@ function Zluxuria() {
 
     for (let i = 0; i < 6; i++) {
         AmenitiesElements.push(<div className='py-8 px-3' key={i}>
-            <img src={Amenities["zluxuria"][(i + 6 * amenitiesIndex) % 20].SVG} alt={Amenities["zluxuria"][(i + 6 * amenitiesIndex) % 20].name} className='w-[100px] h-auto' />
+            <img src={Amenities["zluxuria"][(i + 6 * amenitiesIndex) % 20].SVG} alt={Amenities["zluxuria"][(i + 6 * amenitiesIndex) % 20].name} className='w-[85px] 15:w-[100px] h-auto' />
             <h2 className='text-2xl text-textWhiteDark font-bold font-primary pt-4'>{Amenities["zluxuria"][(i + 6 * amenitiesIndex) % 20].name}</h2>
         </div>);
     }
@@ -153,6 +158,8 @@ function Zluxuria() {
         <motion.div exit={{ opacity: 0 }}>
 
             <Navbar />
+
+
 
             {/* Hero */}
 
@@ -362,67 +369,21 @@ function Zluxuria() {
                     }
                 </div>
 
-                {/* <div className='flex flex-col md:flex-row justify-between z-30 mt-24'>
-                    {
-                        ZL.moreDetails ? ZL.moreDetails.map((data, index) => {
 
-                            if (index === ZL.moreDetails.length - 1) {
-                                return (
-                                    <motion.div
-                                        key={index}
-                                        whileInView={{ opacity: 1 }}
-                                        transition={{
-                                            duration: 1,
-                                            delay: 0.3,
-                                            // ease: [0.5, 0.71, 1, 1.5],
-                                        }}
-                                        initial={{ opacity: 0 }}
-                                        className='flex justify-start items-baseline my-4 md:my-0 md:mx-8'>
-                                        <div className='py-5'>
-                                            <h1 className='text-5xl text-textWhiteDark font-semibold'>{data[0]}</h1>
-                                            <p className=' text-textWhiteDark py-3 text-2xl font-primary'>{data[1]}</p>
-                                        </div>
-                                    </motion.div>
-                                )
-                            } else {
-                                return (
-                                    <motion.div
-                                        key={index}
-                                        whileInView={{ opacity: 1 }}
-                                        transition={{
-                                            duration: 1,
-                                            delay: 0.3,
-                                            // ease: [0.5, 0.71, 1, 1.5],
-                                        }}
-                                        initial={{ opacity: 0 }}
-                                        className='flex flex-col md:flex-row md:justify-start md:items-baseline md:mx-8 my-4 md:my-0'>
-                                        <div className='py-5'>
-                                            <h1 className='text-5xl text-textWhiteDark font-semibold'>{data[0]}</h1>
-                                            <p className=' text-textWhiteDark py-3 text-2xl font-primary max-w-[180px]'>{data[1]}</p>
-                                        </div>
-                                        <div className='ml-8 py-1'>
-                                            <hr className='border-primary border w-24'></hr>
-                                        </div>
-                                    </motion.div>
-                                )
-                            }
-
-                        }) : null
-                    }
-                </div> */}
 
             </div>
 
 
+            {/* living Room */}
 
-
-            <div className='py-16 md:pb-60 md:pt-16 bg-cover'
+            <div className='py-16 14:pb-40 15:pb-60 md:pt-16 bg-cover'
 
                 style={{
                     backgroundImage: `url(${bg1})`,
                 }}>
 
-                {/* living Room */}
+
+                <h2 className='text-[12rem] font-script text-gold text-center pt-7'>Specious Living Space</h2>
 
                 <div className='relative flex my-24'>
 
@@ -438,15 +399,16 @@ function Zluxuria() {
                         <div className='w-1/2 flex items-center'>
                             <img src={specification_bg} alt="Spacious Living Room cover" className='w-auto h-[85%] object-cover' />
                         </div>
+
                         <div className='w-1/2 flex items-center'>
-                            <div className='ml-24 mr-36'>
+                            <div className='ml-20 mr-16 15:ml-24 15:mr-36'>
                                 <p className='text-textWhiteDark font-primary text-sm font-semibold uppercase pb-5'>Specious Living Room</p>
-                                <h2 className='text-textWhiteDark font-primary font-bold text-6xl'>We create spaces for luxury living</h2>
-                                <p className='text-textWhiteLight font-light pt-8 pb-6'>The super spacious column less structure of formal living room, family living room and dining area is embedded with the most exquisite interiors offering you a splendid living experience.</p>
-                                <ul className='pb-14'>
-                                    <li className='text-textWhiteDark font-primary text-xl py-2'>Fill Aura of Luxurious Lifestyle</li>
-                                    <li className='text-textWhiteDark font-primary text-xl py-2'>Specious Living with Specious View</li>
-                                    <li className='text-textWhiteDark font-primary text-xl py-2'>Wide space of  42' 8"  X 17' 10" </li>
+                                <h2 className='text-textWhiteDark font-primary font-bold text-5xl 15:text-6xl'>We create spaces for luxury living</h2>
+                                <p className='text-textWhiteLight font-light pt-7 pb-4 15:pt-8 15:pb-6'>The super spacious column less structure of formal living room, family living room and dining area is embedded with the most exquisite interiors offering you a splendid living experience.</p>
+                                <ul className='pb-10 15:pb-14'>
+                                    <li className='text-textWhiteDark font-primary text-xl 14:py-1 15:py-2'>Fill Aura of Luxurious Lifestyle</li>
+                                    <li className='text-textWhiteDark font-primary text-xl 14:py-1 15:py-2'>Specious Living with Specious View</li>
+                                    <li className='text-textWhiteDark font-primary text-xl 14:py-1 15:py-2'>Wide space of  42' 8"  X 17' 10" </li>
                                 </ul>
                                 <a className='button-gold' href='#contact'>Contact Us</a>
                             </div>
@@ -518,7 +480,8 @@ function Zluxuria() {
                         <div className="flex justify-start items-start flex-col" onTouchStart={handleTouchStart}
                             onTouchEnd={handleTouchEnd}>
                             <p className="text-3xl px-1 md:px-0 md:text-6xl primaryBlack font-bold">{specification_images[current].title}</p>
-                            <p className="py-7 px-2  text-textBlackDark">{specification_images[current].description}</p>
+                            <p className="py-6 px-2 font-primary font-semibold text-2xl  text-textBlackDark">{specification_images[current].details}</p>
+                            <p className="pb-10 px-2  text-textBlackDark">{specification_images[current].description}</p>
                         </div>
                         <div className='flex'>
 
@@ -571,17 +534,17 @@ function Zluxuria() {
             <div className='flex relative justify-center flex-col items-center bg-gray py-28 pb-40'
 
             >
-                <div className="absolute w-[50%] h-full left-0 bottom-16 py-14 bg-no-repeat bg-left-bottom"
+                <div className="absolute w-full h-full left-0 bottom-16 py-14 bg-no-repeat bg-left-bottom"
                     style={{
                         backgroundImage: `url(${bg5})`,
                     }}
                 >
                 </div>
 
-                <div className='w-[85%] mx-auto flex py-24'>
-                    <div className='w-[45%] px-16 flex flex-col items-start'>
+                <div className='14:w-[90%] 15:w-[85%] mx-auto flex py-24'>
+                    <div className='w-[45%] 15:px-16 flex flex-col items-start'>
                         <p className='text-textWhiteDark font-primary text-sm font-semibold uppercase pb-5'>Discover Our amenities</p>
-                        <h2 className='text-textWhiteDark font-primary font-bold text-6xl'>The lifestyle you deserve</h2>
+                        <h2 className='text-textWhiteDark font-primary font-bold 14:text-5xl 15:text-6xl'>The lifestyle you deserve</h2>
                         <p className='text-textWhiteLight font-light pt-6 pb-6'>Indulge in an array of exclusive amenities curated to cater to your regal lifestyle, ensuring every moment is steeped in grandeur and refinement.</p>
                     </div>
                     <div className='w-[55%] ml-10 grid grid-cols-2'>
@@ -603,32 +566,32 @@ function Zluxuria() {
                 />
                 <div className="relative z-10 flex flex-col justify-center items-center h-[85vh]">
 
-                    <div className="max-w-[85%]">
 
-                        <div className="w-[250px] py-5 md:w-full rounded-sm shadow-md bg-secondary flex flex-col justify-center items-center transition duration-500 ease-in-out transform hover:cursor-pointer" onClick={() => { setDBVisible(true) }}>
 
-                            <div className="h-[full] flex justify-center items-center py-4 px-10">
-                                <motion.img
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 1.5,
-                                        delay: 0.2,
-                                    }}
-                                    initial={{ opacity: 0, y: 10 }} src={brochure_cover} className='fill-primary w-44' alt='icon' />
-                                {/* {SVG} */}
-                            </div>
+                    <div className="w-fit py-5 px-4 rounded-sm shadow-md bg-secondary flex flex-col justify-center items-center transition duration-500 ease-in-out transform hover:cursor-pointer" onClick={() => { setDBVisible(true) }}>
 
-                            <div className="px-4 my-5 hover:cursor-pointer">
-                                <motion.h1
-                                    variants={animate}
-                                    className="text-xl text-center text-white font-style"
-                                    onClick={() => { setDBVisible(true) }}
-                                >Download Brochure</motion.h1>
-                            </div>
+                        <div className="h-[full] flex justify-center items-center py-4 px-10">
+                            <motion.img
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    duration: 1.5,
+                                    delay: 0.2,
+                                }}
+                                initial={{ opacity: 0, y: 10 }} src={brochure_cover} className='fill-primary w-44' alt='icon' />
+                            {/* {SVG} */}
+                        </div>
 
+                        <div className="px-4 my-5 hover:cursor-pointer">
+                            <motion.h1
+                                variants={animate}
+                                className="text-xl text-center text-white font-primary font-bold"
+                                onClick={() => { setDBVisible(true) }}
+                            >Download Brochure</motion.h1>
                         </div>
 
                     </div>
+
+
                 </div>
             </div>
 

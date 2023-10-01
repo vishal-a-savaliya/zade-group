@@ -4,6 +4,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}", "./*/*.html",
   ],
   theme: {
+
+
+
+
+
     extend: {
       colors: {
         primary: '#cda24b',
@@ -34,6 +39,12 @@ module.exports = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(calc(-250px * 14))' },
         },
+      },
+      screens: {
+
+        '14': '1320px',
+        '15': '1420px',
+        '16': '1520px',
       },
     },
     fontFamily: {
