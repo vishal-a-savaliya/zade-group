@@ -23,6 +23,36 @@ import amenities_img4 from '../image/zluxuria/zluxuria_specification4.jpeg'
 import amenities_img5 from '../image/zluxuria/zluxuria_specification5.jpeg'
 import amenities_img8 from '../image/zluxuria/zluxuria_specification8.jpeg'
 
+import icon1 from '../image/icons/view.webp';
+import icon2 from '../image/icons/natural-light.webp';
+import icon3 from '../image/icons/villaments.webp';
+import icon4 from '../image/icons/balcony-view-swing.webp';
+
+
+// amenities icons
+import Zade_Luxuria_amenities1 from '../image/icons/zluxuria/hall.webp';
+import Zade_Luxuria_amenities2 from '../image/icons/zluxuria/4_level_basement_parking.webp';
+import Zade_Luxuria_amenities4 from '../image/icons/zluxuria/Security_cabin.webp';
+import Zade_Luxuria_amenities5 from '../image/icons/zluxuria/Society_Maintenace_office.webp';
+import Zade_Luxuria_amenities6 from '../image/icons/zluxuria/Guest_room.webp';
+import Zade_Luxuria_amenities7 from '../image/icons/zluxuria/elevator.webp';
+import Zade_Luxuria_amenities8 from '../image/icons/zluxuria/adjoining_deck.webp';
+import Zade_Luxuria_amenities9 from '../image/icons/zluxuria/tv_lounge.webp';
+import Zade_Luxuria_amenities10 from '../image/icons/zluxuria/kitty_party_room.webp';
+import Zade_Luxuria_amenities11 from '../image/icons/zluxuria/pool_table.webp';
+import Zade_Luxuria_amenities12 from '../image/icons/zluxuria/Toddler_s_play_Zone.webp';
+import Zade_Luxuria_amenities13 from '../image/icons/zluxuria/board-game.webp';
+import Zade_Luxuria_amenities14 from '../image/icons/zluxuria/swimming-pool.webp';
+import Zade_Luxuria_amenities15 from '../image/icons/zluxuria/gym.webp';
+import Zade_Luxuria_amenities16 from '../image/icons/zluxuria/salon-spa.webp';
+import Zade_Luxuria_amenities17 from '../image/icons/zluxuria/Theater.webp';
+import Zade_Luxuria_amenities18 from '../image/icons/zluxuria/Open_Terrace.webp';
+import Zade_Luxuria_amenities19 from '../image/icons/zluxuria/generator.webp';
+import Zade_Luxuria_amenities20 from '../image/icons/zluxuria/Garbage-duct-system.webp';
+import Zade_Luxuria_amenities21 from '../image/icons/zluxuria/air-conditioner.webp';
+
+
+
 
 export const Projects = [
     {
@@ -79,37 +109,80 @@ export const Projects = [
                 0: 4,
                 1: "Level Lavish Parking"
             },
+        ],
+        moreDetails: [
+            {
+                0: "12.25",
+                1: "Ft. Clear Height"
+            },
+            {
+                0: "21842",
+                1: "Sq. Ft. Landscape Garden"
+            },
+            // {
+            //     0: "Double",
+            //     1: "Height reception & Waiting lounge"
+            // },
+            {
+                0: "145",
+                1: "Meter high viewing deck"
+            },
+        ],
+        aboutDetails: [
+            {
+                "icon": icon1,
+                "title": "A 270 degree view",
+                "description": "A 147 meters tall tower amidst low rise buildings gilts you a rare chance to witness the spellbinding beauty that lay in front of you."
+            },
+            {
+                "icon": icon2,
+                "title": "Abundant natural light",
+                "description": "The strategic placement of the tower and large windows ensure abundant natural light and air ventilation."
+            },
+            {
+                "icon": icon3,
+                "title": "Only 2 Villament per floor",
+                "description": "The privacy, exclusivity, richness and freedom of space you experience is amazing when there are only 2 apartments on each floor.A 1225 feet clear height is like a bonus."
+            },
+            {
+                "icon": icon4,
+                "title": "Spacious Balcony",
+                "description": "These large viewing decks is the perfect spot to enjoy delightful conversations, your favourite books or a hot cup of coffee. It attaches the feel of openness and spaciousness to your apartment."
+            },
         ]
+
     }
 ];
 
 
 export const Amenities = {
     "zluxuria": [
-        { "SVG": <ImEnter size={50} style={{ 'fill': "#CCA34B" }} />, "name": "DOUBLE HEIGHT ENTRANCE FOYER" },
-        { "SVG": <TbArmchair size={50} style={{ 'stroke': "#CCA34B" }} />, "name": "DOUBLE HEIGHT WAITING & RECEPTION AREA" },
-        { "SVG": <TfiLayoutMediaCenter size={50} style={{ 'fill': "#CCA34B" }} />, "name": "DOUBLE HEIGHT OWNER'S LOUNGE" },
-        { "SVG": <MdOutlineMeetingRoom size={50} style={{ 'fill': "#CCA34B" }} />, "name": "DOUBLE HEIGHT MULTIPURPOSE HALL" },
-        { "SVG": <AiOutlineCar size={50} style={{ fill: '#cda24b' }} />, "name": "4 level Basement Parking" },
-        { "SVG": <BiBuildingHouse size={50} style={{ 'fill': "#CCA34B" }} />, "name": "METER ROOM" },
-        { "SVG": <BiShieldAlt size={50} style={{ 'fill': "#CCA34B" }} />, "name": "SECURITY CABIN" },
-        { "SVG": <MdOutlineDesk size={50} style={{ 'fill': "#CCA34B" }} />, "name": "Society Maintenance Office" },
-        { "SVG": <BiBed size={50} style={{ 'fill': "#CCA34B" }} />, "name": "2 GUEST ROOM" },
-        { "SVG": <MdOutlineElevator size={50} style={{ 'fill': "#CCA34B" }} />, "name": "4 High Speed Elevators" },
-        { "SVG": <TbBrandCouchdb size={50} style={{ 'stroke': "#CCA34B" }} />, "name": "Adjoining Deck" },
-        { "SVG": <BiTv size={50} style={{ 'fill': "#CCA34B" }} />, "name": "TV Lounge" },
-        { "SVG": <BiParty size={50} style={{ 'fill': "#CCA34B" }} />, "name": "Kitty Party Room" },
-        { "SVG": <TbDeviceGamepad size={50} style={{ 'stroke': "#CCA34B" }} />, "name": "Indoor Games Area" },
-        { "SVG": <BiSmile size={50} style={{ 'fill': "#CCA34B" }} />, "name": "Toddler's Play Zone" },
-        { "SVG": <TbChessKnight size={50} style={{ 'stroke': "#CCA34B" }} />, "name": "Board Games Room" },
-        { "SVG": <BiSwim size={50} style={{ 'fill': "#CCA34B" }} />, "name": "SWIMMING POOL" },
-        { "SVG": <BiDumbbell size={50} style={{ 'fill': "#CCA34B" }} />, "name": "GYM" },
-        { "SVG": <GiHairStrands size={50} style={{ 'fill': "#CCA34B" }} />, "name": "Salon / Spa" },
-        { "SVG": <BiCameraMovie size={50} style={{ 'fill': "#CCA34B" }} />, "name": "THEATER" },
-        { "SVG": <SiLinuxcontainers size={50} style={{ 'fill': "#CCA34B" }} />, "name": "Open Terrace With Sitting" },
-        { "SVG": <GiPowerGenerator size={50} style={{ 'fill': "#CCA34B" }} />, "name": "D.G. Set ( For Emergency Use )" },
-        { "SVG": <AiOutlineContainer size={50} style={{ 'fill': "#CCA34B" }} />, "name": "GARBAGE DUCT FACILITIES" },
-        { "SVG": <TbAirConditioning size={50} style={{ 'stroke': "#CCA34B" }} />, "name": "VRV Outdoor Unit" }
+        //     { "SVG": <ImEnter size={80} style={{ 'fill': "#CCA34B" }} />, "name": "DOUBLE HEIGHT ENTRANCE FOYER" },
+        //     { "SVG": <TbArmchair size={80} style={{ 'stroke': "#CCA34B" }} />, "name": "DOUBLE HEIGHT WAITING & RECEPTION AREA" },
+        //     { "SVG": <TfiLayoutMediaCenter size={80} style={{ 'fill': "#CCA34B" }} />, "name": "DOUBLE HEIGHT OWNER'S LOUNGE" },
+        {
+            "SVG": Zade_Luxuria_amenities1, "name": "Double Height Multipurpose Hall"
+        },
+        { "SVG": Zade_Luxuria_amenities2, "name": "4 Level basement parking" },
+        // { "SVG": { Zade_Luxuria_amenities3 }, "name": "METER ROOM" },
+        { "SVG": Zade_Luxuria_amenities4, "name": "Security Cabin" },
+        { "SVG": Zade_Luxuria_amenities5, "name": "Society Maintenance Office" },
+        { "SVG": Zade_Luxuria_amenities6, "name": "2 Guest Room" },
+        { "SVG": Zade_Luxuria_amenities7, "name": "4 High Speed Elevators" },
+        { "SVG": Zade_Luxuria_amenities8, "name": "Adjoining Deck" },
+        { "SVG": Zade_Luxuria_amenities9, "name": "TV Lounge" },
+        { "SVG": Zade_Luxuria_amenities10, "name": "Kitty Party Room" },
+        { "SVG": Zade_Luxuria_amenities11, "name": "Indoor Games Area" },
+        { "SVG": Zade_Luxuria_amenities12, "name": "Toddler's Play Zone" },
+        { "SVG": Zade_Luxuria_amenities13, "name": "Board Games Room" },
+        { "SVG": Zade_Luxuria_amenities14, "name": "Swimming Pool" },
+        { "SVG": Zade_Luxuria_amenities15, "name": "GYM" },
+        { "SVG": Zade_Luxuria_amenities16, "name": "Salon / Spa" },
+        { "SVG": Zade_Luxuria_amenities17, "name": "Theater" },
+        { "SVG": Zade_Luxuria_amenities18, "name": "Open Terrace With Sitting" },
+        { "SVG": Zade_Luxuria_amenities19, "name": "D.G. Set ( For Emergency Use )" },
+        { "SVG": Zade_Luxuria_amenities20, "name": "Garbage Duct Facilities" },
+        { "SVG": Zade_Luxuria_amenities21, "name": "VRV Outdoor Unit" }
     ],
     "Z2": [
 

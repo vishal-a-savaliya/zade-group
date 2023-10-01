@@ -17,7 +17,8 @@ module.exports = {
         goldHover: '#c8924c',
         tomato: '#d3815d',
         tomatoHover: '#BE6944',
-        'secondaryBlack': '#6A6E71',
+        green: '#1E3738',
+        secondaryBlack: '#6A6E71',
         textBlackLight: '#A5A6AA',
         textBlackDark: '#0F0F0F',
         textWhiteLight: '#D2D3D5',
@@ -49,4 +50,10 @@ module.exports = {
   },
 
   plugins: [],
+
+  variants: {
+    extend: {
+      transitionProperty: ['hover', 'focus'],
+    }
+  }
 }

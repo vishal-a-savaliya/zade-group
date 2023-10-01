@@ -101,7 +101,8 @@ function Contact({ page = "home", Subject }) {
         <div id='contact' className='flex flex-col md:flex-row justify-center items-center bg-gray bg-cover bg-center md:bg-opacity-50 py-10 md:py-20'
             style={{
                 backgroundImage: `url(${contact_bg})`,
-            }}>
+            }}
+        >
 
             <div className='flex w-[90%] md:w-[85%] mt-10 flex-col justify-center mx-auto md:flex-row'>
                 <div className='md:w-[40%] pl-4 md:pl-0 font-primary md:pr-14'>
