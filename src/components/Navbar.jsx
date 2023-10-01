@@ -41,7 +41,7 @@ const Navbar = () => {
     // }, [scrollTop, handleScroll]);
 
     // const navbarClasses = `w-full py-2 z-30 ${scroll ? 'bg-white' : 'bg-transparent'}`;
-    const navbarClasses = `relative w-full py-2 z-30 bg-transparent`;
+    const navbarClasses = `w-full py-2 z-30  h-fit bg-transparent`;
 
 
     const pathVariants = {

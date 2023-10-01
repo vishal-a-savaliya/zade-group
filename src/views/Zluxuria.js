@@ -50,6 +50,7 @@ import ImageSlider from "../components/ImageSlider"
 // import { Projects, Amenities } from '../data/ProjectDetails'
 import { Projects, AmenitiesDetails, Amenities } from '../data/ProjectDetails'
 import Brochure from '../components/Brochure'
+import CTA from '../components/CTA'
 
 function Zluxuria() {
 
@@ -155,11 +156,11 @@ function Zluxuria() {
 
 
     return (
-        <motion.div exit={{ opacity: 0 }}>
+        <motion.div exit={{ opacity: 0 }} className='relative'>
+
+            <CTA setDBVisible={setDBVisible} />
 
             <Navbar />
-
-
 
             {/* Hero */}
 

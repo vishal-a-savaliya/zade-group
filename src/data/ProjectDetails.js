@@ -51,6 +51,15 @@ import Zade_Luxuria_amenities19 from '../image/icons/zluxuria/generator.webp';
 import Zade_Luxuria_amenities20 from '../image/icons/zluxuria/Garbage-duct-system.webp';
 import Zade_Luxuria_amenities21 from '../image/icons/zluxuria/air-conditioner.webp';
 
+import Z2_amenities1 from '../image/icons/z2/entrance_plaza.webp'
+import Z2_amenities2 from '../image/icons/z2/conference-room.webp'
+import Z2_amenities3 from '../image/icons/z2/reception-area-hall.webp'
+import Z2_amenities4 from '../image/icons/z2/admin-office.webp'
+import Z2_amenities5 from '../image/icons/z2/driver-waiting-lounge.webp'
+import Z2_amenities6 from '../image/icons/z2/security-cabin.webp'
+import Z2_amenities7 from '../image/icons/z2/5-level-basement-parking.webp'
+import Z2_amenities8 from '../image/icons/z2/wide-drive-way.webp'
+import Z2_amenities9 from '../image/icons/z2/elevators.webp'
 
 
 
@@ -81,7 +90,30 @@ export const Projects = [
                 0: 2,
                 1: "Side road corners"
             },
-        ]
+        ],
+        moreDetails: [
+            {
+                0: 32,
+                1: "Stories"
+            },
+            {
+                0: 1230,
+                1: "Sq. Ft. Onwards"
+            },
+            {
+                0: 5,
+                1: "Level well-planed basement parking"
+            },
+            {
+                0: 2,
+                1: "Side road corners"
+            },
+            {
+                0: 11,
+                1: "Ft. Clear Height"
+            },
+
+        ],
     },
     {
         title: "Z Luxuria",
@@ -186,16 +218,16 @@ export const Amenities = {
     ],
     "Z2": [
 
-        { "SVG": <GiTempleDoor size={50} style={{ fill: '#cda24b' }} />, "name": "Entrance Plaza" },
-        { "SVG": <AiOutlineFundProjectionScreen size={50} style={{ fill: '#cda24b' }} />, "name": "Double Height Conference Room" },
-        { "SVG": <MdOutlineDesk size={50} style={{ fill: '#cda24b' }} />, "name": "Double Height Reception & Waiting Area" },
-        { "SVG": <HiOutlineBuildingOffice size={50} style={{ stroke: '#cda24b' }} />, "name": "Admin Office " },
-        { "SVG": <TbBrandCouchdb size={50} style={{ 'stroke': "#CCA34B" }} />, "name": "Driver Waiting Lounge" },
-        { "SVG": <MdSecurity size={50} style={{ fill: '#cda24b' }} />, "name": "Security Cabin" },
-        { "SVG": <AiOutlineCar size={50} style={{ fill: '#cda24b' }} />, "name": "5 level Basement Parking" },
-        { "SVG": <GiRoad size={50} style={{ fill: '#cda24b' }} />, "name": "Wide Drive Way" },
+        { "SVG": Z2_amenities1, "name": "Entrance Plaza" },
+        { "SVG": Z2_amenities2, "name": "Double Height Conference Room" },
+        { "SVG": Z2_amenities3, "name": "Double Height Reception & Waiting Area" },
+        { "SVG": Z2_amenities4, "name": "Admin Office " },
+        { "SVG": Z2_amenities5, "name": "Driver Waiting Lounge" },
+        { "SVG": Z2_amenities6, "name": "Security Cabin" },
+        { "SVG": Z2_amenities7, "name": "5 level Basement Parking" },
+        { "SVG": Z2_amenities8, "name": "Wide Drive Way" },
         // { "SVG": <IoBedOutline size={50} style={{ stroke: '#cda24b' }} />, "name": "2 Guest Room  " },
-        { "SVG": <MdOutlineElevator size={50} style={{ fill: '#cda24b' }} />, "name": "5 High Speed Elevators" },
+        { "SVG": Z2_amenities9, "name": "5 High Speed Elevators" },
         // { "SVG": <GiPowerGenerator size={50} style={{ fill: '#cda24b' }} />, "name": "Stan dby DG Set For Emergency " },
         // { "SVG": <BsCloudRain size={50} style={{ fill: '#cda24b' }} />, "name": "Rain Water Storage" },
     ]

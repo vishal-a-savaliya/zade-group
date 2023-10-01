@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         primary: '#cda24b',
         primaryHover: '#c7ac70',
-        gray: '#171717',
+        // gray: '#171717',
         // secondary: '#1a1a1a',
         black: '#171717',
         lightBlack: '#201f1f',
@@ -28,7 +28,8 @@ module.exports = {
         textBlackDark: '#0F0F0F',
         textWhiteLight: '#D2D3D5',
         textWhiteDark: '#FCFCFC',
-        pink: '#FFFBF3',
+        offWhite: '#FCFCFC',
+        pink: '#F2EDE6',
         graytext: '#9ea0a6',
       },
       animation: {
