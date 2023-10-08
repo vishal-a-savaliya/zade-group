@@ -2,20 +2,6 @@ import z2_image from '../image/z2/8.jpeg';
 import zluxuria_image from '../image/zluxuria/Zluxuria1.jpeg';
 
 
-import { AiOutlineCar, AiOutlineFundProjectionScreen, AiOutlineContainer } from 'react-icons/ai';
-import { MdSecurity, MdOutlineDesk, MdOutlineMeetingRoom, MdOutlineElevator } from 'react-icons/md';
-import { GiRoad, GiHairStrands, GiPowerGenerator, GiTempleDoor } from "react-icons/gi";
-import { TbBrandCouchdb, TbChessKnight, TbDeviceGamepad, TbArmchair, TbAirConditioning } from "react-icons/tb";
-import { ImEnter } from "react-icons/im";
-// import { BsCloudRain } from "react-icons/bs";
-// import { IoBedOutline } from "react-icons/io5";
-// import { GrLounge } from "react-icons/gr";
-import { HiOutlineBuildingOffice } from "react-icons/hi2";
-import { SiLinuxcontainers } from "react-icons/si";
-import { TfiLayoutMediaCenter } from "react-icons/tfi";
-import { BiBuildingHouse, BiShieldAlt, BiTv, BiBed, BiDumbbell, BiSwim, BiCameraMovie, BiSmile, BiParty } from 'react-icons/bi';
-
-
 
 import amenities_img2 from '../image/zluxuria/zluxuria_specification2.jpeg'
 import amenities_img3 from '../image/zluxuria/zluxuria_specification3.jpeg'

@@ -2,7 +2,7 @@ import React from 'react'
 
 function CTA({ setDBVisible, Page }) {
     return (
-        <div className='fixed  w-fit flex items-end flex-col right-0 top-1/2 transform -translate-y-1/2 z-50'>
+        <div className='hidden fixed w-fit md:flex items-end flex-col right-0 top-1/2 transform -translate-y-1/2 z-50'>
 
 
             <div className='flex group h-full transition-all ease-in-out delay-150 mb-[3px]'>

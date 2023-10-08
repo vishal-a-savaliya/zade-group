@@ -13,6 +13,11 @@
   src: url("./fonts/WonderGardenScript-Regular.ttf");
 }
 
+@font-face {
+  font-family: "BankGothic";
+  src: url("./fonts/BankGothic\ Regular.ttf");
+}
+
 * {
   font-family: 'Poppins', sans-serif;
 }

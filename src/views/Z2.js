@@ -8,7 +8,7 @@ import { Projects, Amenities } from '../data/ProjectDetails'
 
 import ImageSlider from "../components/ImageSlider"
 
-import CTA_bg from '../image/bg-1.png'
+// import CTA_bg from '../image/bg-1.png'
 import amenities_section_bg from '../image/landing_bg2.png'
 
 
@@ -25,10 +25,10 @@ import img7 from '../image/z2/7.jpeg'
 import img8 from '../image/z2/8.jpeg'
 // import img9 from '../image/z2/corponare_place_background_image.jpeg'
 
-import bg_2 from '../image/zluxuria/bg-2.png'
+// import bg_2 from '../image/zluxuria/bg-2.png'
 import z2_hall_image from '../image/z2/z2_hall.jpeg'
 import brochure_cover from '../image/z2/Brochure_cover_3d.png'
-import bg2 from '../image/bg/bg8.webp'
+// import bg2 from '../image/bg/bg8.webp'
 import bg7 from '../image/bg/bg7.webp'
 import bg9 from '../image/bg/bg9.webp'
 import z2 from '../image/z2/z2-no-bg.png'
@@ -107,10 +107,12 @@ function Z2() {
     const AmenitiesElements = [];
 
     Z2.moreDetails.map((data, index) => {
-        AmenitiesElements.push(<div className='py-5 px-3' key={index}>
-            <h2 className='text-6xl font-semibold text-gray-600'>{data[0]}</h2>
-            <h2 className='text-2xl text-textBlackDark font-bold font-primary pt-4'>{data[1]}</h2>
-        </div>);
+        return (
+            AmenitiesElements.push(<div className='py-5 px-3' key={index}>
+                <h2 className='text-6xl font-semibold text-gray-600'>{data[0]}</h2>
+                <h2 className='text-2xl text-textBlackDark font-bold font-primary pt-4'>{data[1]}</h2>
+            </div>)
+        );
     })
 
 

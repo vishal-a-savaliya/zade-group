@@ -7,8 +7,8 @@ import img2 from '../image/zluxuria/2_lite.jpeg'
 import bg from '../image/zluxuria/hero_bg_image_z_luxuria.jpeg'
 // import bg_2 from '../image/zluxuria/bg-2.png'
 import specification_bg from '../image/zluxuria/specification.jpeg'
-import amenities_section_bg from '../image/landing_bg2.png'
-import CTA_bg from "../image/landing_bg3.jpg"
+// import amenities_section_bg from '../image/landing_bg2.png'
+// import CTA_bg from "../image/landing_bg3.jpg"
 
 
 
@@ -31,7 +31,7 @@ import brochure_cover from '../image/zluxuria/brochure_3d.png';
 
 
 import bg1 from '../image/bg/bg1.webp';
-import bg2 from '../image/bg/bg2.webp';
+// import bg2 from '../image/bg/bg2.webp';
 import bg3 from '../image/bg/bg3.webp';
 import bg4 from '../image/bg/bg4.webp';
 import bg5 from '../image/bg/bg5.webp';
@@ -277,7 +277,7 @@ function Zluxuria() {
 
             {/* project details  */}
 
-            <div className='flex relative justify-center flex-col items-center bg-gray py-20 pb-40'
+            <div className='flex relative justify-center flex-col items-center bg-black py-20 pb-40'
 
             >
                 <div className="absolute w-full h-full top-24 py-14 bg-no-repeat bg-right-top"
@@ -532,7 +532,7 @@ function Zluxuria() {
 
             {/* Amenities */}
 
-            <div className='flex relative justify-center flex-col items-center bg-gray py-28 pb-40'
+            <div className='flex relative justify-center flex-col items-center bg-black py-28 pb-40'
 
             >
                 <div className="absolute w-full h-full left-0 bottom-16 py-14 bg-no-repeat bg-left-bottom"
@@ -649,6 +649,11 @@ function Zluxuria() {
             <Contact id="contact" page={"zluxuria"} Email={'sales@zadegroup.in'} Subject={'New inquiry for z luxuria'} />
 
             {/* <Footer phoneNumber={"7573030028"} Email={"sales@zadegroup.in"} /> */}
+
+            <div className='w-full bg-black'>
+
+            </div>
+
             <Footer phoneNumber={"7573030027-28"} Email={"info@zadegroup.in"} />
 
         </motion.div >
