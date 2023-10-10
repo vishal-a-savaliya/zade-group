@@ -98,7 +98,7 @@ function Contact({ page = "home", Subject }) {
     // console.log(Details[page]["contact"])
 
     return (
-        <div id='contact' className='flex flex-col md:flex-row justify-center items-center bg-gray bg-cover bg-center md:bg-opacity-50 py-10 pb-20 md:pb-0 md:py-20'
+        <div id='contact' className='flex flex-col md:flex-row justify-center items-center bg-gray bg-cover bg-center md:bg-opacity-50 py-10 pb-20 md:py-20'
             style={{
                 backgroundImage: `url(${contact_bg})`,
             }}

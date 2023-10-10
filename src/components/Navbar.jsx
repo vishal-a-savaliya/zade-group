@@ -41,7 +41,7 @@ const Navbar = () => {
     // }, [scrollTop, handleScroll]);
 
     // const navbarClasses = `w-full py-2 z-30 ${scroll ? 'bg-white' : 'bg-transparent'}`;
-    const navbarClasses = `absolute top-0 w-full py-3 z-40  h-fit bg-white backdrop-blur-sm bg-opacity-80`;
+    const navbarClasses = `relative top-0 w-full py-3 z-40  h-fit bg-white backdrop-blur-sm bg-opacity-80`;
 
 
     const pathVariants = {
@@ -65,7 +65,7 @@ const Navbar = () => {
 
     return (
         <nav className={navbarClasses}>
-            <div className="max-w-[90%] md:max-w-[85%] mx-auto px-4">
+            <div className="max-w-[90%] md:max-w-[88%] mx-auto px-2 md:px-0">
                 <div className="flex justify-between">
 
                     <div className="flex items-center justify-center">
@@ -89,23 +89,6 @@ const Navbar = () => {
 
                         </button>
 
-
-
-                        <button
-                            className="hidden md:block p-2 pt-3 hover:text-primaryHover font-semibold font-branding"
-                            onClick={handleToggle}
-                            aria-label="Toggle Menu"
-                        >
-                            {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg> */}
-
-                            <svg viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                <path d="M1 11H9M1 6H15M7 1H15" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-
-
-                        </button>
                     </div>
 
                 </div>
@@ -208,7 +191,7 @@ z"/>
 
                         <div className='flex flex-col md:flex-row justify-between pt-3 mb-6 w-[87%] mx-auto border-[#FFFFFF33] border-t font-primary'>
 
-                            <div className='w-[80%] md:w-full mx-auto flex justify-between md:justify-center items-center my-4'>
+                            <div className='w-[80%] md:w-full mx-auto flex justify-between md:justify-start items-center my-4'>
 
                                 <a href='https://www.facebook.com/fbzadegroup' target='_blank' rel="noreferrer" className=' md:mx-4 mx-1 hover:border-primary hover:cursor-pointer transition duration-500 ease-in-out transform'>
                                     {/* <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className='w-5 h-5 md:w-5 md:h-5 fill-white hover:fill-primary transition duration-500 ease-in-out transform'>

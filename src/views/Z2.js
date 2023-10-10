@@ -164,13 +164,19 @@ function Z2() {
             </div>
 
 
+            {/* Mobile */}
+
+
             <div
                 className="md:hidden bg-cover bg-center h-full w-full bg-no-repeat"
                 style={{
                     backgroundImage: `url(${bg})`,
                 }}>
-                {/* <Navbar /> */}
-                <div className="w-full h-full flex  justify-center items-center backdrop-brightness-50 py-36">
+
+                <div className='absolute w-full h-full bg-black bg-opacity-25'></div>
+
+
+                <div className="w-full h-full flex  justify-center items-center py-36">
                     <motion.div
 
                         animate={{ opacity: 1 }}
@@ -184,12 +190,12 @@ function Z2() {
 
                         className="h-full flex flex-col justify-center items-center">
 
-                        <div className='flex flex-col justify-center items-center -mt-20'>
+                        <div className='flex flex-col justify-center items-center -mt-20 z-20'>
 
-                            <h1 className='text-6xl  mt-10 pt-10 pb-2 md:text-6xl text-center text-white font-style uppercase'>Z2</h1>
-                            <h1 className='text-2xl pt-8 pb-2 md:text-6xl text-center font-bold text-white font-style uppercase'>Elevate</h1>
-                            <h1 className='text-2xl md:text-6xl pb-2 text-center font-bold text-white font-style uppercase'> business Growth with</h1>
-                            <h1 className='text-2xl md:text-6xl pb-2 text-center font-bold text-white font-style uppercase'>Corporate Space</h1>
+                            <h1 className='text-6xl  mt-10 pt-10 text-center text-tomato font-primary font-bold'>Z2</h1>
+                            <h1 className='text-2xl pt-5 pb-2 text-center font-semibold text-white uppercase'>Elevate</h1>
+                            <h1 className='text-2xl md:text-6xl pb-2 text-center font-semibold text-white uppercase'> business Growth with</h1>
+                            <h1 className='text-2xl md:text-6xl pb-2 text-center font-semibold text-white uppercase'>Corporate Space</h1>
                             <p className="hidden w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">Discover a new level of elegance and refinement with our latest Corporate Space, designed to exceed your expectations.</p>
                         </div>
 
