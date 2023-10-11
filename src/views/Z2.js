@@ -31,7 +31,11 @@ import brochure_cover from '../image/z2/Brochure_cover_3d.png'
 // import bg2 from '../image/bg/bg8.webp'
 import bg7 from '../image/bg/bg7.webp'
 import bg9 from '../image/bg/bg9.webp'
+import bg10 from '../image/bg/bg10.webp'
+import bg12 from '../image/bg/bg12.webp'
 import z2 from '../image/z2/z2-no-bg.png'
+import z2_skyscraper from '../image/icons/skyscraper-z2.webp'
+import trophy from '../image/icons/trophy.webp'
 
 // import corporate_bg_image from '../image/z2/corponare_place_background_image.jpeg'
 
@@ -108,9 +112,9 @@ function Z2() {
 
     Z2.moreDetails.map((data, index) => {
         return (
-            AmenitiesElements.push(<div className='py-5 px-3' key={index}>
-                <h2 className='text-6xl font-semibold text-gray-600'>{data[0]}</h2>
-                <h2 className='text-2xl text-textBlackDark font-bold font-primary pt-4'>{data[1]}</h2>
+            AmenitiesElements.push(<div className='py-6 md:py-5 px-3' key={index}>
+                <h2 className='text-5xl md:text-6xl font-semibold text-tomato md:text-gray-600'>{data[0]}</h2>
+                <h2 className='text-xl md:text-2xl text-textBlackDark font-bold font-primary pt-3 md:pt-4'>{data[1]}</h2>
             </div>)
         );
     })
@@ -168,7 +172,7 @@ function Z2() {
 
 
             <div
-                className="md:hidden bg-cover bg-center h-full w-full bg-no-repeat"
+                className="md:hidden bg-cover bg-center h-full w-full bg-no-repeat relative"
                 style={{
                     backgroundImage: `url(${bg})`,
                 }}>
@@ -211,7 +215,9 @@ function Z2() {
 
             {/* Intro */}
 
-            <div className='flex relative justify-start flex-col items-center bg-offWhite py-28 pb-24'>
+            {/* Desktop */}
+
+            <div className='hidden md:flex relative justify-start flex-col items-center bg-offWhite py-28 pb-24'>
 
                 <img src={z2} alt="Z2" className='w-[150px] h-auto pt-16 pb-9' />
                 <div className='flex flex-col items-center w-[60%] mx-auto'>
@@ -236,9 +242,41 @@ function Z2() {
 
             </div>
 
+            {/* Mobile */}
+            <div className='md:hidden flex relative justify-start flex-col items-center bg-offWhite py-28 pb-24'>
+
+                <img src={z2} alt="Z2" className='w-[150px] h-auto pt-16 pb-9' />
+                <div className='flex flex-col items-center w-[85%] mx-auto'>
+                    {/* <p className='text-textBlackDark font-primary text-sm font-semibold uppercase pb-5 text-center'>Discover Perfect Corporate Delight</p> */}
+                    <h2 className='text-textBlackDark font-primary font-bold text-2xl text-center'>Elevate your business to new heights with Z2</h2>
+                    {/* <p className='text-gray-500 pt-6 pb-6'>The Corporate Space where modernity meets excellence to create the perfect environment for businesses, offering a state-of-the-art space for businesses and corporations to thrive success.</p> */}
+                </div>
+
+                <div className='w-full mx-auto flex flex-col pt-12 pb-5'>
+
+                    <div className='w-full 15:px-16 14:pl-10 flex flex-col items-start justify-center'>
+                        <img src={img5} alt="Z2" className='w-full h-auto pb-9' />
+                    </div>
+
+                    <div className='w-[90%] ml-7 grid grid-cols-1 relative'>
+
+                        <div className='absolute w-ull h-full bg-right-top top-0 right-0'>
+                            <img src={bg10} alt='z2 details' className='w-[150px]' />
+                        </div>
+
+                        {AmenitiesElements}
+                        {/* <a className='button-tomato' href='#contact'>Contact Us</a> */}
+
+                    </div>
+
+                    <a href="#contact" className="button-tomato mt-12 w-fit mx-auto">Inquire Now!</a>
+                </div>
+
+            </div>
 
 
-            <div className='bg-black py-16 pb-cover bg-center'
+
+            <div className='hidden md:block bg-black py-16 pb-cover bg-center'
                 style={{
                     backgroundImage: `url(${bg7})`,
                 }}
@@ -303,6 +341,82 @@ function Z2() {
 
             </div>
 
+            {/* Mobile */}
+            <div className='md:hidden bg-black'
+            >
+                <div className='w-full top-0 bottom-0 flex flex-col pt-16 pb-24 bg-cover bg-center'
+                    style={{
+                        backgroundImage: `url(${bg7})`,
+                    }}>
+
+                    <marquee className='pb-1 relative'>
+                        <div className='flex items-end'>
+
+                            <img src={z2_skyscraper} alt='z2 skyscraper in thaltej' className='w-20 inline-block' />
+                            <p className=' text-textWhiteDark font-primary font-semibold text-5xl inline-block px-2'>Most work friendly office Space of the year, Award Winner</p>
+
+                            <img src={trophy} alt='z2 skyscraper in thaltej' className='w-20 inline-block' />
+                        </div>
+
+                    </marquee>
+
+                    <div className='w-full flex items-center px-5 pt-5'>
+                        <img src={img8} alt="Spacious Living Room cover" className='w-full h-full object-cover' />
+                        {/* <img src={img1} alt="Spacious Living Room cover" className='w-[45%] h-full object-cover ml-3' /> */}
+                    </div>
+
+                    <motion.div
+                        whileInView={{ opacity: 1 }}
+                        transition={{
+                            duration: 2,
+                            delay: 0.3,
+                            // ease: [0.5, 0.71, 1, 1.5],
+                        }}
+                        initial={{ opacity: 0 }}
+
+                        className='py-10 px-6 flex flex-col justify-center items-start '
+                    >
+
+                        <p className='text-textWhiteDark font-primary text-sm font-semibold uppercase pb-5'>Presenting</p>
+                        <h1 className='text-textWhiteDark font-primary font-semibold text-4xl'>Award winning corporate space</h1>
+                        <p className='text-textWhiteLight font-light pt-7 pb-4 15:pt-8 15:pb-6'>The Z2 <b>Corporate Space</b> where modernity meets excellence to create the perfect environment for businesses, offering a state-of-the-art space for businesses and corporations to thrive success.</p>
+
+                        <div className='flex items-center justify-center py-3'>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" className="w-8 h-8 stroke-tomato">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+                            </svg>
+                            <h1 className='text-xl font-style ml-3 text-white'>{Z2.status}</h1>
+
+                        </div>
+
+                        <div className='flex items-center justify-center py-1'>
+
+                            <a href={Z2.locationLink} target="_blank" rel="noreferrer">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" className="w-7 h-7 stroke-tomato">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                </svg>
+
+                            </a>
+
+
+                            <a href={Z2.locationLink} target="_blank" rel="noreferrer">
+                                <span className='text-xl font-style ml-3 text-white'>{Z2.location}</span>
+                            </a>
+
+
+                        </div>
+
+                        <a href="#contact" className="button-tomato mt-10">CONTACT</a>
+
+                    </motion.div>
+
+                </div>
+
+            </div>
+
 
             {/* CTA */}
 
@@ -328,7 +442,7 @@ function Z2() {
                             delay: 0,
                         }}
                         initial={{ y: 40 }}
-                        className='text-xl md:text-7xl font-primary font-semibold text-white'>IMMEDIATE OCCUPANCY !</motion.h1>
+                        className='text-2xl md:text-7xl font-primary font-semibold text-white'>IMMEDIATE OCCUPANCY !</motion.h1>
 
                     <motion.a
                         whileInView={{ opacity: 1 }}
@@ -337,10 +451,10 @@ function Z2() {
                             delay: 0.5,
                         }}
                         initial={{ opacity: 0 }}
-                        href="#contact" className='bg-white text-lg mt-8 py-3 px-7 uppercase hover:cursor-pointer hover:bg-black hover:shadow-md hover:text-white '>Inquire Now</motion.a>
+                        href="#contact" className='bg-white md:text-lg mt-8 py-3 px-7 uppercase hover:cursor-pointer hover:bg-black hover:shadow-md hover:text-white '>Inquire Now</motion.a>
                 </div>
 
-                <img src={img6} alt='z2 sky view' className='w-full h-full object-cover' />
+                <img src={img6} alt='z2 sky view' className='md:w-full h-[400px] md:h-full object-cover' />
 
 
             </div>
@@ -349,21 +463,21 @@ function Z2() {
 
             {/* amenities */}
 
-            <div className='md:bg-center bg-offWhite py-20 pb-32'
+            <div className='md:bg-center bg-gray-50 py-20 pb-32'
                 style={{
                     backgroundImage: `url(${amenities_section_bg})`,
                 }}
             >
 
-                <div className='flex flex-col items-center w-[60%] mx-auto pb-12 pt-20'>
+                <div className='flex flex-col items-center w-[95%] md:w-[60%] mx-auto pb-12 pt-20'>
                     <p className='text-textBlackDark font-primary text-sm font-semibold uppercase pb-5 text-center'>Amenities Details</p>
-                    <h2 className='text-textBlackDark font-primary font-bold 14:text-5xl 15:text-6xl text-center'>world-class amenities, and stunning architectural design</h2>
+                    <h2 className='text-textBlackDark font-primary font-bold text-2xl 14:text-5xl 15:text-6xl text-center'>world-class amenities, and stunning architectural design</h2>
                     {/* <p className='text-gray-500 pt-6 pb-6'>The Corporate Space where modernity meets excellence to create the perfect environment for businesses, offering a state-of-the-art space for businesses and corporations to thrive success.</p> */}
                 </div>
 
                 <div className="mx-10 md:px-16">
 
-                    <div className='flex w-[98%] md:w-[1200px] md:max-w-[1000px] flex-wrap mx-auto py-10'>
+                    <div className='flex w-[98%] md:w-[1200px] md:max-w-[1000px] flex-wrap mx-auto py-3 md:py-10'>
 
                         {
                             Amenities.Z2 ? Amenities.Z2.map((item, index) => {
