@@ -52,29 +52,29 @@ function FullScreenImage({ image, index, onClose }) {
         >
 
             {/* Left Image */}
-            <div className='w-[20%] h-[350px] md:h-[100vh] overflow-hidden mr-10 py-24 opacity-70'
+            <div className='w-[10%] h-[400px] md:h-[100vh] overflow-hidden mr-10 py-24 opacity-70'
             >
                 <img src={image[(current - 1 + image.length) % image.length]} className='object-cover min-w-full h-full' alt="Left" />
             </div>
 
             {/* Center Image */}
-            <div className='w-[60%] h-[350px] md:h-[100vh] py-14'>
+            <div className='w-auto h-[400px] md:h-[100vh] py-14'>
                 <img src={image[current % image.length]} className='object-cover w-full h-full' alt="Center" />
             </div>
 
             {/* Right Image */}
-            <div className='w-[20%] h-[350px] md:h-[100vh] overflow-hidden ml-10 py-24 opacity-70'>
+            <div className='w-[10%] h-[400px] md:h-[100vh] overflow-hidden ml-10 py-24 opacity-70'>
                 <img src={image[(current + 1) % image.length]} className='object-cover min-w-full h-full' alt="Right" />
             </div>
 
             {/* CLOSE BUTTON */}
 
-            <div className="absolute top-4 left-2 md:left-auto md:top-10 md:right-10 md:z-40" >
+            <div className="absolute top-5 left-3 md:left-auto md:top-10 md:right-10 md:z-40" >
                 <button className="p-3 md:p-7 rounded-full border border-primary hover:border-white transition duration-500 ease-in-out focus:outline-none backdrop-blur-sm" onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} className="hidden md:block w-8 h-8 stroke-primary hover:stroke-white transition duration-500 ease-in-out">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} className="w-8 h-8 stroke-primary hover:stroke-white transition duration-500 ease-in-out md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} className="w-5 h-5 stroke-primary hover:stroke-white transition duration-500 ease-in-out md:hidden">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                     </svg>
                 </button>
