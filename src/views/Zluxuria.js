@@ -164,7 +164,7 @@ function Zluxuria() {
 
             {/* Hero */}
 
-            <div className="relative h-[1000px] pt-5">
+            <div className="hidden md:block relative h-[1000px] pt-5">
                 <div
                     className="bg-cover h-full w-full md:absolute inset-0 bg-no-repeat md:bg-fixed"
                     style={{
@@ -203,10 +203,52 @@ function Zluxuria() {
             </div>
 
 
+            {/* Mobile */}
 
-            {/* project details  */}
+            <div className="md:hidden relative h-[650px]">
+                <div
+                    className="bg-cover bg-center h-full w-full bg-no-repeat"
+                    style={{
+                        backgroundImage: `url(${bg})`,
+                    }}>
 
-            <div className='px-10 py-16 md:py-32'
+                    <div className='absolute w-full h-full bg-black bg-opacity-40'></div>
+
+                    <div className="w-full h-full flex  justify-center items-center z-10">
+                        <motion.div
+
+                            animate={{ opacity: 1 }}
+                            transition={{
+                                duration: 2,
+                                delay: 1,
+                                // ease: [0.5, 0.71, 1, 1.5],
+                            }}
+                            initial={{ opacity: 0 }}
+                            // whileHover={{ scale: 1.2 }}
+
+                            className="h-full flex flex-col items-center z-10">
+
+                            <div className='flex flex-col justify-center items-center pt-[43%]'>
+                                <h1 className='mt-10 pt-10 text-6xl text-center font-bold text-textWhiteDark font-primary'>Z Luxuria</h1>
+                                <h1 className='mt-5 text-4xl text-center text-white font-primary px-8'>Ultimate Luxury Living At Sky</h1>
+                                {/* <h1 className='hidden text-3xl md:text-5xl md:flex text-center text-white font-primary lowercase'>AT SKY</h1> */}
+                                {/* <h1 className='text-3xl md:text-5xl text-center font-bold text-white font-style uppercase'> </h1> */}
+                                <p className="hidden w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">Experience the height of luxury with our latest project, designed to inspire and elevate your senses.</p>
+                            </div>
+
+                            {/* <h1 className='my-10 pt-10 text-4xl text-center font-bold text-secondary font-primary'>Presenting Soon</h1> */}
+
+                        </motion.div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            {/* project details 1 */}
+
+            <div className='hidden md:block px-10 py-16 md:py-32'
 
                 style={{
                     backgroundImage: `url(${bg1})`,
@@ -275,9 +317,9 @@ function Zluxuria() {
             </div>
 
 
-            {/* project details  */}
+            {/* project details 2  */}
 
-            <div className='flex relative justify-center flex-col items-center bg-black py-20 pb-40'
+            <div className='hidden md:flex relative justify-center flex-col items-center bg-black py-20 pb-40'
 
             >
                 <div className="absolute w-full h-full top-24 py-14 bg-no-repeat bg-right-top"
@@ -371,6 +413,89 @@ function Zluxuria() {
                 </div>
 
 
+
+            </div>
+
+
+            {/* Mobile */}
+
+            <div className='md:hidden flex relative justify-center flex-col items-center bg-black py-20 pb-40'>
+
+                <div className='flex flex-col'>
+
+                    <div className='w-full flex flex-col justify-center'>
+                        <div>
+                            <img src={img7} alt='Z Luxuria' className='w-[85%] h-auto mx-auto' />
+                        </div>
+                        <div className='pb-6 z-30 relative'>
+                            <h1 className='text-5xl text-center py-2 font-primary font-semibold text-textWhiteDark'>Z Luxuria</h1>
+                            <h1 className='text-6xl font-script  text-primary absolute top-10 left-1/2 -translate-x-1/2 inline'>Luxurious lifestyle</h1>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div className='relative'>
+
+                    <div className="absolute -right-20 top-10">
+                        <img src={bg3} alt='Z luxuria details' className='w-full ml-auto h-auto object-cover' />
+                    </div>
+
+                    <div className='py-5'>
+
+                    </div>
+
+                    <div className='flex flex-col justify-between z-30 pt-10'>
+
+                        {
+                            ZL.details ? ZL.details.map((data, index) => {
+
+                                if (index === ZL.details.length - 1) {
+                                    return (
+                                        <motion.div
+                                            key={index}
+                                            whileInView={{ opacity: 1 }}
+                                            transition={{
+                                                duration: 1,
+                                                delay: 0.3,
+                                                // ease: [0.5, 0.71, 1, 1.5],
+                                            }}
+                                            initial={{ opacity: 0 }}
+                                            className='flex justify-start items-baseline my-4 md:my-0 md:mx-8'>
+                                            <div className='py-5'>
+                                                <h1 className='text-5xl text-textWhiteDark font-semibold'>{data[0]}</h1>
+                                                <p className=' text-textWhiteDark py-3 text-2xl font-primary'>{data[1]}</p>
+                                            </div>
+                                        </motion.div>
+                                    )
+                                } else {
+                                    return (
+                                        <motion.div
+                                            key={index}
+                                            whileInView={{ opacity: 1 }}
+                                            transition={{
+                                                duration: 1,
+                                                delay: 0.3,
+                                                // ease: [0.5, 0.71, 1, 1.5],
+                                            }}
+                                            initial={{ opacity: 0 }}
+                                            className='flex flex-col md:flex-row md:justify-start md:items-baseline md:mx-8 my-4 md:my-0'>
+                                            <div className='py-5'>
+                                                <h1 className='text-5xl text-textWhiteDark font-semibold'>{data[0]}</h1>
+                                                <p className=' text-textWhiteDark py-3 text-2xl font-primary max-w-[180px]'>{data[1]}</p>
+                                            </div>
+                                            <div className='ml-2 py-1'>
+                                                <hr className='border-primary border w-24'></hr>
+                                            </div>
+                                        </motion.div>
+                                    )
+                                }
+
+                            }) : null
+                        }
+                    </div>
+
+                </div>
 
             </div>
 
