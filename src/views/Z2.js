@@ -423,7 +423,7 @@ function Z2() {
             <div className='relative'>
 
 
-                <div className='absolute w-full h-full bg-black bg-opacity-20 flex flex-col justify-center items-center'>
+                <div className='absolute w-full h-full md:bg-black md:bg-opacity-20 flex flex-col justify-center items-center'>
                     <motion.h1
 
                         whileInView={{ y: 0 }}
