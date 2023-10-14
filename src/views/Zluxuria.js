@@ -509,9 +509,9 @@ function Zluxuria() {
                 }}>
 
 
-                <h2 className='text-[12rem] font-script text-gold text-center pt-7'>Specious Living Space</h2>
+                <h2 className='text-[4rem] md:text-[12rem] font-script text-gold text-center pt-7'>Specious Living Space</h2>
 
-                <div className='relative flex my-24'>
+                <div className='hidden relative md:flex md:my-24'>
 
                     <div className='w-[35%]'>
 
@@ -545,6 +545,44 @@ function Zluxuria() {
                 </div>
 
 
+                {/* Mobile */}
+
+                <div className='md:hidden relative my-24'>
+
+
+                    <div className='absolute inset-0 w-[100%] mx-auto bg-green'>
+                        <img src={bg4} alt="Spacious Living Room cover" className='w-auto h-full' />
+                    </div>
+
+                    <div className='absolute w-[85%] -top-20 left-1/2 -translate-x-1/2'>
+
+                        <div className='w-full flex items-center'>
+                            <img src={specification_bg} alt="Spacious Living Room cover" className='w-auto h-[85%] object-cover' />
+                        </div>
+
+                    </div>
+
+
+
+                    <div className='w-full pb-20 pt-28 flex items-center'>
+                        <div className='z-10 px-4 pt-5'>
+                            <p className='text-textWhiteDark font-primary text-sm font-semibold uppercase pb-3'>Specious Living Room</p>
+                            <h2 className='text-textWhiteDark font-primary font-bold text-3xl'>We create spaces for luxury living</h2>
+                            {/* <p className='text-textWhiteLight font-light pt-5 pb-5 15:pt-8 15:pb-6'>The super spacious column less structure of formal living room, family living room and dining area.</p> */}
+                            <ul className='pb-10 pt-4'>
+                                <li className='text-textWhiteLight font-primary text-xl py-1 15:py-2'>Fill Aura of Luxurious Lifestyle</li>
+                                <li className='text-textWhiteLight font-primary text-xl py-1 15:py-2'>Specious Living with Specious View</li>
+                                <li className='text-textWhiteLight font-primary text-xl py-1 15:py-2'>Wide space of  42' 8"  X 17' 10" </li>
+                            </ul>
+                            <a className='button-gold' href='#contact'>Contact Us</a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
 
 
 
@@ -559,12 +597,11 @@ function Zluxuria() {
 
                 <div className="py-32">
 
-                    <h3 className="text-5xl md:hidden text-primary font-style -pb-10 z-30">gallery</h3>
+                    <h3 className="text-5xl md:hidden text-primary font-primary font-semibold z-50 pl-3 -pb-10">Gallery</h3>
+
                     <div className="flex justify-center h-[300px] md:h-[500px] md:py-0">
                         <h3 className="hidden md:block text-5xl md:text-8xl text-gold font-primary font-semibold absolute z-30 md:left-24 mb-4">Gallery</h3>
-
                         <ImageSlider images={images} width={800} height={500} />
-
                     </div>
                 </div>
 
