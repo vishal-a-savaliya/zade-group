@@ -65,13 +65,15 @@ function Home() {
             <Navbar />
 
             <div className="relative h-[600px] md:h-screen">
+
                 <div
                     className="bg-cover bg-center h-[100vh] md:h-screen w-full absolute inset-0 bg-no-repeat md:bg-fixed"
                     style={{
                         backgroundImage: `url(${bg})`,
                     }}
                 >
-                    <div className="w-full h-full flex  justify-center items-center backdrop-brightness-50">
+
+                    <div className="w-full h-full flex  justify-center md:items-center backdrop-brightness-50">
                         <motion.div
                             animate={{ opacity: 1 }}
                             transition={{
@@ -82,15 +84,15 @@ function Home() {
                             initial={{ opacity: 0 }}
                             // whileHover={{ scale: 1.2 }}
 
-                            className="h-full flex flex-col justify-center items-start px-6 md:px-20 pb-5 md:pb-10">
+                            className="h-full flex flex-col md:justify-center items-start px-6 md:px-20 pb-5 md:pb-10">
 
-                            <div className="md:hidden mt-10 pt-10">
-                                <img src={ZadeGroupLogo} alt="Zade group logo" className="w-[150px] pb-7" />
+                            <div className="md:hidden flex justify-start mt-[40%]">
+                                <img src={ZadeGroupLogo} alt="Zade group logo" className="w-[45%] pb-7" />
                             </div>
 
                             <div className='flex flex-col justify-center items-start md:w-[65%]'>
 
-                                <h1 className='text-5xl md:mt-10 md:pt-10 pb-2 md:text-8xl text-center font-bold text-textWhiteDark font-primary'>Zade Group</h1>
+                                <h1 className='text-4xl md:mt-10 md:pt-10 pb-2 md:text-8xl text-center font-bold text-textWhiteDark font-primary'>Zade Group</h1>
                                 {/* <h1 className='text-3xl md:text-6xl text-center font-bold text-white font-style uppercase'>Build The Future</h1> */}
                                 <p className="pt-4 md:pt-8 md:text-2xl text-textWhiteLight text-left md:py-4 font-light">We're excited to present a new level of luxury in Ahmedabad with state-of-the-art facilities, world-class amenities, and stunning architectural design.</p>
                             </div>
