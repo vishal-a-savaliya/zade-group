@@ -32,7 +32,7 @@ import brochure_cover from '../image/z2/Brochure_cover_3d.png'
 import bg7 from '../image/bg/bg7.webp'
 import bg9 from '../image/bg/bg9.webp'
 import bg10 from '../image/bg/bg10.webp'
-import bg12 from '../image/bg/bg12.webp'
+// import bg12 from '../image/bg/bg12.webp'
 import z2 from '../image/z2/z2-no-bg.png'
 import z2_skyscraper from '../image/icons/skyscraper-z2.webp'
 import trophy from '../image/icons/trophy.webp'
@@ -349,16 +349,16 @@ function Z2() {
                         backgroundImage: `url(${bg7})`,
                     }}>
 
-                    <marquee className='pb-1 relative'>
-                        <div className='flex items-end'>
-
-                            <img src={z2_skyscraper} alt='z2 skyscraper in thaltej' className='w-20 inline-block' />
-                            <p className=' text-textWhiteDark font-primary font-semibold text-5xl inline-block px-2'>Most work friendly office Space of the year, Award Winner</p>
-
-                            <img src={trophy} alt='z2 skyscraper in thaltej' className='w-20 inline-block' />
+                    <div className="marquee-container">
+                        <div className="marquee-content">
+                            <img src={z2_skyscraper} alt="z2 skyscraper in thaltej" className='w-20' />
+                            <div className="text-content text-textWhiteDark font-primary font-semibold text-5xl" >
+                                Most work-friendly office Space of the year, Award Winner
+                            </div>
+                            <img src={trophy} alt="z2 skyscraper in thaltej" className='w-20' />
                         </div>
+                    </div>
 
-                    </marquee>
 
                     <div className='w-full flex items-center px-5 pt-5'>
                         <img src={img8} alt="Spacious Living Room cover" className='w-full h-full object-cover' />
@@ -524,7 +524,7 @@ function Z2() {
 
             <div className="relative h-[85vh]">
                 <div
-                    className="absolute inset-0 bg-no-repeat bg-cover bg-fixed bg-center"
+                    className="absolute inset-0 bg-no-repeat bg-cover md:bg-fixed bg-center"
                     style={{ backgroundImage: `url(${img3})` }}
                 />
                 <div className="relative z-10 flex flex-col justify-center items-center h-[85vh]">

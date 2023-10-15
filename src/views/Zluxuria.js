@@ -149,8 +149,8 @@ function Zluxuria() {
 
     for (let i = 0; i < 6; i++) {
         AmenitiesElements.push(<div className='py-8 px-3' key={i}>
-            <img src={Amenities["zluxuria"][(i + 6 * amenitiesIndex) % 20].SVG} alt={Amenities["zluxuria"][(i + 6 * amenitiesIndex) % 20].name} className='w-[85px] 15:w-[100px] h-auto' />
-            <h2 className='text-2xl text-textWhiteDark font-bold font-primary pt-4'>{Amenities["zluxuria"][(i + 6 * amenitiesIndex) % 20].name}</h2>
+            <img src={Amenities["zluxuria"][(i + 6 * amenitiesIndex) % 20].SVG} alt={Amenities["zluxuria"][(i + 6 * amenitiesIndex) % 20].name} className='w-[70px] md:w-[85px] 15:w-[100px] h-auto' />
+            <h2 className=' md:text-2xl text-textWhiteDark font-bold font-primary pt-4'>{Amenities["zluxuria"][(i + 6 * amenitiesIndex) % 20].name}</h2>
         </div>);
     }
 
@@ -435,11 +435,12 @@ function Zluxuria() {
 
                 </div>
 
-                <div className='relative'>
+                <div className=''>
 
-                    <div className="absolute -right-20 top-10">
-                        <img src={bg3} alt='Z luxuria details' className='w-full ml-auto h-auto object-cover' />
-                    </div>
+                    {/* <div className='relative float-right'>
+                        <img src={bg3} alt='Z luxuria details' className='!right-0 w-full top-10 absolute' />
+                    </div> */}
+
 
                     <div className='py-5'>
 
@@ -498,6 +499,8 @@ function Zluxuria() {
                 </div>
 
             </div>
+
+
 
 
             {/* living Room */}
@@ -618,19 +621,19 @@ function Zluxuria() {
             }} >
 
 
-                <h2 className='text-[10rem] font-script text-gold text-center pb-12'>Double your expectation</h2>
+                <h2 className='text-[4rem] md:text-[10rem] font-script text-gold text-center pb-12'>Double your expectation</h2>
 
                 {/* Double Height amenities */}
 
-                <div className='px-10 pb-32 flex justify-center items-start'>
+                <div className='px-3 md:px-10 md:pb-32 flex flex-col md:flex-row justify-center items-start'>
 
-                    <div className="relative w-[750px]">
+                    {/* Images */}
+
+                    <div className="relative w-full md:w-[750px]">
                         <div className='w-full bg-cover bg-center h-[450px]'
                             style={{
                                 backgroundImage: `url(${specification_images[current].image})`,
                             }}></div>
-
-                        {/* <div className="absolute top-0 left-0 w-full h-full bg-[#000] opacity-40"></div> */}
 
 
                         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 md:z-30">
@@ -639,45 +642,67 @@ function Zluxuria() {
                             ))}
                         </div>
                     </div>
-                    <div className='w-[600px] pl-10 flex flex-col items-start'>
+
+
+                    {/* Details */}
+
+                    <div className='w-full md:w-[600px] mt-5 md:mt-0 md:pl-10 flex flex-col items-start'>
+
                         <div className="flex justify-start items-start flex-col" onTouchStart={handleTouchStart}
                             onTouchEnd={handleTouchEnd}>
-                            <p className="text-3xl px-1 md:px-0 md:text-6xl primaryBlack font-bold">{specification_images[current].title}</p>
-                            <p className="py-6 px-2 font-primary font-semibold text-2xl  text-textBlackDark">{specification_images[current].details}</p>
-                            <p className="pb-10 px-2  text-textBlackDark">{specification_images[current].description}</p>
+                            <p className="text-3xl md:px-0 md:text-6xl primaryBlack font-bold">{specification_images[current].title}</p>
+                            <p className="py-4 md:py-6 md:px-2 font-primary font-semibold text-xl md:text-2xl text-secondaryBlack md:text-textBlackDark">{specification_images[current].details}</p>
+                            <p className="pb-7 md:pb-10 md:px-2 text-secondaryBlack md:text-textBlackDark">{specification_images[current].description}</p>
                         </div>
+
                         <div className='flex'>
 
-                            <button className="mr-3 py-4 px-5 bg-gold hover:bg-goldHover transition duration-500 ease-in-out    focus:outline-none" onClick={prevSlide}>
+                            <button className="mr-3 py-3 md:py-4 px-5 bg-gold hover:bg-goldHover transition duration-500 ease-in-out    focus:outline-none" onClick={prevSlide}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
                                 </svg>
                             </button>
 
-                            <button className="ml-3 py-4 px-5 bg-gold hover:bg-goldHover transition duration-500 ease-in-out  focus:outline-none" onClick={nextSlide}>
+                            <button className="ml-3 py-3 md:py-4 px-5 bg-gold hover:bg-goldHover transition duration-500 ease-in-out  focus:outline-none" onClick={nextSlide}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                 </svg>
                             </button>
+
                         </div>
                     </div>
+
+
                 </div>
 
-                {/* <div className='w-full h-[700px]'></div> */}
 
-                <div className="md:w-[80%] mx-auto h-full z-30 rounded-t-md md:rounded-t-none py-16">
+                {/* Images with Details */}
+
+                <div className="w-[92%] md:w-[80%] mx-auto h-full z-30 py-10 md:py-16">
 
                     {
                         AmenitiesDetails && AmenitiesDetails["zluxuria"].map((item, index) => {
                             return (
-                                <div className="relative my-14" key={index}>
+                                <div className="relative my-12 md:my-14" key={index}>
                                     <img src={item.image} alt={item.name} className="object-cover h-full w-full" />
 
-                                    <div className='group w-full h-full top-0 absolute flex flex-col justify-end hover:bg-black hover:bg-opacity-30 z-20 transition duration-500 ease-in-out '>
 
-                                        <div className='bottom-0 py-14 px-16'>
-                                            <h3 className='text-textWhiteDark text-3xl font-primary font-bold transition duration-500 ease-in-out transform group-hover:translate-y-0 translate-y-full'>{item.name}</h3>
+                                    {/* desktop */}
+
+                                    <div className='hidden group w-full h-full top-0 absolute md:flex flex-col justify-end hover:bg-black hover:bg-opacity-30 z-20 transition duration-500 ease-in-out '>
+
+                                        <div className='bottom-0 md:py-14 md:px-16'>
+                                            <h3 className='text-textWhiteDark md:text-3xl font-primary font-bold transition duration-500 ease-in-out transform group-hover:translate-y-0 translate-y-full'>{item.name}</h3>
                                             <p className='text-textWhiteLight pt-2 opacity-0 transition duration-500 ease-in-out transform group-hover:translate-y-0 translate-y-full group-hover:opacity-100'>{item.description}</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Mobile */}
+
+                                    <div className='md:hidden group w-full h-full top-0 bottom-0 absolute flex flex-col justify-end hover:bg-black bg-opacity-30 z-20 transition duration-500 ease-in-out '>
+
+                                        <div className='bottom-0'>
+                                            <h3 className='text-textWhiteDark text-2xl pl-3 pb-2 font-primary font-bold transition duration-500 ease-in-out'>{item.name}</h3>
                                         </div>
                                     </div>
 
@@ -692,9 +717,12 @@ function Zluxuria() {
             </div>
 
 
-            {/* Amenities */}
 
-            <div className='flex relative justify-center flex-col items-center bg-black py-28 pb-40'
+
+
+            {/* Amenities Desktop */}
+
+            <div className='hidden md:flex relative justify-center flex-col items-center bg-black py-28 pb-40'
 
             >
                 <div className="absolute w-full h-full left-0 bottom-16 py-14 bg-no-repeat bg-left-bottom"
@@ -720,11 +748,44 @@ function Zluxuria() {
             </div>
 
 
+            {/* Mobile  */}
+
+            <div className='flex md:hidden relative justify-center flex-col items-center bg-black pt-20 pb-40'>
+
+
+
+                <div className='14:w-[90%] 15:w-[85%] mx-auto flex flex-col pt-5 relative'>
+
+                    <div className='w-full px-5 15:px-16 flex flex-col items-start'>
+                        <p className='text-textWhiteDark font-primary text-sm font-semibold uppercase pb-5'>Discover Our amenities</p>
+                        <h2 className='text-textWhiteDark font-primary font-bold text-4xl'>The lifestyle you deserve</h2>
+                        <p className='text-textWhiteLight font-light pt-6 pb-6'>Indulge in an array of exclusive amenities curated to cater to your regal lifestyle, ensuring every moment is steeped in grandeur and refinement.</p>
+                    </div>
+
+                    <div className='w-full px-5 grid grid-cols-2'>
+
+                        {AmenitiesElements}
+
+                    </div>
+
+                </div>
+
+                <div className="absolute w-full left-0 bottom-0 py-14">
+                    <img src={bg5} alt='z luxuria amenities thaltej Ahmedabad' className='w-full' />
+                </div>
+
+            </div>
+
+
+
+
+
+            {/* Brochure */}
 
 
             <div className="relative h-[85vh]">
                 <div
-                    className="absolute inset-0 bg-no-repeat bg-cover bg-fixed bg-center"
+                    className="absolute inset-0 bg-no-repeat bg-cover md:bg-fixed bg-center"
                     style={{ backgroundImage: `url(${img4})` }}
                 />
                 <div className="relative z-10 flex flex-col justify-center items-center h-[85vh]">
@@ -741,7 +802,7 @@ function Zluxuria() {
                                     delay: 0.2,
                                 }}
                                 initial={{ opacity: 0, y: 10 }} src={brochure_cover} className='fill-primary w-44' alt='icon' />
-                            {/* {SVG} */}
+
                         </div>
 
                         <div className="px-4 my-5 hover:cursor-pointer">
@@ -760,11 +821,13 @@ function Zluxuria() {
 
             <Brochure DBVisible={DBVisible} setDBVisible={setDBVisible} Page={"zluxuria"} />
 
-            {/* {console.log(DBVisible)} */}
+
+
+
 
             {/* CTA */}
 
-            <div className='md:bg-cover bg-center py-20 flex flex-col justify-center items-center bg-green bg-opacity-60'
+            <div className='bg-cover bg-left md:bg-center py-20 flex flex-col justify-center items-center bg-green md:bg-opacity-60'
                 style={{
                     backgroundImage: `url(${bg6})`,
                 }}
@@ -778,7 +841,7 @@ function Zluxuria() {
                     }}
                     initial={{ y: 30 }}
 
-                    className='text-2xl md:text-4xl font-primary font-bold text-white py-2'>AVAILABLE FOR</motion.h1>
+                    className='text-xl md:text-4xl font-primary font-bold text-white py-2'>AVAILABLE FOR</motion.h1>
                 <motion.h1
                     whileInView={{ y: 0 }}
                     transition={{
@@ -786,7 +849,7 @@ function Zluxuria() {
                         delay: 0,
                     }}
                     initial={{ y: 30 }}
-                    className='text-2xl md:text-6xl font-primary font-bold text-white'>IMMEDIATE OCCUPANCY !</motion.h1>
+                    className='text-xl md:text-6xl font-primary font-bold text-white'>IMMEDIATE OCCUPANCY !</motion.h1>
 
                 <motion.a
                     whileInView={{ opacity: 1 }}

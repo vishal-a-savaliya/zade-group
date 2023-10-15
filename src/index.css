@@ -137,3 +137,93 @@ textarea::placeholder {
 .snaps-inline > * {
   scroll-snap-align: start;
 }
+
+
+
+
+/* Makes the animation pause on hover */
+.moving-text:hover {
+  animation-play-state: paused;
+}
+
+/* The animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* media query to enable animation for only those who want it */
+@media (prefers-reduced-motion: no-preference) {
+  .moving-text {
+    animation: marquee 15s linear infinite;
+  }
+}
+
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: flex;
+    /* Change the display to flex */
+    align-items: flex-end;
+    /* Align items at the vertical bottom */
+  animation: marquee 10s linear infinite;
+}
+
+.marquee-content img,
+.marquee-content .text-content {
+  display: inline-block;
+}
+
+.text-content {
+  margin-right: 20px;
+  /* Add some spacing between text and images */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  /* Ensure the container takes the full width */
+}
+
+.marquee-content {
+  display: inline-flex;
+  align-items: flex-end;
+  animation: marquee 18s linear infinite;
+}
+
+.text-content {
+  display: inline-block;
+  /* Display as inline-block */
+  white-space: nowrap;
+  /* Prevent text from wrapping */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(30%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

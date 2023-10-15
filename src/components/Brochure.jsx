@@ -159,9 +159,9 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
 
             {!success ?
 
-                <div className='bg-white w-[85%] flex h-[90%] rounded-sm shadow-sm'>
+                <div className='bg-white w-[93%] md:w-[85%] flex flex-col md:flex-row h-[90%] rounded-sm shadow-sm'>
 
-                    <div className='w-1/2 flex justify-center items-center bg-right'
+                    <div className='hidden w-1/2 md:flex justify-center items-center bg-right'
 
                         style={{
                             backgroundImage: `url(${bg_pattern})`,
@@ -173,7 +173,7 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
 
                     </div>
 
-                    <div className={`w-1/2 flex flex-col mx-auto justify-center items-start relative`}>
+                    <div className={`hidden w-1/2 md:flex flex-col mx-auto justify-center items-start relative`}>
 
                         <div className='absolute top-5 right-5'>
 
@@ -186,7 +186,7 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
 
                         </div>
 
-                        <div className='flex items-center mb-5'>
+                        <div className='items-center mb-5'>
 
                             <h2 className='text-4xl text-textBlackDark font-primary font-bold'>Download Brochure</h2>
                         </div>
@@ -237,20 +237,95 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
 
                     </div>
 
+
+
+                    <div className={`md:hidden flex flex-col w-full h-full mx-auto justify-center items-center relative bg-center bg-cover bg-no-repeat`}
+                        style={{
+                            backgroundImage: `url(${bg_pattern})`,
+                        }}
+                    >
+
+                        <div className='absolute top-5 right-5'>
+
+                            <button className="p-3 rounded-full border max-w-fit max-h-fit border-primary hover:border-black transition duration-500 ease-in-out focus:outline-none" onClick={() => { handelBack() }}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+
+
+
+
+                        <div className='w-[90%] mx-auto pl-3'>
+
+                            <div className='mb-3'>
+                                <h2 className='text-2xl text-textBlackDark font-primary font-bold'>Download Brochure</h2>
+                            </div>
+
+                            <p className='mb-5 font-primary font-semibold text-gray-500 w-[88%]'>Please fill up the details in the form below,
+                                We shall email you the brochure.
+                            </p>
+
+                            <div className='flex justify-center items-center w-[90%]'>
+                                <form onSubmit={handleSubmit} className="w-full">
+                                    <div className="w-full flex md:items-baseline mb-4 flex-col md:flex-row">
+                                        <input type="text" id="name" name="name" placeholder='Name' autoComplete="off" className="input mb-2 md:mb-0" value={data.name} onChange={handleChange} />
+                                    </div>
+                                    <div className="w-full flex md:items-baseline mb-4 flex-col md:flex-row">
+                                        <input type="email" id="email" name="email" placeholder='Email Address' autoComplete="off" className="input mb-2 md:mb-0" value={data.email} onChange={handleChange} />
+                                    </div>
+                                    <div className="w-full flex md:items-baseline mb-4 flex-col md:flex-row">
+                                        <input type="text" id="mobile" name="mobile" placeholder='Mobile Number' autoComplete="off" className="input mb-2 md:mb-0" value={data.mobile} onChange={handleChange} />
+                                    </div>
+
+
+                                    <div className='my-3 mt-5'>
+                                        <button type="submit" className="button-gold w-full">
+                                            <div className='flex justify-center'>
+
+                                                <img src={sendIcon} alt="download Brochure" className='w-6 mr-3' />
+
+                                                {submitting ? "Brochure Is On The Way..." : "Get Brochure"}
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div className="w-full flex mb-3 md:items-baseline flex-col">
+                                        {errors.email && <div className="text-red-500 flex">{errors.email}</div>}
+                                        {errors.mobile && <div className="text-red-500 flex">{errors.mobile}</div>}
+                                        {successMessage && <div className="text-primary font-primary flex">{successMessage}</div>}
+                                    </div>
+                                </form>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
                 </div> :
 
-                <div className='bg-white w-[85%] h-[90%] flex justify-center items-center'>
+                <div className='bg-white w-[93%] md:w-[85%] h-[90%] flex justify-center items-center rounded-md shadow-md'>
 
-                    <div className='absolute top-5 right-5'>
+                    {/* <div className='absolute top-10 md:top-5 left-5 md:left-auto md:right-5 z-10'>
 
-                        <button className="p-4 rounded-full border max-w-fit max-h-fit border-primary hover:border-black transition duration-500 ease-in-out focus:outline-none" onClick={() => { handelBack() }}>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                        <button className="p-2 md:p-4 rounded-full border max-w-fit max-h-fit border-primary hover:border-black transition duration-500 ease-in-out focus:outline-none backdrop-blur-sm" onClick={() => { handelBack() }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 stroke-white hidden md:block">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} className="z-20 w-5 h-5 stroke-white hover:stroke-black transition duration-500 ease-in-out md:hidden">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                             </svg>
 
                         </button>
 
-                    </div>
+                    </div> */}
 
                     {isLoading && <motion.svg fill="#FFFFFF" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                         width="200px" viewBox="0 0 747 742" className='fill-none'>
@@ -293,11 +368,25 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
                     </motion.svg>}
 
                     <div className='relative w-full h-full' style={{ display: isLoading ? 'none' : 'block' }}>
-                        <a href={`https://drive.google.com/uc?export=download&id=${details[Page].ID}`} target="_blank" rel="noopener noreferrer" className='absolute  z-50 md:z-30 right-5 md:right-10 bottom-7 p-3 md:p-4 rounded-full border border-primary hover:border-primaryHover bg-blur-sm bg-opacity-75 transition duration-500 ease-in-out'>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth={1.5} fill='none' className="w-6 h-6 stroke-primary hover:stroke-primaryHover transition duration-500 ease-in-out">
+
+
+                        <a href={`https://drive.google.com/uc?export=download&id=${details[Page].ID}`} target="_blank" rel="noopener noreferrer" className='absolute right-3 top-14 mt-2 p-2 bg-[#000] border-primary hover:border-primaryHover transition duration-500 ease-in-out bg-opacity-75 '>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth={1.5} fill='none' className="w-6 h-6 stroke-[#fff] hover:stroke-primaryHover transition duration-500 ease-in-out ">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                             </svg>
                         </a>
+
+                        <div className='absolute top-28 right-3 mt-1'>
+
+                            <button className="p-2 transition duration-500 ease-in-out focus:outline-none bg-[#000] bg-opacity-75" onClick={() => { handelBack() }}>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 stroke-white hover:stroke-primaryHover">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+
+                            </button>
+
+                        </div>
 
 
                         <iframe
@@ -306,7 +395,7 @@ function Brochure({ DBVisible, setDBVisible, Page }) {
                             height="100%"
                             title={details[Page].fileName}
                             onLoad={() => setIsLoading(false)}
-                            className='rounded-md shadow-md'
+                            className='md:rounded-md md:shadow-md'
                         ></iframe>
 
                     </div>

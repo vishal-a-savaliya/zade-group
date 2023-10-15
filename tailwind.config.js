@@ -43,6 +43,7 @@ module.exports = {
       },
       screens: {
 
+        'smd': '350px',
         '14': '1320px',
         '15': '1420px',
         '16': '1520px',
