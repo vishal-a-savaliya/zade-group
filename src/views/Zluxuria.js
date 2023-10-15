@@ -36,6 +36,7 @@ import bg3 from '../image/bg/bg3.webp';
 import bg4 from '../image/bg/bg4.webp';
 import bg5 from '../image/bg/bg5.webp';
 import bg6 from '../image/bg/bg6.webp';
+import bg14 from '../image/bg/bg14.webp';
 import z_luxuria_logo from '../image/logos/ZADE_LUXURIA_LOGO.png'
 
 // import icon1 from '../image/icons/view.png'
@@ -437,9 +438,9 @@ function Zluxuria() {
 
                 <div className=''>
 
-                    {/* <div className='relative float-right'>
-                        <img src={bg3} alt='Z luxuria details' className='!right-0 w-full top-10 absolute' />
-                    </div> */}
+                    <div className='relative flex justify-end'>
+                        <img src={bg14} alt='Z luxuria details' className='w-[60%] top-32 right-0 absolute' />
+                    </div>
 
 
                     <div className='py-5'>
