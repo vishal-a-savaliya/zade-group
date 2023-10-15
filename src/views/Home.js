@@ -378,7 +378,7 @@ function Home() {
 
                 {/* Z Luxuria */}
 
-                <div className="flex justify-center items-center mt-28 md:mt-20 relative">
+                <div className="flex justify-center items-center mt-28 md:mt-32 relative">
 
                     <div className="hidden md:flex flex-col items-center md:relative md:-bottom-12 md:left-18 md:w-[80%] mx-auto md:z-30">
                         <motion.h1
