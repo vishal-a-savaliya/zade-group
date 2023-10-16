@@ -1,5 +1,5 @@
 // src/PrivacyPolicy.js
-import React from 'react';
+import { useEffect } from 'react';
 import { motion } from "framer-motion"
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
@@ -9,6 +9,13 @@ import Navbar from '../components/Navbar';
 import bg from '../image/hero_image.jpeg';
 
 const PrivacyPolicy = () => {
+
+    useEffect(() => {
+
+        window.scrollTo(0, 0);
+
+    }, []);
+
     return (
 
         <div>
@@ -62,7 +69,7 @@ const PrivacyPolicy = () => {
                     <p className="mb-6">
                         By accessing or using our website, you consent to the terms of this Privacy Policy. If you do not agree with the practices described in this policy, please do not use our website.
                     </p>
-                    <p className="mb-6">
+                    <p className="mb-6 pt-5">
                         <strong>1. Information Collection and Use</strong>
                     </p>
                     <p className="mb-6">
@@ -71,7 +78,7 @@ const PrivacyPolicy = () => {
                     <p className="mb-6">
                         1.2. <strong>Cookies and Tracking Technologies:</strong> We do not use cookies or any other tracking technologies on our website. Hence, we do not collect any personally identifiable information automatically.
                     </p>
-                    <p className="mb-6">
+                    <p className="mb-6 pt-5">
                         <strong>2. Data Storage and Security</strong>
                     </p>
                     <p className="mb-6">
@@ -80,7 +87,7 @@ const PrivacyPolicy = () => {
                     <p className="mb-6">
                         2.2. <strong>Data Security:</strong> While we take reasonable measures to protect the information you provide us, please be aware that no method of transmission over the internet or electronic storage is entirely secure. Therefore, we cannot guarantee the absolute security of your data; any transmission is at your own risk.
                     </p>
-                    <p className="mb-6">
+                    <p className="mb-6 pt-5">
                         <strong>3. Third-Party Disclosure</strong>
                     </p>
                     <p className="mb-6">
@@ -89,26 +96,26 @@ const PrivacyPolicy = () => {
                     <p className="mb-6">
                         3.2. <strong>Legal Requirements:</strong> We may disclose your information when required by law or in response to a valid legal request from authorities.
                     </p>
-                    <p className="mb-6">
+                    <p className="mb-6 pt-5">
                         <strong>4. Children's Privacy</strong>
                     </p>
                     <p className="mb-6">
                         Our website is not intended for children under the age of 13. We do not knowingly collect or solicit any personal information from children under 13. If you believe that a child under 13 may have provided us with personal information, please contact us at the email address mentioned below, and we will promptly delete that information.
                     </p>
-                    <p className="mb-6">
+                    <p className="mb-6 pt-5">
                         <strong>5. Changes to this Privacy Policy</strong>
                     </p>
                     <p className="mb-6">
                         We reserve the right to modify or update this Privacy Policy at any time without prior notice. Any changes made will be effective immediately upon posting the updated policy on this page. We encourage you to review this page periodically to stay informed about how we are protecting your information.
                     </p>
-                    <p className="mb-6">
+                    <p className="mb-6 pt-5">
                         <strong>6. Contact Us</strong>
                     </p>
                     <p className="mb-6">
                         If you have any questions, concerns, or suggestions regarding this Privacy Policy or the practices of Zade Group, please contact us at:
                     </p>
                     <p className="mb-6">
-                        Email: info@zadegroup.in
+                        <a href='mailto:info@zadegroup.in' className='hover:text-primary'>Email: info@zadegroup.in</a>
                     </p>
                     <p>
                         By using our website, you acknowledge that you have read and understood this Privacy Policy, and you agree to be bound by its terms. Thank you for visiting Zade Group's website.
