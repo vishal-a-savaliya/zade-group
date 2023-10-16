@@ -210,7 +210,7 @@ function Footer({ phoneNumber, Email, page }) {
                 </div> */}
                 <p className='text-center text-white md:pt-5 pb-10'>© 2023 All rights reserved</p>
                 {
-                    RERA[page] && <div className='hidden md:block text-center text-white font-primary md:pt-5 pb-10'>RERA Approved : {RERA[page]}</div>
+                    RERA[page] && RERA[page] ? <div className='hidden md:block text-center text-white font-primary md:pt-5 pb-10'>RERA Approved : {RERA[page]}</div> : <p className='hidden md:block text-center text-white md:pt-5 pb-10'>ZADE GROUP</p>
                 }
 
             </div>
