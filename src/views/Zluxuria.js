@@ -880,7 +880,7 @@ function Zluxuria() {
 
             </div>
 
-            <Footer phoneNumber={"7573030027-28"} Email={"info@zadegroup.in"} />
+            <Footer phoneNumber={"7573030027-28"} Email={"info@zadegroup.in"} page={"zluxuria"} />
 
         </motion.div >
     )

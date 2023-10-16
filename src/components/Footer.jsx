@@ -22,9 +22,15 @@ const pathVariants = {
 };
 
 
+const RERA = {
+    z2: "PR/GJ/AHMEDABAD/AHMEDABADCITY/AUDA/CAA12096/060723",
+    zluxuria: "PR/GJ/AHMEDABAD/AHMEDABADCITY/AUDA/RAA12017/280623"
+}
 
 
-function Footer({ phoneNumber, Email }) {
+
+
+function Footer({ phoneNumber, Email, page }) {
     return (
         <div className='bg-black bg-cover pt-14 md:px-3 lg:px-14 md:pt-10'
         // style={{
@@ -32,8 +38,10 @@ function Footer({ phoneNumber, Email }) {
         // }}
         >
 
-            <div className='absolute h-full bg-right-bottom'>
-                {/* <img src={footer_bg} alt='zade group' className='w-[100%]  object-cover' /> */}
+            <div className='md:hidden marquee-container pt-8'>
+                {
+                    RERA[page] && <div className='marquee-content inline-block text-white font-primary'>RERA Approved : {RERA[page]}</div>
+                }
             </div>
 
             <div className='flex flex-col md:flex-row justify-between md:w-[90%] 15:w-[80%] mx-auto px-[10%] md:px-0 py-20'>
@@ -189,7 +197,10 @@ function Footer({ phoneNumber, Email }) {
 
 
                 </div>
+
             </div>
+
+
 
 
             <div className='flex flex-col md:flex-row justify-between pt-3 md:w-[92%] 15:w-[83%] mx-auto border-[#FFFFFF33] border-t font-primary'>
@@ -198,6 +209,10 @@ function Footer({ phoneNumber, Email }) {
                     <Link to='/privacy-policy'><p className='text-center text-white font-medium pt-4 pb-10 px-3'>Privacy Policy</p></Link>
                 </div> */}
                 <p className='text-center text-white md:pt-5 pb-10'>© 2023 All rights reserved</p>
+                {
+                    RERA[page] && <div className='hidden md:block text-center text-white font-primary md:pt-5 pb-10'>RERA Approved : {RERA[page]}</div>
+                }
+
             </div>
 
         </div>
