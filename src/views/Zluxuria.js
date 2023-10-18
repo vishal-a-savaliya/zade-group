@@ -60,8 +60,8 @@ function Zluxuria() {
     const images = [img6, img3, img4, img5];
     const specification_images = [{
         image: amenities_img7,
-        title: "Double height entrance foyer",
-        description: "Make a striking first impression with our double-height entrance foyer, welcoming you and your guests to a space designed to leave a lasting memory.",
+        title: "Double height owner's lounge",
+        description: "Make a striking first impression with our double-height owner's lounge, welcoming you and your guests to a space designed to leave a lasting memory.",
         details: "25'ft Double Height Foyer"
 
     },
@@ -69,7 +69,7 @@ function Zluxuria() {
         image: amenities_img6, title: "Double height waiting & reception area", description: "Elevate your guests' experience in our double-height waiting and reception area, Get ready to be impressed as you and your guests are treated to the utmost hospitality and warmth.",
         details: "25'ft Double Height Foyer"
     },
-    { image: amenities_img1, title: "Double height owner's lounge", description: "Turn every special occasion into a grand memory with a venue that is perfect for all your gatherings and celebrations.", details: "25'ft Double Height Foyer" }];
+    { image: amenities_img1, title: "Double height multipurpose hall", description: "Turn every special occasion into a grand memory with a venue that is perfect for all your gatherings and celebrations.", details: "25'ft Double Height Foyer" }];
 
     // const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
