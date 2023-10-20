@@ -5,9 +5,6 @@ import { Link } from "react-router-dom";
 import bg from '../image/Z GROUP LOGO.svg';
 
 
-
-
-
 const Navbar = () => {
 
 

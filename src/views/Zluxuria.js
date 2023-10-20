@@ -382,7 +382,8 @@ function Zluxuria() {
                                         className='flex justify-start items-baseline my-4 md:my-0 md:mx-8'>
                                         <div className='py-5'>
                                             <h1 className='text-5xl text-textWhiteDark font-semibold'>{data[0]}</h1>
-                                            <p className=' text-textWhiteDark py-3 text-2xl font-primary'>{data[1]}</p>
+                                            <p className='text-textWhiteDark py-3 text-2xl font-primary'>{data[1]}</p>
+
                                         </div>
                                     </motion.div>
                                 )
@@ -400,10 +401,17 @@ function Zluxuria() {
                                         className='flex flex-col md:flex-row md:justify-start md:items-baseline md:mx-8 my-4 md:my-0'>
                                         <div className='py-5'>
                                             <h1 className='text-5xl text-textWhiteDark font-semibold'>{data[0]}</h1>
-                                            <p className=' text-textWhiteDark py-3 text-2xl font-primary max-w-[180px]'>{data[1]}</p>
+
+                                            {index === 1 ? (
+                                                <p className='text-textWhiteDark py-3 text-2xl font-primary'>
+                                                    Units <br /> Two Villaments Per Floor
+                                                </p>
+                                            ) : (
+                                                <p className='text-textWhiteDark py-3 text-2xl font-primary'>{data[1]}</p>
+                                            )}
                                         </div>
                                         <div className='ml-8 py-1'>
-                                            <hr className='border-primary border w-24'></hr>
+                                            <hr className='border-primary border w-20 15:w-24'></hr>
                                         </div>
                                     </motion.div>
                                 )

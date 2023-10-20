@@ -122,7 +122,7 @@ export const Projects = [
             },
             {
                 0: "4, 6 & 7 BHK",
-                1: "Super Size Residency"
+                1: "Supersize Residency"
             },
             {
                 0: 4,
