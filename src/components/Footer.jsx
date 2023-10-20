@@ -128,7 +128,7 @@ function Footer({ phoneNumber, Email, page }) {
                         <p className='text-textWhiteLight hover:text-gold transition duration-500 ease-in-out transform  w-fit mt-4 text-sm'>Z2</p>
                     </Link>
                     <Link to="/zluxuria">
-                        <p className='text-textWhiteLight hover:text-gold transition duration-500 ease-in-out transform  w-fit mt-4 text-sm'>Zade Luxuria</p>
+                        <p className='text-textWhiteLight hover:text-gold transition duration-500 ease-in-out transform  w-fit mt-4 text-sm'>Z Luxuria</p>
                     </Link>
 
 
