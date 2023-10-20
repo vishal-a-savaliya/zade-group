@@ -118,11 +118,11 @@ export const Projects = [
             },
             {
                 0: 56,
-                1: "Units ( 2 Apartment Per Floor )"
+                1: "Units 2 Villaments Per Floor"
             },
             {
                 0: "4, 6 & 7 BHK",
-                1: "Penthouse and Duplex Residency"
+                1: "Super Size Residency"
             },
             {
                 0: 4,
