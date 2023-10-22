@@ -25,6 +25,7 @@ import img7 from '../image/z2/7.jpeg'
 import img8 from '../image/z2/8.jpeg'
 // import img9 from '../image/z2/corponare_place_background_image.jpeg'
 
+import z2_logo from '../image/logos/Z2_LOGO.png';
 // import bg_2 from '../image/zluxuria/bg-2.png'
 import z2_hall_image from '../image/z2/z2_hall.jpeg'
 import brochure_cover from '../image/z2/Brochure_cover_3d.png'
@@ -113,7 +114,7 @@ function Z2() {
     Z2.moreDetails.map((data, index) => {
         return (
             AmenitiesElements.push(<div className='py-6 md:py-5 px-3' key={index}>
-                <h2 className='text-5xl md:text-6xl font-semibold text-tomato md:text-gray-600'>{data[0]}</h2>
+                <h2 className='text-5xl md:text-6xl font-semibold text-tomato'>{data[0]}</h2>
                 <h2 className='text-xl md:text-2xl text-textBlackDark font-bold font-primary pt-3 md:pt-4'>{data[1]}</h2>
             </div>)
         );
@@ -152,7 +153,8 @@ function Z2() {
 
                             <div className='flex flex-col justify-center items-center -mt-20'>
 
-                                <h1 className='text-3xl  mt-10 pt-10 pb-2 md:text-9xl text-center font-bold text-tomato font-primary uppercase'>Z2</h1>
+                                {/* <h1 className='text-3xl  mt-10 pt-10 pb-2 md:text-9xl text-center font-bold text-tomato font-primary uppercase'>Z2</h1> */}
+                                <img src={z2_logo} alt='z2 logo' className='w-32 mt-10 pt-10 pb-1' />
                                 <h1 className='text-3xl  mt-8 pb-2 md:text-6xl text-center font-bold text-white font-primary'>Elevate</h1>
                                 <h1 className='text-3xl md:text-6xl pb-2 text-center font-bold text-white font-primary'> business Growth with</h1>
                                 <h1 className='text-3xl md:text-6xl pb-2 text-center font-bold text-white font-primary'>Corporate Space</h1>
@@ -196,7 +198,8 @@ function Z2() {
 
                         <div className='flex flex-col justify-center items-center -mt-20 z-20'>
 
-                            <h1 className='text-6xl  mt-10 pt-10 text-center text-tomato font-primary font-bold'>Z2</h1>
+                            {/* <h1 className='text-6xl  mt-10 pt-10 text-center text-tomato font-primary font-bold'>Z2</h1> */}
+                            <img src={z2_logo} alt='z2 logo' className='w-24 mt-10 pt-10 pb-1' />
                             <h1 className='text-2xl pt-5 pb-2 text-center font-semibold text-white uppercase'>Elevate</h1>
                             <h1 className='text-2xl md:text-6xl pb-2 text-center font-semibold text-white uppercase'> business Growth with</h1>
                             <h1 className='text-2xl md:text-6xl pb-2 text-center font-semibold text-white uppercase'>Corporate Space</h1>
@@ -221,7 +224,7 @@ function Z2() {
 
                 <img src={z2} alt="Z2" className='w-[150px] h-auto pt-16 pb-9' />
                 <div className='flex flex-col items-center w-[60%] mx-auto'>
-                    <p className='text-textBlackDark font-primary text-sm font-semibold uppercase pb-5 text-center'>Discover Perfect Corporate Delight</p>
+                    <p className='text-textBlackDark font-primary text-sm font-semibold uppercase pb-5 text-center'>A Futuristic Corporate Edifice</p>
                     <h2 className='text-textBlackDark font-primary font-bold 14:text-5xl 15:text-6xl text-center'>Elevate your business to new heights with Z2</h2>
                     {/* <p className='text-gray-500 pt-6 pb-6'>The Corporate Space where modernity meets excellence to create the perfect environment for businesses, offering a state-of-the-art space for businesses and corporations to thrive success.</p> */}
                 </div>
@@ -307,7 +310,7 @@ function Z2() {
 
                         <div className='flex items-center justify-center py-3'>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" className="w-8 h-8 stroke-gold">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" className="w-8 h-8 stroke-tomato">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
                             </svg>
                             <h1 className='text-xl font-style ml-3 text-white'>{Z2.status}</h1>
@@ -318,7 +321,7 @@ function Z2() {
 
                             <a href={Z2.locationLink} target="_blank" rel="noreferrer">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" className="w-7 h-7 stroke-gold">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" className="w-7 h-7 stroke-tomato">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                 </svg>
@@ -333,7 +336,7 @@ function Z2() {
 
                         </div>
 
-                        <a href="#contact" className="button-gold mt-8">CONTACT</a>
+                        <a href="#contact" className="button-tomato mt-8">CONTACT</a>
 
                     </motion.div>
 
