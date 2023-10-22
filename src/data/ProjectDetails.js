@@ -1,8 +1,12 @@
+// project logos
+import z2_logo from '../image/logos/Z2_LOGO.png'
+import z_luxuria_logo from '../image/logos/ZADE_LUXURIA_LOGO.png';
+
+// project images
 import z2_image from '../image/z2/8.jpeg';
 import zluxuria_image from '../image/zluxuria/Zluxuria1.jpeg';
 
-
-
+// z luxuria images
 import amenities_img2 from '../image/zluxuria/zluxuria_specification2.jpeg'
 import amenities_img3 from '../image/zluxuria/zluxuria_specification3.jpeg'
 import amenities_img4 from '../image/zluxuria/zluxuria_specification4.jpeg'
@@ -53,6 +57,7 @@ import Z2_amenities9 from '../image/icons/z2/elevators.webp'
 export const Projects = [
     {
         title: "Z2",
+        logo: z2_logo,
         id: "01",
         description: "The Z2, Corporate Space is our newest project in construction, offering a state-of-the-art space for businesses and corporations to thrive. This stunning 32-story building boasts a grand height of 11 feet per floor, providing space for businesses of all sizes",
         location: "Thaltej, Ahmedabad",
@@ -104,6 +109,7 @@ export const Projects = [
     },
     {
         title: "Z Luxuria",
+        logo: z_luxuria_logo,
         id: "02",
         description: "Introducing our latest project, Z Luxuria a luxurious residential tower that will set new standards for opulent living in Ahmedabad. This magnificent 33-story tower offers 56 units with world-class amenities and stunning architectural design.",
         location: "Thaltej, Ahmedabad",
