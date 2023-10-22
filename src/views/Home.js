@@ -210,7 +210,7 @@ function Home() {
                         <motion.h1
                             className="text-3xl md:text-6xl font-semibold primaryBlack">Presenting</motion.h1>
                         <motion.h1
-                            className="text-2xl mb-4 md:text-8xl md:pt-2 font-style font-bold text-tomato font-primary">Zade Group's</motion.h1>
+                            className="text-2xl mb-4 md:text-8xl md:pt-2 font-style font-bold text-z2 font-primary">Zade Group's</motion.h1>
                     </div>
 
                 </div>
@@ -251,13 +251,6 @@ function Home() {
                             </div>
                         </Link>
 
-                        <div className="hidden absolute bottom-0 right-0 md:flex flex-col justify-end items-end">
-                            <div className="px-5 md:px-12 py-10 flex flex-col justify-center items-center">
-                                <div>
-                                    <h1 className="text-3xl md:text-7xl text-tomato font-style text-center">{Projects[0].title}</h1>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
 
@@ -265,7 +258,7 @@ function Home() {
 
                     <div key={Projects[0].id} className="px-5 mt-10 md:w-[45%] flex flex-col justify-start md:mt-28 md:px-20 ">
 
-                        <motion.h1
+                        {/* <motion.h1
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{
                                 duration: 1,
@@ -273,7 +266,20 @@ function Home() {
                             }}
                             initial={{ opacity: 0, x: 20 }}
                             className="text-5xl md:text-6xl font-[500] py-2 md:pb-3">{Projects[0].title}
-                        </motion.h1>
+                        </motion.h1> */}
+
+                        <motion.img
+
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{
+                                duration: 1,
+                                delay: 0.2,
+                            }}
+                            initial={{ opacity: 0, x: 20 }}
+
+                            src={Projects[0].logo} alt={Projects[0].title} className="w-24 md:w-28 py-2 pb-4 md:pb-10"
+
+                        />
 
                         <motion.p
 
@@ -386,7 +392,7 @@ function Home() {
                         <motion.h1
                             className="text-3xl md:text-6xl font-semibold primaryBlack">Presenting</motion.h1>
                         <motion.h1
-                            className="text-2xl mb-4 md:text-8xl md:pt-2 font-style font-bold text-gold font-primary">Z Luxuria</motion.h1>
+                            className="text-2xl mb-4 md:text-8xl md:pt-2 font-style font-bold text-zluxuria font-primary">Z Luxuria</motion.h1>
                     </div>
 
 
@@ -441,7 +447,7 @@ function Home() {
 
                     <div key={Projects[1].id} className="px-5 mt-10 md:w-[45%] flex flex-col justify-start md:mt-28 md:px-20 ">
 
-                        <motion.h1
+                        {/* <motion.h1
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{
                                 duration: 1,
@@ -449,7 +455,20 @@ function Home() {
                             }}
                             initial={{ opacity: 0, x: 20 }}
                             className="text-4xl md:text-6xl font-bold font-primary py-2 md:pb-3">{Projects[1].title}
-                        </motion.h1>
+                        </motion.h1> */}
+
+                        <motion.img
+
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{
+                                duration: 1,
+                                delay: 0.2,
+                            }}
+                            initial={{ opacity: 0, x: 20 }}
+
+                            src={Projects[1].logo} alt={Projects[1].title} className="w-36 md:w-40 py-2 pb-4 md:pb-6"
+
+                        />
 
                         <motion.p
 
