@@ -22,6 +22,8 @@ module.exports = {
         goldHover: '#c8924c',
         tomato: '#d3815d',
         tomatoHover: '#BE6944',
+        z2: '#BF795F',
+        zluxuria: '#D7B56D',
         green: '#1E3738',
         secondaryBlack: '#6A6E71',
         textBlackLight: '#A5A6AA',
