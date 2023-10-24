@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 
 import { motion } from "framer-motion"
-import { Projects, Amenities } from '../data/ProjectDetails'
+import { Projects, Amenities, RERA } from '../data/ProjectDetails'
 // import { ProjectUpdates } from "../data/ProjectUpdate"
 
 import ImageSlider from "../components/ImageSlider"
@@ -528,39 +528,57 @@ function Z2() {
             </div>
 
 
-            <div className="relative h-[85vh]">
+            <div className="relative h-[95vh]">
                 <div
                     className="absolute inset-0 bg-no-repeat bg-cover md:bg-fixed bg-center"
                     style={{ backgroundImage: `url(${img3})` }}
                 />
-                <div className="relative z-10 flex flex-col justify-center items-center h-[85vh]">
+                <div className="absolute z-10 flex flex-col justify-center items-center h-full w-full bg-black bg-opacity-30">
 
-                    <div className="max-w-[85%]">
 
-                        <div className="w-fit py-10 px-3 rounded-sm shadow-md bg-secondary flex flex-col justify-center items-center transition duration-500 ease-in-out transform hover:cursor-pointer" onClick={() => { setDBVisible(true) }}>
 
-                            <div className="h-[full] flex justify-center items-center py-4 px-10">
-                                <motion.img
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 1.5,
-                                        delay: 0.2,
-                                    }}
-                                    initial={{ opacity: 0, y: 10 }} src={brochure_cover} className='fill-primary w-44' alt='icon' />
-                                {/* {SVG} */}
-                            </div>
+                    <div className="w-fit py-10 px-3 rounded-sm shadow-md bg-secondary flex flex-col justify-center items-center transition duration-500 ease-in-out transform hover:cursor-pointer" onClick={() => { setDBVisible(true) }}>
 
-                            <div className="px-4 my-5 hover:cursor-pointer">
-                                <motion.h1
-                                    variants={animate}
-                                    className="text-xl text-center text-white font-primary font-bold"
-                                    onClick={() => { setDBVisible(true) }}
-                                >Download Brochure</motion.h1>
-                            </div>
+                        <div className="h-[full] flex justify-center items-center py-4 px-10">
+                            <motion.img
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    duration: 1.5,
+                                    delay: 0.2,
+                                }}
+                                initial={{ opacity: 0, y: 10 }} src={brochure_cover} className='fill-primary w-44' alt='icon' />
+                            {/* {SVG} */}
+                        </div>
 
+                        <div className="px-4 my-5 hover:cursor-pointer">
+                            <motion.h1
+                                variants={animate}
+                                className="text-xl text-center text-white font-primary font-bold"
+                                onClick={() => { setDBVisible(true) }}
+                            >Download Brochure</motion.h1>
                         </div>
 
                     </div>
+
+                    <div className='flex flex-col items-center'>
+
+                        <h3 className='hidden md:block text-2xl text-black mt-10 w-fit font-primary font-bold'>Proudly Approved By RERA</h3>
+
+
+
+                        <div className='hidden md:flex justify-center pt-2'>
+                            {
+                                RERA['zluxuria'] && <div className='inline-block text-textWhiteDark font-primary font-semibold text-lg'>{RERA['zluxuria']} <span className='px-3'>|</span> {RERA['RERAWEB']}</div>
+                            }
+                        </div>
+                    </div>
+
+                    <div className='md:hidden marquee-container pt-10'>
+                        {
+                            RERA['zluxuria'] && <div className='marquee-content inline-block text-textWhiteDark font-primary font-semibold text-lg'> Proudly Approved By RERA : {RERA['zluxuria']} <span className='px-3'>|</span> {RERA['RERAWEB']}</div>
+                        }
+                    </div>
+
                 </div>
             </div>
 
