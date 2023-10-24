@@ -22,10 +22,10 @@ const pathVariants = {
 };
 
 
-const RERA = {
-    z2: "PR/GJ/AHMEDABAD/AHMEDABADCITY/AUDA/CAA12096/060723",
-    zluxuria: "PR/GJ/AHMEDABAD/AHMEDABADCITY/AUDA/RAA12017/280623"
-}
+// const RERA = {
+//     z2: "PR/GJ/AHMEDABAD/AHMEDABADCITY/AUDA/CAA12096/060723",
+//     zluxuria: "PR/GJ/AHMEDABAD/AHMEDABADCITY/AUDA/RAA12017/280623"
+// }
 
 
 
@@ -38,13 +38,13 @@ function Footer({ phoneNumber, Email, page }) {
         // }}
         >
 
-            <div className='md:hidden marquee-container pt-8'>
+            {/* <div className='md:hidden marquee-container pt-8'>
                 {
                     RERA[page] && <div className='marquee-content inline-block text-white font-primary'>RERA Approved : {RERA[page]}</div>
                 }
-            </div>
+            </div> */}
 
-            <div className='flex flex-col md:flex-row justify-between md:w-[90%] 15:w-[80%] mx-auto px-[10%] md:px-0 py-20'>
+            <div className='flex flex-col md:flex-row justify-between md:w-[90%] 15:w-[80%] mx-auto px-[10%] md:px-0 py-14 md:py-20'>
 
                 <div>
 
@@ -208,11 +208,14 @@ function Footer({ phoneNumber, Email, page }) {
                     <Link to='/about'><p className='text-center text-white font-medium pt-4 pb-10 pr-3'>About</p></Link>
                     <Link to='/privacy-policy'><p className='text-center text-white font-medium pt-4 pb-10 px-3'>Privacy Policy</p></Link>
                 </div> */}
-                <p className='text-center text-white md:pt-5 pb-10'>© 2023 All rights reserved</p>
-                {
+                <p className='text-center text-white pt-5 pb-10'>© 2023 All rights reserved</p>
+                {/* {
                     RERA[page] && RERA[page] ? <div className='hidden md:block text-center text-white font-primary md:pt-5 pb-10'>RERA Approved : {RERA[page]}</div> : <p className='hidden md:block text-center text-white md:pt-5 pb-10'>ZADE GROUP</p>
-                }
+                } */}
 
+                <Link to='/' className='hidden md:block' >
+                    <p className='text-center text-white md:pt-5 pb-10'>ZADE GROUP</p>
+                </Link>
             </div>
 
         </div>

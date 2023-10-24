@@ -274,3 +274,8 @@ export const AmenitiesDetails = {
 
     ]
 }
+
+export const RERA = {
+    z2: "PR/GJ/AHMEDABAD/AHMEDABADCITY/AUDA/CAA12096/060723",
+    zluxuria: "PR/GJ/AHMEDABAD/AHMEDABADCITY/AUDA/RAA12017/280623"
+}
