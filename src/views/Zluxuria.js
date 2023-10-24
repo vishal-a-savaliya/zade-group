@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import img1 from '../image/zluxuria/Zluxuria1.jpeg'
-import img2 from '../image/zluxuria/2_lite.jpeg'
+import img2 from '../image/zluxuria/Zluxuria8.jpeg'
 import bg from '../image/zluxuria/hero_bg_image_z_luxuria.jpeg'
 // import bg_2 from '../image/zluxuria/bg-2.png'
 import specification_bg from '../image/zluxuria/specification.jpeg'
