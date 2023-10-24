@@ -811,7 +811,7 @@ function Zluxuria() {
             <div className="relative h-[85vh]">
                 <div
                     className="absolute inset-0 bg-no-repeat bg-cover md:bg-fixed bg-center"
-                    style={{ backgroundImage: `url(${img4})` }}
+                    style={{ backgroundImage: `url(${img5})` }}
                 />
                 <div className="relative z-10 flex flex-col justify-center items-center h-[85vh]">
 
