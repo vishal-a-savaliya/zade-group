@@ -22,11 +22,12 @@ import img7 from '../image/zluxuria/Z_LUXURIA_ARTWORK_2.png';
 import amenities_img1 from '../image/zluxuria/zluxuria_specification1.jpeg'
 // import amenities_img2 from '../image/zluxuria/zluzuria_specification2.jpeg'
 // import amenities_img3 from '../image/zluxuria/zluzuria_specification3.jpeg'
-// import amenities_img4 from '../image/zluxuria/zluzuria_specification4.jpeg'
+// import amenities_img4 from '../image/zluxuria/zluxuria_specification4.jpeg'
 // import amenities_img5 from '../image/zluxuria/zluzuria_specification5.jpeg'
 import amenities_img6 from '../image/zluxuria/zluxuria_specification6.jpeg'
 import amenities_img7 from '../image/zluxuria/zluxuria_specification7.jpeg'
 // import amenities_img8 from '../image/zluxuria/zluxuria_specification8.jpeg'
+import amenities_img4 from '../image/zluxuria/Zluxuria4.jpeg'
 import brochure_cover from '../image/zluxuria/brochure_3d.png';
 
 
@@ -58,18 +59,31 @@ function Zluxuria() {
 
     const ZL = Projects[1];
     const images = [img6, img3, img4, img5];
-    const specification_images = [{
-        image: amenities_img7,
-        title: "Double height owner's lounge",
-        description: "Make a striking first impression with our double-height owner's lounge, welcoming you and your guests to a space designed to leave a lasting memory.",
-        details: "25'ft Double Height Foyer"
+    const specification_images = [
 
-    },
-    {
-        image: amenities_img6, title: "Double height waiting & reception area", description: "Elevate your guests' experience in our double-height waiting and reception area, Get ready to be impressed as you and your guests are treated to the utmost hospitality and warmth.",
-        details: "25'ft Double Height Foyer"
-    },
-    { image: amenities_img1, title: "Double height multipurpose hall", description: "Turn every special occasion into a grand memory with a venue that is perfect for all your gatherings and celebrations.", details: "25'ft Double Height Foyer" }];
+        {
+            image: amenities_img4,
+            title: "Double height entrance foyer",
+            description: "Make a striking first impression with our double-height entrance foyer, welcoming you and your guests to a space designed to leave a lasting memory.",
+            details: "Welcoming you to royal lifestyle"
+        },
+
+        {
+            image: amenities_img7,
+            title: "Double height owner's lounge",
+            description: "Make a striking first impression with our double-height owner's lounge, welcoming you and your guests to a space designed to leave a lasting memory.",
+            details: "25'ft Double Height Foyer"
+
+        },
+        {
+            image: amenities_img6, title: "Double height waiting & reception area", description: "Elevate your guests' experience in our double-height waiting and reception area, Get ready to be impressed as you and your guests are treated to the utmost hospitality and warmth.",
+            details: "25'ft Double Height Foyer"
+        },
+        {
+            image: amenities_img1,
+            title: "Double height multipurpose hall",
+            description: "Turn every special occasion into a grand memory with a venue that is perfect for all your gatherings and celebrations.", details: "25'ft Double Height Foyer"
+        }];
 
     // const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
