@@ -171,8 +171,10 @@ function Zluxuria() {
                     style={{
                         backgroundImage: `url(${bg})`,
                     }}>
-                    {/* <Navbar /> */}
-                    <div className="w-full h-full flex  justify-center items-center backdrop-brightness-50">
+
+                    <div className='absolute w-full h-full bg-black bg-opacity-25'></div>
+
+                    <div className="w-full h-full flex  justify-center items-center">
                         <motion.div
 
                             animate={{ opacity: 1 }}
@@ -184,7 +186,7 @@ function Zluxuria() {
                             initial={{ opacity: 0 }}
                             // whileHover={{ scale: 1.2 }}
 
-                            className="h-full flex flex-col items-center">
+                            className="h-full flex flex-col items-center z-30">
 
                             <div className='flex flex-col justify-center items-center pt-[43%]'>
                                 <h1 className='mt-10 pt-10 pb-2 text-6xl md:text-9xl text-center md:font-bold text-white font-primary'>Z Luxuria</h1>
