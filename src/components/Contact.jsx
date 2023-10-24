@@ -107,7 +107,7 @@ function Contact({ page = "home", Subject }) {
             <div className='flex w-[90%] md:w-[85%] mt-10 flex-col justify-center mx-auto md:flex-row'>
                 <div className='md:w-[40%] pl-4 md:pl-0 font-primary md:pr-14'>
 
-                    <motion.h2
+                    {page === 'zluxuria' ? <motion.h2
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{
                             duration: 1,
@@ -115,7 +115,19 @@ function Contact({ page = "home", Subject }) {
                         }}
                         initial={{ opacity: 0, x: -20 }}
 
-                        className='text-4xl font-semibold primaryBlack'>Invest in your future.<br /> <span className='text-gold font-primary'>Let's talk!</span></motion.h2>
+                        className='text-4xl font-semibold primaryBlack'>Elevate Your Lifestyle<br /> <span className='text-gold font-primary'>Let's talk!</span></motion.h2>
+
+                        : <motion.h2
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{
+                                duration: 1,
+                                delay: 0.2,
+                            }}
+                            initial={{ opacity: 0, x: -20 }}
+
+                            className='text-4xl font-semibold primaryBlack'>Invest in your future.<br /> <span className='text-gold font-primary'>Let's talk!</span></motion.h2>
+
+                    }
 
                     <motion.p
                         whileInView={{ opacity: 1, x: 0 }}
