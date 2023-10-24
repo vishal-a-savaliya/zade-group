@@ -13,6 +13,7 @@ import amenities_img4 from '../image/zluxuria/zluxuria_specification4.jpeg'
 import amenities_img5 from '../image/zluxuria/zluxuria_specification5.jpeg'
 import amenities_img8 from '../image/zluxuria/zluxuria_specification8.jpeg'
 import amenities_img9 from '../image/zluxuria/zluxuria_specification9.jpg'
+import amenities_img10 from '../image/zluxuria/Zluxuria6.jpeg'
 
 import icon1 from '../image/icons/view.webp';
 import icon2 from '../image/icons/natural-light.webp';
@@ -229,43 +230,25 @@ export const Amenities = {
 export const AmenitiesDetails = {
     "zluxuria": [
         {
-            "svg": <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.7926 7.71101C17 8.67676 17 9.97075 17 12C17 14.0287 17 15.3225 16.7928 16.2882M16.7926 7.71101C16.7138 7.34408 16.6051 7.02453 16.455 6.73005C15.9757 5.78924 15.2108 5.02433 14.27 4.54497C13.2004 4 11.8003 4 9 4C6.19974 4 4.79961 4 3.73005 4.54497C2.78924 5.02433 2.02433 5.78924 1.54497 6.73005C1 7.79961 1 9.19974 1 12C1 14.8003 1 16.2004 1.54497 17.27C2.02433 18.2108 2.78924 18.9757 3.73005 19.455C4.79961 20 6.19974 20 9 20C11.8003 20 13.2004 20 14.27 19.455C15.2108 18.9757 15.9757 18.2108 16.455 17.27C16.6052 16.9753 16.714 16.6555 16.7928 16.2882M16.7926 7.71101L17 7.62176L17.3984 7.44768C19.9262 6.34311 21.1902 5.79083 22.0951 6.38296C23 6.97508 23 8.3544 23 11.113V12.887C23 15.6456 23 17.0249 22.0951 17.617C21.1902 18.2092 19.9262 17.6569 17.3984 16.5523L17 16.3782L16.7928 16.2882M6 12C6 10.2142 6 9.32135 6.35181 8.80519C6.65868 8.35497 7.13034 8.06469 7.64955 8.00652C8.24481 7.93983 8.97022 8.38627 10.4211 9.27915C11.8719 10.172 12.5973 10.6185 12.8407 11.2013C13.0531 11.7097 13.0531 12.2903 12.8407 12.7987C12.5973 13.3815 11.8719 13.828 10.4211 14.7208C8.97022 15.6137 8.24481 16.0602 7.64955 15.9935C7.13034 15.9353 6.65868 15.645 6.35181 15.1948C6 14.6786 6 13.7858 6 12Z" stroke="#cda24b" strokeWidth="1.5" />
-            </svg>,
+            "svg": "",
             "image": amenities_img2,
             "name": "Home Theater",
             "description": "Experience cinema-quality visuals and sound, immersing you in movie magic without leaving the comfort of our residency.",
         },
         {
-            "svg": <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 5L16 19H2L9 5Z" stroke="#cda24b" strokeWidth="1.2" strokeLinejoin="round" />
-                <path d="M14 14.5L16.8235 11L22 19H16M6 11H12M7 9L5 13M11 9L13 13" stroke="#cda24b" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>,
+            "svg": "",
             "image": amenities_img3,
             "name": "Toddler Play Zone",
             "description": "A safe and vibrant space for the little ones to unleash their imagination, ensuring fun-filled and constructive playtime.",
         },
         {
-            "svg": <svg width="36" height="36" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19.862 31.5215H25.793V33.4985H19.862V31.5215ZM15.908 33.4985V35.4755H29.747V33.4985H27.77V31.5215L28.8402 31.5175L29.0551 31.5123C31.6858 31.4002 31.5421 30.3182 28.8837 30.3182L16.4787 30.3274C13.848 30.4394 13.9903 31.5215 16.6487 31.5215H17.885V33.4985H15.908Z" fill="#cda24b" />
-                <path d="M12.9425 11.7515H32.7125L32.8865 11.7568C34.443 11.8464 35.678 13.138 35.678 14.717V26.579L35.6727 26.753C35.5831 28.3095 34.2915 29.5445 32.7125 29.5445H12.9425L12.7685 29.5392C11.212 29.4496 9.977 28.158 9.977 26.579V14.717L9.98227 14.543C10.0719 12.9865 11.3635 11.7515 12.9425 11.7515ZM27.77 31.5215H32.7125L32.9273 31.5175C35.5581 31.4055 37.655 29.2374 37.655 26.579V14.717L37.651 14.5022C37.539 11.8714 35.3709 9.7745 32.7125 9.7745H12.9425L12.7277 9.77845C10.0969 9.89048 8 12.0586 8 14.717V26.579L8.00395 26.7938C8.11598 29.4246 10.2841 31.5215 12.9425 31.5215H17.885H27.77Z" fill="#cda24b" />
-            </svg>,
+            "svg": "",
             "image": amenities_img4,
             "name": "TV Lounge",
             "description": "A cozy retreat where residents can gather, relax, and catch up on their favorite shows or the latest news, fostering community ties.",
         },
         {
-            "svg": <svg width="36" height="36" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M34.875 12.5C36.049 12.5 37 13.451 37 14.625C37 15.799 36.049 16.75 34.875 16.75C33.701 16.75 32.75 15.799 32.75 14.625C32.75 13.451 33.701 12.5 34.875 12.5Z" stroke="#cda24b" strokeWidth="2" strokeLinejoin="round" />
-                <path d="M34.875 28.25C36.049 28.25 37 29.201 37 30.375C37 31.549 36.049 32.5 34.875 32.5C33.701 32.5 32.75 31.549 32.75 30.375C32.75 29.201 33.701 28.25 34.875 28.25Z" stroke="#cda24b" strokeWidth="2" strokeLinejoin="round" />
-                <path d="M11.312 27.875C12.589 27.875 13.625 28.911 13.625 30.188C13.625 31.465 12.589 32.5 11.312 32.5C10.035 32.5 9 31.465 9 30.188C9 28.911 10.035 27.875 11.312 27.875Z" stroke="#cda24b" strokeWidth="2" strokeLinejoin="round" />
-                <path d="M11.312 12.5C12.589 12.5 13.625 13.535 13.625 14.812C13.625 16.089 12.589 17.125 11.312 17.125C10.035 17.125 9 16.089 9 14.812C9 13.535 10.035 12.5 11.312 12.5Z" stroke="#cda24b" strokeWidth="2" strokeLinejoin="round" />
-                <path d="M25 32.5V30.5C25 29.395 24.105 28.5 23 28.5C21.895 28.5 21 29.395 21 30.5V32.5" stroke="#cda24b" strokeWidth="2" strokeLinejoin="round" />
-                <path d="M25 12.5V14.5C25 15.605 24.105 16.5 23 16.5C21.895 16.5 21 15.605 21 14.5V12.5" stroke="#cda24b" strokeWidth="2" strokeLinejoin="round" />
-                <path d="M9 12.5H37V32.5H9V12.5Z" stroke="#cda24b" strokeWidth="2" strokeLinejoin="round" />
-                <path d="M25.682 21.548L31 37.5" stroke="#cda24b" strokeWidth="2" strokeLinejoin="round" />
-                <path d="M25 18.5C25.552 18.5 26 18.948 26 19.5C26 20.052 25.552 20.5 25 20.5C24.448 20.5 24 20.052 24 19.5C24 18.948 24.448 18.5 25 18.5Z" fill="#cda24b" />
-            </svg>,
+            "svg": "",
             "image": amenities_img5,
             "name": "Indoor Game Area",
             "description": "Engage in friendly competition or hone your billiards skills, offering residents both leisure and entertainment in one corner.",
@@ -281,6 +264,12 @@ export const AmenitiesDetails = {
             "image": amenities_img8,
             "name": "Infinity Swimming Pool",
             "description": "A covered pool promising you a refreshing dip in the water along with gorgeous views of the horizon that are sure to soothe your mind, bod and soul",
+        },
+        {
+            "svg": "",
+            "image": amenities_img10,
+            "name": "Terrace Garden",
+            "description": "The charming sit-outs and decks wrapped in fragrant plantations, under the mesmerizing sky makes for the picture perfect space for party and gatherings.",
         },
 
     ]
