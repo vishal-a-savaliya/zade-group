@@ -136,8 +136,11 @@ function Z2() {
                     style={{
                         backgroundImage: `url(${bg})`,
                     }}>
-                    {/* <Navbar /> */}
-                    <div className="w-full h-full flex  justify-center items-center backdrop-brightness-50">
+
+                    <div className='absolute w-full h-full bg-black bg-opacity-30'></div>
+
+
+                    <div className="w-full h-full flex  justify-center items-center">
                         <motion.div
 
                             animate={{ opacity: 1 }}
@@ -149,7 +152,7 @@ function Z2() {
                             initial={{ opacity: 0 }}
                             // whileHover={{ scale: 1.2 }}
 
-                            className="h-full flex flex-col justify-center items-center">
+                            className="h-full flex flex-col justify-center items-center z-30">
 
                             <div className='flex flex-col justify-center items-center -mt-20'>
 
