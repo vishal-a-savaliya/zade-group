@@ -227,3 +227,9 @@ textarea::placeholder {
     transform: translateX(-100%);
   }
 }
+
+
+.select-none {
+  user-select: none;
+}
+
