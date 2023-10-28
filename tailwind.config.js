@@ -1,13 +1,11 @@
 /** @type {import('tailwindcss').Config} */
+
+
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}", "./*/*.html",
   ],
   theme: {
-
-
-
-
 
     extend: {
       colors: {
@@ -50,6 +48,9 @@ module.exports = {
         '15': '1420px',
         '16': '1520px',
       },
+      cursor: {
+        'slider': 'url(./image/slider95x95.svg), pointer'
+      }
     },
     fontFamily: {
       'sans': ['ui-sans-serif', 'system-ui'],
