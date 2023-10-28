@@ -45,7 +45,7 @@ import Navbar from '../components/Navbar'
 import Contact from '../components/Contact'
 import Brochure from "../components/Brochure"
 import CTA from '../components/CTA'
-// import ImageSlider from '../components/ImageSlider'
+
 
 
 
@@ -526,6 +526,13 @@ function Z2() {
                 </div>
                 {/* <h2 className='absolute top-0'>Image Gallery</h2> */}
             </div>
+
+
+
+
+
+
+            {/* Brochure */}
 
 
             <div className="relative h-[95vh]">
