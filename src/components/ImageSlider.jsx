@@ -120,10 +120,18 @@ function ImageSlider({ images, width = 600, height = 450 }) {
 
 
     const startDivRef = useRef(null); // Change from 0 to null
-    const [scrollAmount, setScrollAmount] = useState(0);
-    const [fullscreenImageIndex, setFullscreenImageIndex] = useState(null);
+    const transformDivRef = useRef(null);
 
-    const maxScrollAmount = 600 * (images.length - 1);
+    const [scrollAmount, setScrollAmount] = useState(0);
+    // const [maxScrollAmount, setMaxScrollAmount] = useState(0);
+    const [fullscreenImageIndex, setFullscreenImageIndex] = useState(null);
+    const [startTouchX, setStartTouchX] = useState(null);
+
+
+    const isMobile = window.innerWidth <= 768;
+
+    const maxScrollAmount = isMobile ? 350 * (images.length) : 600 * (images.length - 2.5);
+    // console.log(maxScrollAmount);
 
     const handleMouseMove = (e) => {
         // Get the bounding rectangle of the slider div
@@ -133,15 +141,35 @@ function ImageSlider({ images, width = 600, height = 450 }) {
         // Calculate the difference between the mouse's X position and the center
         const diffX = e.clientX - center;
 
+        console.log(scrollAmount + diffX * 0.03);
+
         // Set the scroll amount based on the difference (you can adjust the factor for faster/slower sliding)
         setScrollAmount(prevScroll => Math.min(maxScrollAmount, Math.max(0, prevScroll + diffX * 0.03)));
     };
 
-
-
-    const handleDragStart = (e) => {
-        e.preventDefault();
+    const handleTouchStart = (e) => {
+        setStartTouchX(e.touches[0].clientX);
     };
+
+    const handleTouchMove = (e) => {
+        if (startTouchX !== null) {
+            const diffX = e.touches[0].clientX - startTouchX;
+            setScrollAmount(prevScroll => Math.min(maxScrollAmount, Math.max(0, prevScroll + diffX * 0.03)));
+        }
+    };
+
+    const handleTouchEnd = () => {
+        setStartTouchX(null); // Reset starting touch position
+    };
+
+
+
+    // useEffect(() => {
+    //     if (transformDivRef.current) {
+    //         const divWidth = transformDivRef.current.offsetWidth;
+    //         setMaxScrollAmount(divWidth);
+    //     }
+    // }, [images]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -169,6 +197,11 @@ function ImageSlider({ images, width = 600, height = 450 }) {
     };
 
 
+    //for image not drag
+
+    const handleDragStart = (e) => {
+        e.preventDefault();
+    };
 
     return (
         <>
@@ -176,8 +209,12 @@ function ImageSlider({ images, width = 600, height = 450 }) {
                 className="w-full h-full flex justify-center items-center md:my-14 overflow-hidden select-none hover:cursor-slider"
                 ref={startDivRef}
                 onMouseMove={handleMouseMove}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
             >
                 <div
+                    ref={transformDivRef}
                     className="flex w-full h-full transition-transform duration-400 ease-out"
                     style={{ transform: `translateX(-${scrollAmount}px)` }}
                 >
