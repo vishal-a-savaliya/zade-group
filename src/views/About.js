@@ -66,12 +66,12 @@ function About() {
                         <h3 className='font-primary font-semibold text-textWhiteDark text-2xl md:text-5xl text-center'>Available For Occupancy</h3>
                     </div>
 
-                    <div className='flex flex-col md:flex-row py-12 items-center'>
+                    <div className='flex flex-col md:flex-row py-12 items-center justify-center w-full'>
 
 
-                        <Link to={'/z2'} >
+                        <Link to={'/z2'} className='w-[90%] md:w-[350px]' >
 
-                            <div className='flex flex-col bg-lightBlack w-[350px] shadow-sm'>
+                            <div className='flex flex-col bg-lightBlack w-full shadow-sm'>
 
                                 <img src={img8} alt='Zade group project Z2' className='w-full h-[500px] object-top  object-cover' />
 
@@ -87,7 +87,7 @@ function About() {
                                         <p className='text-textWhiteDark font-[500] text-[15px]'>Status</p>
                                         <p className='text-textWhiteLight  text-[15px]'>Under Construction</p>
                                     </div>
-                                    <div className='flex justify-between pb-2 mb-'>
+                                    <div className='flex justify-between pb-2 mb-2'>
                                         <p className='text-textWhiteDark font-[500] text-[15px]'>Type</p>
                                         <p className='text-textWhiteLight text-[15px]'>Corporate Space</p>
                                     </div>
@@ -96,9 +96,9 @@ function About() {
 
                         </Link>
 
-                        <Link to={'/zluxuria'} >
+                        <Link to={'/zluxuria'} className='w-[90%] md:w-[350px]' >
 
-                            <div className='flex flex-col bg-lightBlack w-[350px] shadow-sm md:ml-9 mt-10 md:mt-0'>
+                            <div className='flex flex-col bg-lightBlack shadow-sm w-full md:ml-9 mt-10 md:mt-0'>
                                 <img src={img2} alt='Zade group project z luzuria' className='w-full h-[500px] object-cover object-top' />
 
 
