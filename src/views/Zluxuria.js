@@ -188,7 +188,7 @@ function Zluxuria() {
 
                     <div className='absolute w-full h-full bg-black bg-opacity-25'></div>
 
-                    <div className="w-full h-full flex  justify-center items-center">
+                    <div className="w-full h-full flex items-center">
                         <motion.div
 
                             animate={{ opacity: 1 }}
@@ -200,12 +200,11 @@ function Zluxuria() {
                             initial={{ opacity: 0 }}
                             // whileHover={{ scale: 1.2 }}
 
-                            className="h-full flex flex-col items-center z-30">
+                            className="h-full flex flex-col items-start z-30">
 
-                            <div className='flex flex-col justify-center items-center pt-[43%]'>
-                                <h1 className='mt-10 pt-10 pb-2 text-6xl md:text-9xl text-center md:font-bold text-white font-primary'>Z Luxuria</h1>
-                                <h1 className='mt-5 pb-2 text-3xl md:hidden md:text-5xl text-center text-white lowercase'>ULTIMATE LUXURY LIVING AT SKY</h1>
-                                <h1 className='hidden md:flex mt-5 pb-2 text-3xl md:text-5xl text-center text-white font-primary lowercase'>ULTIMATE LUXURY LIVING AT SKY</h1>
+                            <div className='flex flex-col justify-start items-center sticky top-0 pl-12 pt-20 pb-16'>
+                                <h1 className='mt-10 pt-10 pb-2 text-6xl md:text-8xl 15:text-9xl text-center md:font-bold text-white font-primary'>Z Luxuria</h1>
+                                <h1 className='hidden md:flex pb-2 text-3xl md:text-3xl 15:text-5xl text-center text-white font-primary lowercase'>ULTIMATE LUXURY LIVING AT SKY</h1>
                                 {/* <h1 className='hidden text-3xl md:text-5xl md:flex text-center text-white font-primary lowercase'>AT SKY</h1> */}
                                 {/* <h1 className='text-3xl md:text-5xl text-center font-bold text-white font-style uppercase'> </h1> */}
                                 <p className="hidden w-[90%] md:w-[70%] mx-auto pt-8 md:text-xl text-white font-primary text-center py-4 font-medium">Experience the height of luxury with our latest project, designed to inspire and elevate your senses.</p>
