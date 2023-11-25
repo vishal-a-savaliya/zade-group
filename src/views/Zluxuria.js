@@ -561,6 +561,7 @@ function Zluxuria() {
                                 <ul className='pb-10 15:pb-14'>
                                     <li className='text-textWhiteDark font-primary text-xl 14:py-1 15:py-2'>Fill Aura of Luxurious Lifestyle</li>
                                     <li className='text-textWhiteDark font-primary text-xl 14:py-1 15:py-2'>Specious Living with Specious View</li>
+                                    <li className='text-textWhiteDark font-primary text-xl 14:py-1 15:py-2'>A 12.25 feet clear height</li>
                                     <li className='text-textWhiteDark font-primary text-xl 14:py-1 15:py-2'>Wide space of  42' 8"  X 17' 10" </li>
                                 </ul>
                                 <a className='button-gold' href='#contact'>Contact Us</a>
@@ -599,6 +600,7 @@ function Zluxuria() {
                             <ul className='pb-10 pt-4'>
                                 <li className='text-textWhiteLight font-primary text-xl py-1 15:py-2'>Fill Aura of Luxurious Lifestyle</li>
                                 <li className='text-textWhiteLight font-primary text-xl py-1 15:py-2'>Specious Living with Specious View</li>
+                                <li className='text-textWhiteLight font-primary text-xl py-1 15:py-2'>A 12.25 feet clear height</li>
                                 <li className='text-textWhiteLight font-primary text-xl py-1 15:py-2'>Wide space of  42' 8"  X 17' 10" </li>
                             </ul>
                             <a className='button-gold' href='#contact'>Contact Us</a>
