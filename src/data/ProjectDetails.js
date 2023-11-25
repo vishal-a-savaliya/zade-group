@@ -168,7 +168,7 @@ export const Projects = [
             {
                 "icon": icon3,
                 "title": "Only 2 Villament per floor",
-                "description": "The privacy, exclusivity, richness and freedom of space you experience is amazing when there are only 2 apartments on each floor.A 1225 feet clear height is like a bonus."
+                "description": "The privacy, exclusivity, richness and freedom of space you experience is amazing when there are only 2 apartments on each floor, A 12.25 feet clear height is like a bonus."
             },
             {
                 "icon": icon4,
