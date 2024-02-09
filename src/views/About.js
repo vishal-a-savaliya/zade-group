@@ -116,7 +116,7 @@ function About() {
                                     </div>
                                     <div className='flex justify-between pb-2 mb-2'>
                                         <p className='text-textWhiteDark font-[500] text-[15px]'>Type</p>
-                                        <p className='text-textWhiteLight text-[15px]'>Villaments Recidency</p>
+                                        <p className='text-textWhiteLight text-[15px]'>Villaments Residency</p>
                                     </div>
                                 </div>
                             </div>
